@@ -40,6 +40,16 @@
 - 名著与古诗文为公有领域作品，原文取自维基文库，逐字未改；原创选文版权自持。
 - 非连续性文本中的数据为教学用虚构材料，不得作为事实引用。
 
-## 构建
+## 构建与发布
 
-静态站，无依赖。`index.html` 与 `doc-*.html` 由项目根目录的 Markdown 生成（自写的极简 md→html 转换器），改完文档重新生成即可。
+静态站，零依赖（只要 Python 3）。`index.html` 与 `doc-*.html` 由项目根目录的 Markdown 生成，转换器是自写的极简 md→html（`tools/md2html.py`）。
+
+```bash
+# 仅重建
+python3 tools/build_site.py
+
+# 重建 + 提交 + 推送（GitHub Pages 约 1 分钟后生效）
+./publish.sh "更新说明"
+```
+
+目录约定：`tools/build_site.py` 从自身位置推出路径 —— 源在 `../`（项目根的 `*.md` 与 `content/`），产物写到本仓库根。新增文档需在 `tools/build_site.py` 的 `DOCS` 列表里加一行（文件名、编号、标题、一句话简介）。
