@@ -18,10 +18,11 @@ DOCS=[
  ("03-纯C端阅读产品改良方案.md","03","纯 C 端阅读产品改良方案","并行会话产出：用户分层、主题系列化、每周节奏与家长报告"),
  ("04-合规红线与双内核方案（可行性补充）.md","04","合规红线与双内核方案","学科类身份、教育 App 备案、未成年人模式；语文不能分级的论证"),
  ("05-初中语文阅读产品方案-中文五步法.md","05","初中语文阅读产品方案：中文五步法","猜·读·问·辨·写；支架分层、三层追问、承诺边界"),
- ("06-初一首月阅读训练量与分地区内容规格.md","06","初一首月训练量与分地区内容规格","选文全国共用、题壳按地区分；真题只能逆向工程"),
+ ("06-初一首月阅读训练量与分地区内容规格.md","06","初一首月训练量与分地区内容规格","首月 12＋4＋16 的量与排布；分地区部分首版不实施，见 10"),
  ("07-有效性审查-按机制逐件审.md","07","有效性审查：按机制逐件审","七个零件逐件对证据；一处对 05 的自我纠正"),
- ("08-首月内容库-选文与练习.md","08","首月内容库：选文与练习","16 篇选文全文 ＋ 168 道练习，可直接投产"),
+ ("08-首月内容库-选文与练习.md","08","首月内容库：选文与练习","16 篇选文全文 ＋ 120 道练习，可直接投产"),
  ("09-阅读问题诊断与可训练提升方案.md","09","阅读问题诊断与可训练提升方案","并行会话产出：三道闸门、17 个微技能、6 种画像处方"),
+ ("10-去掉地区分版本-首版收敛决定.md","10","去掉地区分版本：首版收敛决定","决策记录：去掉了什么、为什么、代价、什么条件下加回来"),
 ]
 
 CSS = """
@@ -124,7 +125,7 @@ hub = f"""<div class="hero">
 <span class="tag">项目资料 · 2026-09</span>
 <h1>读得深</h1>
 <p class="lead">面向 C 端的初中语文阅读能力产品 —— 从 Achieve3000 竞品拆解，到可投产的首月内容库。</p>
-<p style="font-size:13.5px;color:var(--ink-muted)">10 份文档 · 2 个可交互 Demo · 16 篇选文 · 168 道练习</p>
+<p style="font-size:13.5px;color:var(--ink-muted)">11 份文档 · 2 个可交互 Demo · 16 篇选文 · 120 道练习</p>
 </div>
 
 <div class="notice">这是一组<strong>内部工作稿</strong>，公开仅为便于评审。文中的定价、内容量、各项指标均为<strong>待验证建议，不是承诺</strong>；效果数据凡来自厂商宣称的均已标注。</div>
@@ -132,7 +133,7 @@ hub = f"""<div class="hero">
 <div class="sec-h">可交互 Demo</div>
 <div class="cards two">
   <a class="card" href="https://pumo0926-cpu.github.io/dudeshen-reading-h5/"><div class="k">产品方案</div><b>五步法方案 H5</b><span>猜·读·问·辨·写的完整设计，含 Achieve3000 对照与承诺边界</span></a>
-  <a class="card" href="https://pumo0926-cpu.github.io/dudeshen-month-demo/"><div class="k">月度 Demo</div><b>初一首月训练</b><span>16 篇选文全部可读，切换地区看题壳变化，可走完整五步</span></a>
+  <a class="card" href="https://pumo0926-cpu.github.io/dudeshen-month-demo/"><div class="k">月度 Demo</div><b>初一首月训练</b><span>16 篇选文全部可读，可走完整五步；首版不分地区</span></a>
 </div>
 
 <div class="sec-h">文档</div>
@@ -142,13 +143,14 @@ hub = f"""<div class="hero">
 
 <div class="sec-h">数据</div>
 <div class="cards">
-  <a class="doc" href="content/month01.json"><span class="n">JSON</span><span class="t"><b>首月内容库</b><span>16 篇选文全文 ＋ 168 道练习的机器可读版本</span></span></a>
+  <a class="doc" href="content/month01.json"><span class="n">JSON</span><span class="t"><b>首月内容库</b><span>16 篇选文全文 ＋ 120 道练习的机器可读版本</span></span></a>
 </div>
 
 <div class="sec-h">怎么读这组文档</div>
 <blockquote><strong>只看三篇：</strong>01（对标对象是什么）→ 07（我们这套到底有没有用）→ 08（内容长什么样）。<br>
 <strong>关心可行性：</strong>04（合规红线）＋ 02B。<br>
-<strong>关心怎么落地：</strong>05（机制）→ 06（规格）→ 09（分诊与疗程）→ 08（成品）。</blockquote>
+<strong>关心怎么落地：</strong>05（机制）→ 06（规格）→ 09（分诊与疗程）→ 08（成品）。<br>
+<strong>想知道最近改了什么：</strong>10（去掉地区分版本的决定与代价）。</blockquote>
 
 <div class="notice">02B、03、09 由并行会话产出，与其余各篇在个别判断上存在分歧（例如首批客户应否走学校渠道），分歧点已在 04 开头写明，未作统一。</div>
 {FOOT}"""
