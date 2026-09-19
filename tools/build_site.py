@@ -127,7 +127,7 @@ hub = f"""<div class="hero">
 <span class="tag">项目资料 · 2026-09</span>
 <h1>读得深</h1>
 <p class="lead">面向 C 端的初中语文阅读能力产品 —— 从 Achieve3000 竞品拆解，到可投产的首月内容库。</p>
-<p style="font-size:13.5px;color:var(--ink-muted)">12 份文档 · 3 个可交互 Demo · 16 篇选文 · 120 道练习</p>
+<p style="font-size:13.5px;color:var(--ink-muted)">13 份文档 · 3 个可交互 Demo · 16 篇选文 · 172 道练习</p>
 </div>
 
 <div class="notice">这是一组<strong>内部工作稿</strong>，公开仅为便于评审。文中的定价、内容量、各项指标均为<strong>待验证建议，不是承诺</strong>；效果数据凡来自厂商宣称的均已标注。</div>
