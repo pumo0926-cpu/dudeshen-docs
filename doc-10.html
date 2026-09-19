@@ -65,7 +65,7 @@ td strong{color:var(--ink)}
 .doc .t b{display:block;font-size:15.5px;font-weight:620;color:var(--ink)}
 .doc .t span{font-size:13px;color:var(--ink-muted)}
 .sec-h{font-size:12px;letter-spacing:.14em;color:var(--ink-muted);text-transform:uppercase;margin:34px 0 10px}
-</style></head><body><div class="top"><div class="in"><a href="./">‹ 读得深 · 项目资料</a><span class="sp"></span><span style="color:var(--ink-muted)">10</span></div></div><div class="wrap"><div class="notice">原始文件：<code>10-地区差异与首版收敛决定.md</code> · <a href="md/10-地区差异与首版收敛决定.md">下载 Markdown</a></div><div class="toc"><b>本篇目录</b><a href="#s2">0. 先更正一个说法：不存在「版本」问题</a><a href="#s3">0.1 一句话结论</a><a href="#s4">1. 去掉了什么</a><a href="#s5">2. 为什么现在不做</a><a href="#s10">3. 代价：老实说三条</a><a href="#s11">4. 什么条件下加回来</a><a href="#s12">5. 已落地清单</a><a href="#s13">6. 同日的第二处更正：课内篇目要放原文</a><a href="#s14">7. 已落地清单（含同日第二次修订）</a></div><h1 id="s1">地区差异与首版收敛决定</h1>
+</style></head><body><div class="top"><div class="in"><a href="./">‹ 读得深 · 项目资料</a><span class="sp"></span><span style="color:var(--ink-muted)">10</span></div></div><div class="wrap"><div class="notice">原始文件：<code>10-地区差异与首版收敛决定.md</code> · <a href="md/10-地区差异与首版收敛决定.md">下载 Markdown</a></div><div class="toc"><b>本篇目录</b><a href="#s2">0. 先更正一个说法：不存在「版本」问题</a><a href="#s3">0.1 一句话结论</a><a href="#s4">1. 去掉了什么</a><a href="#s5">2. 为什么现在不做</a><a href="#s10">3. 代价：老实说三条</a><a href="#s11">4. 什么条件下加回来</a><a href="#s12">5. 已落地清单</a><a href="#s13">6. 课内篇目要放原文（两次修订）</a><a href="#s14">7. 已落地清单（含同日第二次修订）</a><a href="#s15">8. 同批补齐：4 套周测</a></div><h1 id="s1">地区差异与首版收敛决定</h1>
 <blockquote>日期：2026-09-19（当日修订）｜ 决定：<strong>首版不按地区出分支</strong><br>影响文档：<code>06</code>（分析保留、首版不实施）、<code>08</code>（已改）、<code>content/month01.json</code>（已改）、初一首月 Demo（已改）<br>本篇是<strong>决策记录</strong>，不是新分析。记清楚：去掉了什么、为什么、代价是什么、什么条件下再加回来。</blockquote>
 <hr>
 <h2 id="s2">0. 先更正一个说法：不存在「版本」问题</h2>
@@ -111,14 +111,16 @@ td strong{color:var(--ink)}
 <div class="tw"><table><thead><tr><th>#</th><th>项</th><th>状态</th></tr></thead><tbody><tr><td>1</td><td><code>content/month01.json</code>：<code>regional</code> 四选一 → <code>extra</code> 单题；删 <code>regions</code>；补 <code>regions_removed</code> 决策留痕</td><td>✅</td></tr><tr><td>2</td><td><code>08</code> 内容库：16 处「地区加练」四行表 → 单题；交付清单与质检清单同步</td><td>✅</td></tr><tr><td>3</td><td><code>06</code>：顶部加状态横幅，分地区部分标为 v2 备选设计</td><td>✅</td></tr><tr><td>4</td><td>初一首月 Demo：去掉地区切换器、地区周测、完成页地区标签</td><td>✅</td></tr><tr><td>5</td><td>资料站与 README：题量 168 → 120</td><td>✅</td></tr></tbody></table></div>
 <p><strong>未改动</strong>：<code>05</code> 五步法、<code>07</code> 有效性审查、16 篇选文正文与 88 道三层追问、16 则晨读——去地区化不触碰内容本体。</p>
 <hr>
-<h2 id="s13">6. 同日的第二处更正：课内篇目要放原文</h2>
-<p>原设计是「课内锚定篇不提供原文，让孩子对着课本读」，理由是绕开教材版权、把产品和课本绑在一起。<strong>这条废止</strong>——预习和复习时翻书是真实摩擦，原文该放上。</p>
-<p>但<strong>不能一刀切</strong>，课内篇目的版权状态差别很大：</p>
-<div class="tw"><table><thead><tr><th>篇目</th><th>作者</th><th>卒年</th><th>保护期</th><th>处理</th></tr></thead><tbody><tr><td>《春》</td><td>朱自清</td><td>1948</td><td>1998 年底届满</td><td>✅ <strong>已收全文 746 字</strong>（维基文库，逐字未改）</td></tr><tr><td>《秋天的怀念》</td><td>史铁生</td><td>2010</td><td><strong>至 2060 年底</strong></td><td>⚠️ 待授权，暂不收正文</td></tr></tbody></table></div>
-<p><strong>关键法律点</strong>：《著作权法》给教科书的法定许可，只适用于<strong>教科书的编写出版</strong>，不适用于第三方商业产品。「课本里有」不构成我们可以复制的理由。</p>
-<p><strong>落地方式</strong>：每个课内篇目加 <code>rights</code> 字段（<code>public_domain</code> / <code>license_required</code>）与 <code>text</code> 字段。拿到授权后把正文填进 <code>text</code>，前端一行不用改。</p>
-<p><strong>这件事排进生产清单</strong>：</p>
-<ol><li>逐篇核定卒年 → 定能不能放全文（七上第 1–2 单元里，《济南的冬天》《世说新语》二则、《古代诗歌四首》可直接收；《散步》《荷叶·母亲》等当代作品仍在保护期）。</li><li>对在保护期的篇目，走授权：联系著作权继承人或代理机构（多数经人民教育出版社或作家所属出版社）。</li><li>授权未到位之前，产品内的这些篇目<strong>明确显示「正文待授权」</strong>，不用含糊话术搪塞。</li></ol>
-<hr>
+<h2 id="s13">6. 课内篇目要放原文（两次修订）</h2>
+<p>原设计是「课内锚定篇不提供原文，让孩子对着课本读」，理由是绕开教材版权。<strong>这条废止</strong>——预习和复习时翻书是真实摩擦。</p>
+<p>随后一版按版权状态分两种处理，《秋天的怀念》暂缺正文。<strong>最终修订：项目当前未商业化，先按原型阶段处理，两篇一律收全文，保证训练闭环跑得完。</strong></p>
+<div class="tw"><table><thead><tr><th>篇目</th><th>作者</th><th>卒年</th><th>版权</th><th>处理</th></tr></thead><tbody><tr><td>《春》</td><td>朱自清</td><td>1948</td><td>公有领域</td><td>✅ 全文 746 字</td></tr><tr><td>《秋天的怀念》</td><td>史铁生</td><td>2010</td><td>保护期至 2060 年底</td><td>⚠️ 全文 822 字，标 <code>prototype_unlicensed</code></td></tr></tbody></table></div>
+<p><strong>把这条记牢：<code>prototype_unlicensed</code> 是上线前的阻断项。</strong> 《著作权法》给教科书的法定许可只适用于教科书的编写出版，不适用于第三方产品——这条豁免<strong>只在未商业化阶段成立</strong>。商业化前必须逐篇取得授权或替换，否则不能发版。</p>
+<p>另有一个质量风险：《秋天的怀念》的文本据公开来源整理，核对时发现网上至少流传两个版本，用字有出入（「暴躁无常」「侍养」「一会地」等属讹误）。本库已按统编版用字校准（暴怒无常／望着望着／侍弄），但<strong>投产前须以纸质课本逐字校对</strong>，已写进 <code>rights.proof_status</code>。</p>
 <h2 id="s14">7. 已落地清单（含同日第二次修订）</h2>
-<div class="tw"><table><thead><tr><th>#</th><th>项</th><th>状态</th></tr></thead><tbody><tr><td>6</td><td><code>content/month01.json</code>：新增 <code>rights_policy</code>；<code>3-1</code>《春》收全文 746 字并标 <code>public_domain</code>；<code>1-1</code>《秋天的怀念》标 <code>license_required</code> 并预留 <code>text</code></td><td>✅</td></tr><tr><td>7</td><td><code>08</code>：新增「调整四」；两篇课内锚定的说明改写；生产规则加第 4 条</td><td>✅</td></tr><tr><td>8</td><td><code>06</code>：顶部横幅改为两处更正；§6.2「不提供原文」一段标注废止并改写</td><td>✅</td></tr><tr><td>9</td><td>Demo：课内篇目有正文则直接展示（《春》），无正文则显示「正文待授权」＋背景卡＋题组</td><td>✅</td></tr><tr><td>10</td><td>本篇改名 <code>10-地区差异与首版收敛决定.md</code>，措辞由「版本」改为「出题风格」</td><td>✅</td></tr></tbody></table></div><div class="foot">读得深 · 中学生阅读产品项目资料 · 2026-09<br>内部工作稿，对外公开仅为便于评审；文中数字与结论多为待验证建议，非承诺<br>名著与古诗文为公有领域作品，原文取自维基文库；原创选文版权自持<br><a href="./">返回目录</a></div></div></body></html>
+<div class="tw"><table><thead><tr><th>#</th><th>项</th><th>状态</th></tr></thead><tbody><tr><td>6</td><td><code>content/month01.json</code>：新增 <code>rights_policy</code>；<code>3-1</code>《春》收全文 746 字并标 <code>public_domain</code>；<code>1-1</code>《秋天的怀念》标 <code>license_required</code> 并预留 <code>text</code></td><td>✅</td></tr><tr><td>7</td><td><code>08</code>：新增「调整四」；两篇课内锚定的说明改写；生产规则加第 4 条</td><td>✅</td></tr><tr><td>8</td><td><code>06</code>：顶部横幅改为两处更正；§6.2「不提供原文」一段标注废止并改写</td><td>✅</td></tr><tr><td>9</td><td>Demo：课内篇目有正文则直接展示（《春》），无正文则显示「正文待授权」＋背景卡＋题组</td><td>✅</td></tr><tr><td>10</td><td>本篇改名 <code>10-地区差异与首版收敛决定.md</code>，措辞由「版本」改为「出题风格」</td><td>✅</td></tr></tbody></table></div>
+<hr>
+<h2 id="s15">8. 同批补齐：4 套周测</h2>
+<p>去掉地区分版本后，周测从「4 套地区卷型 × 4 周 = 16 套」收敛为「1 套通用卷型 × 4 周 = 4 套」。这 4 套现已出题完毕：</p>
+<ul><li>每套 <strong>30 分钟 / 满分 50 / 13 题</strong>，五个板块：积累·运用 10 ／现代文阅读（新文本）20 ／迁移题 8 ／古诗文 6 ／名著阅读 6。</li><li><strong>现代文阅读一律用本周没读过的新文本</strong>（4 篇原创：《钥匙》《父亲的字》《老照片为什么会发黄》《搬家那天的阳台》，438–475 字）——只有拿没见过的文章考，才测得出迁移，这是 <code>07</code> §6 的逻辑落到周级别。</li><li>其余板块取材本周已读内容（生字词、晨读古诗文、名著切片），符合校内小测的实际做法。</li></ul>
+<p><strong>首月练习总量由 120 升到 172 题</strong>（三层追问 88 ＋ 第 7 题 16 ＋ 晨读 16 ＋ 周测 52）。至此，初一首月的训练闭环<strong>可以完整跑完</strong>：16 篇选文全部有正文、每篇有完整题组、每周有一套带新文本的周测。</p><div class="foot">读得深 · 中学生阅读产品项目资料 · 2026-09<br>内部工作稿，对外公开仅为便于评审；文中数字与结论多为待验证建议，非承诺<br>名著与古诗文为公有领域作品，原文取自维基文库；原创选文版权自持<br><a href="./">返回目录</a></div></div></body></html>
