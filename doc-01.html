@@ -1,0 +1,124 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Achieve3000 竞品分析 · 读得深</title>
+<meta name="theme-color" content="#f9f9f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)">
+<style>
+:root{color-scheme:light dark;--plane:#f9f9f7;--surface:#fcfcfb;--surface-2:#f3f2ef;
+--ink:#0b0b0b;--ink-2:#52514e;--ink-muted:#898781;--grid:#e1e0d9;--axis:#c3c2b7;
+--border:rgba(11,11,11,.10);--accent:#2a78d6;--accent-soft:#86b6ef;--wash:#eaf2fd;--r:14px}
+@media (prefers-color-scheme:dark){:root{--plane:#0d0d0d;--surface:#1a1a19;--surface-2:#232321;
+--ink:#fff;--ink-2:#c3c2b7;--ink-muted:#898781;--grid:#2c2c2a;--axis:#383835;
+--border:rgba(255,255,255,.10);--accent:#3987e5;--accent-soft:#6da7ec;--wash:#141c26}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{background:var(--plane);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px 80px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.top{position:sticky;top:0;z-index:9;background:var(--plane);border-bottom:1px solid var(--border);padding:12px 18px;margin:0 -18px 0}
+.top .in{max-width:720px;margin:0 auto;display:flex;align-items:center;gap:12px;font-size:13.5px}
+.top b{font-weight:680;font-size:15px}
+.top .sp{flex:1}
+h1{font-size:30px;font-weight:700;letter-spacing:-.01em;line-height:1.3;margin:30px 0 12px}
+h2{font-size:21px;font-weight:660;margin:34px 0 10px;padding-top:6px;border-top:1px solid var(--grid)}
+h3{font-size:17px;font-weight:640;margin:24px 0 8px}
+h4{font-size:15px;font-weight:620;margin:18px 0 6px;color:var(--ink-2)}
+p{margin:0 0 14px;color:var(--ink-2)}
+strong{color:var(--ink);font-weight:620}
+hr{border:0;border-top:1px solid var(--grid);margin:26px 0}
+blockquote{margin:0 0 16px;padding:12px 16px;background:var(--surface);border-left:3px solid var(--accent-soft);border-radius:0 10px 10px 0;color:var(--ink-2);font-size:15px}
+blockquote strong{color:var(--ink)}
+ul,ol{margin:0 0 16px;padding-left:22px;color:var(--ink-2)}
+li{margin:0 0 6px}
+code{background:var(--surface-2);border-radius:5px;padding:1px 5px;font-size:13.5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+pre{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px;overflow-x:auto;margin:0 0 16px}
+pre code{background:none;padding:0;font-size:12.5px;line-height:1.7}
+.tw{overflow-x:auto;margin:0 0 18px;border:1px solid var(--border);border-radius:var(--r);background:var(--surface)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--grid);color:var(--ink-2);vertical-align:top}
+th{font-size:12px;color:var(--ink-muted);font-weight:560;white-space:nowrap;background:var(--surface-2)}
+tr:last-child td{border-bottom:0}
+td strong{color:var(--ink)}
+.toc{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 18px;margin:20px 0 28px}
+.toc b{font-size:12px;letter-spacing:.14em;color:var(--ink-muted);text-transform:uppercase;display:block;margin-bottom:8px}
+.toc a{display:block;font-size:14px;padding:3px 0;color:var(--ink-2)}
+.toc a:hover{color:var(--accent)}
+.notice{background:var(--wash);border-radius:10px;padding:11px 14px;font-size:13px;color:var(--ink-2);margin:18px 0}
+.foot{border-top:1px solid var(--grid);margin-top:40px;padding-top:20px;font-size:12.5px;color:var(--ink-muted);line-height:1.9}
+/* hub */
+.hero{padding:44px 0 6px}
+.hero .tag{display:inline-block;font-size:12.5px;color:var(--ink-muted);border:1px solid var(--border);border-radius:999px;padding:4px 12px;background:var(--surface)}
+.hero h1{font-size:38px;margin:16px 0 10px}
+.lead{font-size:17px;color:var(--ink-2);margin:0 0 6px}
+.cards{display:grid;gap:12px;margin:14px 0 8px}
+@media(min-width:560px){.cards.two{grid-template-columns:1fr 1fr}}
+.card{display:block;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px;color:inherit}
+.card:hover{border-color:var(--accent-soft);text-decoration:none}
+.card .k{font-size:11.5px;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:6px}
+.card b{display:block;font-size:16.5px;font-weight:640;margin-bottom:4px;color:var(--ink)}
+.card span{font-size:13.5px;color:var(--ink-muted);line-height:1.7}
+.doc{display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;color:inherit}
+.doc:hover{border-color:var(--accent-soft);text-decoration:none}
+.doc .n{flex:0 0 40px;height:40px;border-radius:10px;background:var(--wash);color:var(--accent);display:grid;place-items:center;font-weight:700;font-size:14px}
+.doc .t{flex:1;min-width:0}
+.doc .t b{display:block;font-size:15.5px;font-weight:620;color:var(--ink)}
+.doc .t span{font-size:13px;color:var(--ink-muted)}
+.sec-h{font-size:12px;letter-spacing:.14em;color:var(--ink-muted);text-transform:uppercase;margin:34px 0 10px}
+</style></head><body><div class="top"><div class="in"><a href="./">‹ 读得深 · 项目资料</a><span class="sp"></span><span style="color:var(--ink-muted)">01</span></div></div><div class="wrap"><div class="notice">原始文件：<code>01-竞品分析-Achieve3000.md</code> · <a href="md/01-竞品分析-Achieve3000.md">下载 Markdown</a></div><div class="toc"><b>本篇目录</b><a href="#s2">一、一句话定位</a><a href="#s3">二、产品事实卡</a><a href="#s4">三、核心机制：五步流程（The 5-Step Literacy Routine）</a><a href="#s5">四、适合什么场景</a><a href="#s9">五、它想解决什么问题（三层痛点）</a><a href="#s10">六、家长对这个产品的使用预期 ⭐</a><a href="#s14">七、效果证据的真实水位（别被 3.5x 迷惑）</a><a href="#s15">八、对我们做「中学生阅读产品」的启发</a><a href="#s19">九、资料来源</a></div><h1 id="s1">Achieve3000 竞品分析：定位、场景、要解决的问题、家长预期</h1>
+<blockquote>调研日期：2026-09-13 ｜ 用途：为「中学生阅读产品」提供对标参考<br>说明：文中区分「厂商宣称」「第三方评估」「用户实感」三类信息，来源见文末。</blockquote>
+<hr>
+<h2 id="s2">一、一句话定位</h2>
+<p><strong>Achieve3000 是一套 B2B（卖给学区/学校）的补充型英文非虚构分级阅读训练系统</strong>：把同一篇时事/学科短文自动改写成 12 个蓝思（Lexile）难度版本，按每个学生的实测阅读水平精准投喂，用固定的「五步流程」把阅读变成可打分、可追踪、可上报的日常练习。</p>
+<p>官方 tagline：<strong>&quot;Differentiate, Engage, and Achieve&quot;</strong> / <strong>&quot;Literacy Acceleration at Your Fingertips&quot;</strong>。</p>
+<p>它不是&quot;读物库&quot;，也不是&quot;阅读兴趣培养 App&quot;，而是<strong>一套带评测闭环的阅读训练与学情管理工具</strong>。这是理解它一切设计取舍的前提。</p>
+<hr>
+<h2 id="s3">二、产品事实卡</h2>
+<div class="tw"><table><thead><tr><th>维度</th><th>情况</th></tr></thead><tbody><tr><td>归属</td><td>2001 年创立；2021-11-01 被 McGraw Hill 以 <strong>7.011 亿美元</strong>收购；2025–26 学年起账号体系并入 McGraw Hill 平台</td></tr><tr><td>覆盖</td><td>官方口径：美国 50 个州 + 49 个国家（&quot;美国一半 2–12 年级学生在用&quot;是中文渠道的营销话术，未见官方数据支撑）</td></tr><tr><td>年级</td><td>2–12 年级（官网现主推 3–12，另有 Smarty Ants 覆盖低幼、Actively Learn 覆盖整本书/课文精读）</td></tr><tr><td>内容</td><td>非虚构为主（时事、科技、历史、地理、生物、体育、人物），兼有少量虚构；跨 ELA / 科学 / 社会学科</td></tr><tr><td>分级</td><td>英文 <strong>12 个难度版本</strong>，西班牙文 8 个；基于 Lexile 蓝思体系（与 MetaMetrics 深度绑定）</td></tr><tr><td>入口测评</td><td><strong>LevelSet</strong>（半自适应，15–45 分钟，建议整节 40 分钟课完成），定出初始蓝思值</td></tr><tr><td>定价</td><td>美国校端：约 <strong>$42/生/年</strong>起，站点包约 $7,500/125 人（含 1 天到校培训）；家庭版渠道（Homeschool Buyers Club）<strong>$99/年</strong>（原价 $177）；中国团购渠道 <strong>$68 或 ¥468/年</strong></td></tr><tr><td>形态</td><td>纯 Web，无教材、无教师讲授，定位&quot;supplemental&quot;（补充课程），不替代主教材</td></tr></tbody></table></div>
+<hr>
+<h2 id="s4">三、核心机制：五步流程（The 5-Step Literacy Routine）</h2>
+<p>每篇文章一个 lesson，学生走完固定五步：</p>
+<ol><li><strong>Ready</strong>（原 Before Reading Poll）— 一道投票题激活背景知识、建立观点预设</li><li><strong>Read</strong>（原 Article）— 读自己那一版难度的文章，带朗读（TTS）和生词支持</li><li><strong>Respond</strong>（原 Activity）— 约 8 题选择题，<strong>记首答正确率</strong>，是全系统的核心数据</li><li><strong>Reflect</strong>（原 After Reading Poll）— 再投一次票，对比读前读后观点变化</li><li><strong>Write</strong>（原 Thought Question）— 基于文本写一段回应</li></ol>
+<p><strong>升降级逻辑</strong>：首答正确率持续达标 → 系统自动上调文本复杂度；反之下调。厂商定义的&quot;高质量高强度练习&quot;= <strong>一年完成 ≥40 篇 + 首答平均正确率 ≥75%</strong>。</p>
+<p>这套设计的高明之处：<strong>把&quot;读懂了没有&quot;变成了一个每周产生数据的标准动作</strong>。对学校来说，它交付的不只是阅读，更是一条可向上汇报的成长曲线。</p>
+<hr>
+<h2 id="s5">四、适合什么场景</h2>
+<h3 id="s6">主场景（它真正被买单的地方，全部在校内）</h3>
+<ol><li><strong>差异化教学</strong>：一个班里蓝思值从 400L 到 1200L 都有，老师无法备 12 套材料——同一话题同一课堂讨论，每人读自己那一版，是刚需中的刚需。</li><li><strong>干预与补差（MTSS / RTI / Title I）</strong>：给落后学生做可量化的提分干预，且有 ESSA &quot;Strong&quot; 评级可用于经费申请合规。</li><li><strong>英语学习者（EL/ELL）</strong>：英西双语 + 朗读 + 词汇脚手架，2022–23 研究覆盖 3.3 万+ EL 学生。</li><li><strong>跨学科知识建构</strong>：科学课/社会课老师拿它补背景知识阅读，同时练读写。</li><li><strong>暑期学校、寒暑假防滑坡、标化前的阅读量补充</strong>。</li></ol>
+<h3 id="s7">中国的实际场景（与美国完全不同）</h3>
+<ul><li><strong>国际学校 / 双语学校校内采购</strong>：作为英文非虚构阅读的常规作业。</li><li><strong>家长自购（&quot;鸡娃&quot;渠道）</strong>：通过团购、代理、公众号买单人账号，目标明确——<strong>冲蓝思值、备 MAP/标化、补非虚构阅读短板</strong>。</li></ul>
+<h3 id="s8">明确不适合</h3>
+<ul><li>英文零基础或低幼启蒙（渠道方自己也说&quot;不建议初学者用，是给有基础的孩子做进阶&quot;）</li><li>追求阅读兴趣、文学体验、整本书阅读的场景（它是练习系统，不是读物）</li><li>需要口语、语法、写作精批的场景（Write 环节缺乏强反馈）</li></ul>
+<hr>
+<h2 id="s9">五、它想解决什么问题（三层痛点）</h2>
+<div class="tw"><table><thead><tr><th>层级</th><th>痛点</th><th>Achieve3000 的解法</th></tr></thead><tbody><tr><td><strong>教师</strong></td><td>班内阅读水平差 5–8 个年级，无法一人一材料；批改成本高</td><td>一键分层 + 自动判分 + 现成课堂讨论素材</td></tr><tr><td><strong>学校/学区</strong></td><td>阅读成绩要对州测负责；干预经费需要循证依据；说不清钱花在哪</td><td>蓝思值增长曲线 + ESSA Strong 评级 + 使用率报表</td></tr><tr><td><strong>学生</strong></td><td>读的材料要么太难放弃、要么太简单没长进</td><td>精准落在&quot;可理解性输入&quot;区间，读得懂但有挑战</td></tr></tbody></table></div>
+<p><strong>本质上它解决的是&quot;阅读这件事无法被管理&quot;的问题</strong>——把一个模糊的能力，变成可测、可分层、可追踪、可问责的流程。这也是它能卖出 7 亿美金的原因：<strong>买它的人（学区）和用它的人（学生）不是同一批人</strong>。</p>
+<hr>
+<h2 id="s10">六、家长对这个产品的使用预期 ⭐</h2>
+<p>这是本次调研最需要拆开看的部分，因为<strong>中美家长处在完全不同的位置</strong>。</p>
+<h3 id="s11">6.1 美国家长：被动接触者，预期极低</h3>
+<ul><li>家长<strong>不是买单人</strong>，产品由学校采购、以作业形式下发。</li><li>官方给家长的是 <strong>Home / Parent Edition</strong>：一个只读的进度入口 + 封闭邮件系统 + Learning Center 资源。定位是&quot;让家长知道孩子在干什么&quot;，不是&quot;让家长参与教学&quot;。</li><li>家长的真实预期只有三条：<strong>别占太多时间、别莫名其妙拉低成绩、在家能打开</strong>。</li><li>实际反馈很差：第三方评价站评分 <strong>1.5–1.8 星</strong>（86% 一星），评论者绝大多数是学生本人。集中吐槽：</li><li>文章陈旧（大量 2004–2016 年的旧闻，与&quot;时事&quot;定位自相矛盾）</li><li>被当作硬性作业计分——学生投稿写道，每月 4 篇 Achieve 没做好，&quot;70 分（及格）会掉到 63 分（不及格）&quot;</li><li>家里没设备/没网的学生直接受罚</li><li><strong>越读得好惩罚越重</strong>：正确率高就派更长更难的文章</li><li>结论：在美国，<strong>它是&quot;学校的工具&quot;，不是&quot;家庭的产品&quot;</strong>。家长满意度不在它的产品目标函数里。</li></ul>
+<h3 id="s12">6.2 中国家长：付费决策人，预期极高</h3>
+<p>中文渠道的宣传语几乎决定了家长的预期，典型话术：</p>
+<blockquote>&quot;地表最强阅读提升软件&quot;｜&quot;全球 48 个国家 500 多万学生在使用&quot;｜&quot;美国一半学生在用&quot;｜&quot;顶尖私校天才班、国际学校偷偷鸡娃的家长都在用的阅读神器&quot;｜&quot;蓝思值增长可达同龄人的 3.5 倍以上&quot;｜&quot;提高 MAP 等英语专项考试成绩&quot;</blockquote>
+<p>由此形成的四条核心预期：</p>
+<ol><li><strong>数值可见</strong>：蓝思值必须涨，且看得见涨了多少。这是家长唯一能拿来自我确认的 KPI。</li><li><strong>提分转化</strong>：能迁移到 MAP、标化、校内英语成绩。</li><li><strong>权威背书</strong>：美国学校在用 = 内容和体系可信，替家长解决了&quot;选什么材料&quot;的焦虑。</li><li><strong>省心可托管</strong>：孩子自己能跑完流程，家长不用陪读；渠道商甚至加送<strong>中文周报</strong>（官方没有的服务，专为满足中国家长的&quot;可视化交代&quot;需求）。</li></ol>
+<h3 id="s13">6.3 预期落差在哪（关键洞察）</h3>
+<p>真实家长记录里的失望高度一致：</p>
+<ul><li><strong>蓝思值前期暴涨 → 后期崩塌</strong>：有家长记录孩子第一个月从 <strong>875L 跳到 1035L</strong>，随后&quot;每天都提不起兴趣&quot;，正确率从 88% 掉到 63%，最低 37%。系统按正确率自动加难度，形成&quot;越涨越难 → 越难越挫败 → 数值回落&quot;的循环。</li><li><strong>枯燥</strong>：纯非虚构 + 固定五步 + 每篇 8 道选择题，新鲜感只有几周。孩子的兴趣点还会漂移（今天航天、后天网游）。</li><li><strong>无人监督即停摆</strong>：产品的动力设计原本依赖&quot;老师布置 + 计入成绩&quot;这一外部约束；家庭场景里这个约束不存在，坚持完全靠家长盯。</li><li><strong>家长自己的反思</strong>：&quot;不要过多看重蓝思值的升降&quot;——但产品的整个反馈体系恰恰把家长引向了这个数值。</li></ul>
+<p><strong>一句话：Achieve3000 的家长预期错配，根源是它的动力机制长在学校里，被剥离到家庭场景后，只剩下一个会让人焦虑的数字。</strong></p>
+<hr>
+<h2 id="s14">七、效果证据的真实水位（别被 3.5x 迷惑）</h2>
+<div class="tw"><table><thead><tr><th>来源</th><th>结论</th></tr></thead><tbody><tr><td>厂商（National Lexile Study）</td><td>每周 ≥2 篇 → 超预期增长 <strong>3.5 倍</strong>；小学 1.8–2.1x、初中 2.6–3.2x、高中 3.3–4.2x</td></tr><tr><td>Evidence for ESSA（中学段）</td><td><strong>Strong</strong> 评级，效应量 <strong>+0.29</strong>（1 项研究，742 人；6 年级 +0.22，9 年级 +0.44）</td></tr><tr><td>What Works Clearinghouse</td><td>青少年读写：理解力&quot;潜在正向&quot;，改善指数仅 <strong>+6 个百分位</strong>；整体读写 <strong>+3 个百分位</strong>。低年级阅读流畅度：<strong>无可辨识效果</strong></td></tr></tbody></table></div>
+<p><strong>关键前提被折叠掉了</strong>：厂商的 3.5x 是<strong>在&quot;每周 2 篇 + 首答正确率 ≥75% + 坚持全学年 40 篇&quot;条件下</strong>的相关性结果，而非随机对照的因果效应。绝大多数家庭达不到这个使用强度——落差正是从这里开始的。</p>
+<hr>
+<h2 id="s15">八、对我们做「中学生阅读产品」的启发</h2>
+<h3 id="s16">值得抄的</h3>
+<ol><li><strong>一文多版本分层</strong>是整个模式的地基，且技术上今天用 LLM 重写的成本远低于 2001 年。这是最值得复用的核心机制。</li><li><strong>固定的轻流程</strong>（读前预判 → 读 → 判分 → 读后回看 → 输出）比&quot;自由阅读&quot;更容易形成习惯和数据。读前/读后双投票的观点对比设计尤其巧妙，成本极低但让学生对&quot;我理解变化了&quot;有感知。</li><li><strong>首答正确率作为唯一升降级信号</strong>，简洁、抗作弊、易解释给家长。</li><li><strong>入口测评（LevelSet）</strong>给家长的&quot;第一次确定感&quot;极强，是转化的关键动作。</li></ol>
+<h3 id="s17">必须避开的</h3>
+<ol><li><strong>别把动力机制建在&quot;老师计分&quot;上</strong>。中国家长自购场景没有这层约束，必须自带内在动机设计（内容吸引力、连读激励、社交/榜单、可选主题）。</li><li><strong>别只给一个数值</strong>。蓝思值单点上涨会制造焦虑并反噬留存。应给&quot;能力画像 + 阅读量 + 主题广度 + 习惯稳定性&quot;的多维反馈，弱化单一 KPI。</li><li><strong>内容新鲜度是生死线</strong>。Achieve3000 最集中的差评是&quot;文章是 2004 年的&quot;——一个宣称&quot;时事阅读&quot;的产品，内容陈旧等于自毁根基。</li><li><strong>别让&quot;读得好&quot;变成惩罚</strong>。难度上调必须有节奏和缓冲，且让学生/家长看到&quot;这是奖励&quot;而非&quot;这是加罚&quot;。</li><li><strong>纯非虚构 + 纯选择题会枯燥</strong>。中学生需要叙事、争议话题、可讨论性，以及比选择题更有意思的输出形式。</li><li><strong>家长视图要独立设计</strong>，不能是学生后台的只读镜像。中国家长要的是&quot;我能向自己交代&quot;——渠道商自发做中文周报，说明这是被官方长期忽略的真需求。</li></ol>
+<h3 id="s18">最大的结构性机会</h3>
+<p>Achieve3000 是<strong>为学校的问责需求设计、被硬塞进家庭场景</strong>的产品。而中国中学生阅读市场的付费方就是家长本人。<strong>一个从第一天就为&quot;家长付费 + 学生自驱 + 无教师督促&quot;三方设计的产品，在动力机制和反馈设计上有它结构性拿不到的空间。</strong></p>
+<hr>
+<h2 id="s19">九、资料来源</h2>
+<ul><li><a href="https://www.mheducation.com/prek-12/program/microsites/achieve-3000-literacy.html" target="_blank" rel="noopener">Achieve3000 Literacy 官方产品页（McGraw Hill）</a></li><li><a href="https://www.mheducation.com/prek-12/program/microsites/achieve-3000-literacy/program-details/features.html" target="_blank" rel="noopener">产品特性页：Differentiate, Engage, and Achieve</a></li><li><a href="https://www.mheducation.com/prek-12/program/microsites/achieve-3000-literacy/browse/english-learners.html" target="_blank" rel="noopener">English Learners 场景页</a></li><li><a href="https://helpcenter.achieve3000.com/hc/en-us/articles/360063217413-The-5-Step-Literacy-Routine" target="_blank" rel="noopener">The 5 Step Literacy Routine（官方帮助中心）</a></li><li><a href="https://helpcenter.achieve3000.com/hc/en-us/sections/360012659213-Home-Parent-Edition" target="_blank" rel="noopener">Home / Parent Edition（官方帮助中心）</a></li><li><a href="https://www.mheducation.com/unitas/school/explore/sites/achieve3000/mh-a3k-lexile-summary-fall-2024.pdf" target="_blank" rel="noopener">2022-23 National Lexile Study 执行摘要（PDF）</a></li><li><a href="https://www.mheducation.com/prek-12/support/knowledge/achieve3000-literacy-levelset-teacher-guide.html" target="_blank" rel="noopener">LevelSet 教师指南</a></li><li><a href="https://www.evidenceforessa.org/program/achieve3000-secondary/" target="_blank" rel="noopener">Evidence for ESSA：Achieve3000 Secondary（效应量 +0.29）</a></li><li><a href="https://ies.ed.gov/ncee/wwc/Intervention/1284" target="_blank" rel="noopener">What Works Clearinghouse：Achieve3000 干预报告</a></li><li><a href="https://investors.mheducation.com/news/news-details/2021/McGraw-Hill-Completes-Acquisition-of-EdTech-Pioneer-Achieve3000-11-01-2021/default.aspx" target="_blank" rel="noopener">McGraw Hill 完成收购 Achieve3000 新闻稿</a></li><li><a href="https://www.trustradius.com/products/achieve3000/pricing" target="_blank" rel="noopener">TrustRadius：Achieve3000 定价</a></li><li><a href="https://homeschoolbuyersclub.com/products/achieve3000-literacy" target="_blank" rel="noopener">Homeschool Buyers Club：家庭版 $99/年</a></li><li><a href="https://www.smartcustomer.com/reviews/achieve3000.com" target="_blank" rel="noopener">用户评价站（1.8 星，86% 一星）</a></li><li><a href="https://thsgazette.com/1455/opinion/achieve3000-causes-undue-stress/" target="_blank" rel="noopener">学生投稿：Achieve3000 Causes Undue Stress</a></li><li><a href="https://www.findingschool.com/cn/columnist/3126" target="_blank" rel="noopener">FindingSchool 中文专栏：国际学校家长都在用的阅读神器</a></li><li><a href="https://news.qq.com/rain/a/20230110A08TJ800" target="_blank" rel="noopener">腾讯新闻：国际学校都在用的&quot;非虚构阅读网站&quot;（¥468/年）</a></li><li><a href="https://igroupbuy.us/Main/41/Detail.aspx" target="_blank" rel="noopener">美国爱团购：Achieve3000 团购页（$68）</a></li><li><a href="https://www.xiaohuasheng.cn/blog/9c69c8ddc9bf0769" target="_blank" rel="noopener">小花生：Achieve 3000 的使用感受（家长一手记录）</a></li><li><a href="https://zhuanlan.zhihu.com/p/26214185430" target="_blank" rel="noopener">知乎：Achieve3000 分级阅读学习平台介绍</a></li></ul><div class="foot">读得深 · 中学生阅读产品项目资料 · 2026-09<br>内部工作稿，对外公开仅为便于评审；文中数字与结论多为待验证建议，非承诺<br>名著与古诗文为公有领域作品，原文取自维基文库；原创选文版权自持<br><a href="./">返回目录</a></div></div></body></html>

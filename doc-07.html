@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>有效性审查：按机制逐件审 · 读得深</title>
+<meta name="theme-color" content="#f9f9f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)">
+<style>
+:root{color-scheme:light dark;--plane:#f9f9f7;--surface:#fcfcfb;--surface-2:#f3f2ef;
+--ink:#0b0b0b;--ink-2:#52514e;--ink-muted:#898781;--grid:#e1e0d9;--axis:#c3c2b7;
+--border:rgba(11,11,11,.10);--accent:#2a78d6;--accent-soft:#86b6ef;--wash:#eaf2fd;--r:14px}
+@media (prefers-color-scheme:dark){:root{--plane:#0d0d0d;--surface:#1a1a19;--surface-2:#232321;
+--ink:#fff;--ink-2:#c3c2b7;--ink-muted:#898781;--grid:#2c2c2a;--axis:#383835;
+--border:rgba(255,255,255,.10);--accent:#3987e5;--accent-soft:#6da7ec;--wash:#141c26}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{background:var(--plane);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px 80px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.top{position:sticky;top:0;z-index:9;background:var(--plane);border-bottom:1px solid var(--border);padding:12px 18px;margin:0 -18px 0}
+.top .in{max-width:720px;margin:0 auto;display:flex;align-items:center;gap:12px;font-size:13.5px}
+.top b{font-weight:680;font-size:15px}
+.top .sp{flex:1}
+h1{font-size:30px;font-weight:700;letter-spacing:-.01em;line-height:1.3;margin:30px 0 12px}
+h2{font-size:21px;font-weight:660;margin:34px 0 10px;padding-top:6px;border-top:1px solid var(--grid)}
+h3{font-size:17px;font-weight:640;margin:24px 0 8px}
+h4{font-size:15px;font-weight:620;margin:18px 0 6px;color:var(--ink-2)}
+p{margin:0 0 14px;color:var(--ink-2)}
+strong{color:var(--ink);font-weight:620}
+hr{border:0;border-top:1px solid var(--grid);margin:26px 0}
+blockquote{margin:0 0 16px;padding:12px 16px;background:var(--surface);border-left:3px solid var(--accent-soft);border-radius:0 10px 10px 0;color:var(--ink-2);font-size:15px}
+blockquote strong{color:var(--ink)}
+ul,ol{margin:0 0 16px;padding-left:22px;color:var(--ink-2)}
+li{margin:0 0 6px}
+code{background:var(--surface-2);border-radius:5px;padding:1px 5px;font-size:13.5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+pre{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px;overflow-x:auto;margin:0 0 16px}
+pre code{background:none;padding:0;font-size:12.5px;line-height:1.7}
+.tw{overflow-x:auto;margin:0 0 18px;border:1px solid var(--border);border-radius:var(--r);background:var(--surface)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--grid);color:var(--ink-2);vertical-align:top}
+th{font-size:12px;color:var(--ink-muted);font-weight:560;white-space:nowrap;background:var(--surface-2)}
+tr:last-child td{border-bottom:0}
+td strong{color:var(--ink)}
+.toc{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 18px;margin:20px 0 28px}
+.toc b{font-size:12px;letter-spacing:.14em;color:var(--ink-muted);text-transform:uppercase;display:block;margin-bottom:8px}
+.toc a{display:block;font-size:14px;padding:3px 0;color:var(--ink-2)}
+.toc a:hover{color:var(--accent)}
+.notice{background:var(--wash);border-radius:10px;padding:11px 14px;font-size:13px;color:var(--ink-2);margin:18px 0}
+.foot{border-top:1px solid var(--grid);margin-top:40px;padding-top:20px;font-size:12.5px;color:var(--ink-muted);line-height:1.9}
+/* hub */
+.hero{padding:44px 0 6px}
+.hero .tag{display:inline-block;font-size:12.5px;color:var(--ink-muted);border:1px solid var(--border);border-radius:999px;padding:4px 12px;background:var(--surface)}
+.hero h1{font-size:38px;margin:16px 0 10px}
+.lead{font-size:17px;color:var(--ink-2);margin:0 0 6px}
+.cards{display:grid;gap:12px;margin:14px 0 8px}
+@media(min-width:560px){.cards.two{grid-template-columns:1fr 1fr}}
+.card{display:block;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px;color:inherit}
+.card:hover{border-color:var(--accent-soft);text-decoration:none}
+.card .k{font-size:11.5px;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:6px}
+.card b{display:block;font-size:16.5px;font-weight:640;margin-bottom:4px;color:var(--ink)}
+.card span{font-size:13.5px;color:var(--ink-muted);line-height:1.7}
+.doc{display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;color:inherit}
+.doc:hover{border-color:var(--accent-soft);text-decoration:none}
+.doc .n{flex:0 0 40px;height:40px;border-radius:10px;background:var(--wash);color:var(--accent);display:grid;place-items:center;font-weight:700;font-size:14px}
+.doc .t{flex:1;min-width:0}
+.doc .t b{display:block;font-size:15.5px;font-weight:620;color:var(--ink)}
+.doc .t span{font-size:13px;color:var(--ink-muted)}
+.sec-h{font-size:12px;letter-spacing:.14em;color:var(--ink-muted);text-transform:uppercase;margin:34px 0 10px}
+</style></head><body><div class="top"><div class="in"><a href="./">‹ 读得深 · 项目资料</a><span class="sp"></span><span style="color:var(--ink-muted)">07</span></div></div><div class="wrap"><div class="notice">原始文件：<code>07-有效性审查-按机制逐件审.md</code> · <a href="md/07-有效性审查-按机制逐件审.md">下载 Markdown</a></div><div class="toc"><b>本篇目录</b><a href="#s3">0. 结论</a><a href="#s4">1. 先把「阅读理解提升」拆成三件不同的事</a><a href="#s5">2. 逐件审：七个零件，证据站在哪一边</a><a href="#s9">3. 一处自我纠正：05 §7 的传导链条是错的</a><a href="#s11">4. 对「中考提分」，必须讲的实话</a><a href="#s12">5. 要真的有效，按性价比排序的三处修改</a><a href="#s16">6. 三个月内怎么证伪它</a><a href="#s17">7. 回到那个问题</a><a href="#s18">8. 资料来源</a></div><h1 id="s1">这个产品对初中生语文阅读理解到底有没有帮助</h1>
+<h3 id="s2">—— 按机制逐件审，含一处对 <code>05</code> 的自我纠正</h3>
+<blockquote>日期：2026-09-19 ｜ 审查对象：<code>05-初中语文阅读产品方案-中文五步法.md</code> ＋ <code>06-初一首月阅读训练量与分地区内容规格.md</code><br>本篇不为方案辩护。每个零件单独拿出来，看证据站在哪一边。</blockquote>
+<hr>
+<h2 id="s3">0. 结论</h2>
+<p><strong>有帮助，但帮助不来自「读得多」。</strong></p>
+<p>产品里真正有实证支撑的是三个零件：<strong>写（第 5 步）、追问（第 3 步的 L2/L3）、知识建构（内容线）</strong>。</p>
+<p>而我在 <code>05</code> 里把承诺链条的中段押在了「阅读量上升 → 阅读能力提升」上——<strong>这一步的证据其实接近于零</strong>。这是本篇要纠正的主要问题。</p>
+<blockquote>一句话：<strong>帮助不在「读」，在「读完之后那 3 分钟」。</strong> 如果把那 3 分钟做成可跳过的，产品就退化成一个精致的阅读打卡器——而打卡器对理解力的效应量，研究上约等于 0。</blockquote>
+<hr>
+<h2 id="s4">1. 先把「阅读理解提升」拆成三件不同的事</h2>
+<div class="tw"><table><thead><tr><th></th><th>是什么</th><th>怎么测</th><th>本产品的贡献</th></tr></thead><tbody><tr><td><strong>① 理解力</strong></td><td>能不能读懂一篇没见过的文章</td><td>产品外的盲测</td><td><strong>中等，且集中在少数零件上</strong></td></tr><tr><td><strong>② 答题得分</strong></td><td>中考现代文那 20–35 分</td><td>校内考试</td><td><strong>弱（且是刻意的取舍）</strong></td></tr><tr><td><strong>③ 习惯与意愿</strong></td><td>会不会持续读、读得进去</td><td>完成率、时长</td><td><strong>强</strong></td></tr></tbody></table></div>
+<p><strong>三者不等价。</strong> 这个品类最常见的失败，是拿 ③ 的数据去承诺 ②——家长看到的是打卡天数，听到的是提分暗示，最后拿到的是一张能力曲线。<code>01</code> 里 Achieve3000 的中国家长落差，就是这么来的。</p>
+<hr>
+<h2 id="s5">2. 逐件审：七个零件，证据站在哪一边</h2>
+<div class="tw"><table><thead><tr><th>#</th><th>产品零件</th><th>对应的研究机制</th><th>证据</th><th>判断</th></tr></thead><tbody><tr><td>1</td><td><strong>第 5 步「写」</strong></td><td>写作回应文本（writing about text）</td><td><strong>+0.40 个标准差</strong>（Graham &amp; Hebert 2011，11 项研究的均值）</td><td>🟢 <strong>最强的一件</strong></td></tr><tr><td>2</td><td><strong>第 3 步 L2/L3 追问</strong></td><td>阅读理解策略教学、高阶提问</td><td>EEF 工具箱：约 <strong>+6–7 个月</strong>进度，证据充分、成本中等</td><td>🟢 强</td></tr><tr><td>3</td><td><strong>L3 强制文本证据</strong></td><td>紧扣文本的提问（text-dependent questions）／证据链</td><td>与中考「踩点给分」的评分机制直接对齐</td><td>🟢 强，且是中式考试的对接点</td></tr><tr><td>4</td><td><strong>内容线的知识建构</strong></td><td>内容与读写整合教学</td><td>Hwang / Cabell / Joyner 2022 meta：词汇、内容理解、标准化阅读测验均更优；知识建构课程词汇 ES 0.55</td><td>🟡 <strong>中等偏强，但我的设计里最弱</strong></td></tr><tr><td>5</td><td><strong>第 4 步同龄人碰撞</strong></td><td>课堂讨论、协作推理</td><td>有结构的讨论有中等效应；<strong>线上异步、无引导的观点展示 ≠ 有结构的讨论</strong></td><td>🟡 弱到中等，主要价值在动机</td></tr><tr><td>6</td><td><strong>支架三档</strong></td><td>可读性支持</td><td>提升的是<strong>可读性与完成率</strong>，对理解力本身无直接证据</td><td>⚪ 对 ③ 有效，对 ① 近乎无关</td></tr><tr><td>7</td><td><strong>阅读量（12 篇/月 ＋ 晨读）</strong></td><td>自主/广泛阅读</td><td>美国国家阅读委员会：<strong>无足够因果证据</strong>；2000–2020 年独立阅读综述：<strong>对理解力的效应量约等于 0</strong>（对词汇识别与阅读态度有效）</td><td>🔴 <strong>最弱的一件</strong></td></tr></tbody></table></div>
+<h3 id="s6">2.1 第 1 件是最强的，而我把它设成了可跳过</h3>
+<p><code>05</code> 第 5 步的设计是：轻/中/重三档、<strong>可跳过</strong>、「重」档一周最多一次。</p>
+<p>这是为留存做的让步——理由成立（每次都写作文是这类产品最典型的死法）。但代价必须说清楚：<strong>我把效应量最大的那个零件，做成了选项。</strong></p>
+<p><code>06</code> 的首月排期里，12 篇精读每篇都配三层追问，但没有任何机制保证「写」真的发生。demo 里「跳过，直接完成」和「完成今天这一篇」是并排的两个按钮。</p>
+<h3 id="s7">2.2 第 4 件是杠杆最长的，而我把它做成了装饰</h3>
+<p>名著切片、时文、古诗文三条线，在 <code>06</code> 里的编排逻辑是<strong>文体覆盖</strong>（4 篇记叙、2 篇说明、2 篇非连续……），不是<strong>知识累积</strong>。</p>
+<p>四周的主题「四季与观察 / 至爱亲情 / 学习与成长 / 月考模拟」是文体和情感的分类，篇与篇之间不共享知识，读完第 12 篇时脑子里没有多出一张网。</p>
+<p>而证据指向的恰恰是：<strong>内容知识的累积，是理解力提升的主要通路之一。</strong> <code>03</code>（并行会话那份）里已经提过「主题系列化」，我在 <code>05</code>/<code>06</code> 里没有接住。</p>
+<h3 id="s8">2.3 第 7 件是最弱的，而我把它写进了承诺</h3>
+<p>见下节。</p>
+<hr>
+<h2 id="s9">3. 一处自我纠正：<code>05</code> §7 的传导链条是错的</h2>
+<p><code>05</code> 里写的是：</p>
+<pre><code>持续使用 ──①──&gt; 阅读量与专注时长上升   【我们保证】
+         ──②──&gt; 阅读能力提升           【我们能证明】
+         ──③──&gt; 语文成绩提升           【不承诺】</code></pre>
+<p><strong>②这一步站不住。</strong> 独立阅读量对理解力的效应量约等于 0——增加的阅读量本身不会转化成理解力。</p>
+<p>正确的链条是：</p>
+<pre><code>持续使用 ──&gt; 完成的是「带追问与写作的阅读」  ──&gt; 理解力提升
+             （不是「读了多少篇」）</code></pre>
+<p><strong>起作用的不是读了几篇，是每篇读完之后做了什么。</strong></p>
+<h3 id="s10">这带来一个具体的指标修改</h3>
+<div class="tw"><table><thead><tr><th></th><th><code>05</code>/<code>06</code> 原定</th><th>应改为</th></tr></thead><tbody><tr><td>剂量指标</td><td>年度剂量达标率（读完 ≥40% 的篇目）</td><td><strong>带证据输出的完成次数</strong>（L3 有观点＋有证据＋有写作的篇数）</td></tr><tr><td>首月目标</td><td>12 篇精读完成 9 篇</td><td><strong>9 篇中至少 7 篇产出了输出</strong></td></tr><tr><td>北极星</td><td>完成率</td><td>完成率<strong>仍是北极星</strong>（它决定商业存活），但<strong>效果指标必须换成输出率</strong></td></tr></tbody></table></div>
+<p><strong>完成率和输出率是两个指标，不能混用。</strong> 前者对赌的是续费，后者对赌的是效果。</p>
+<hr>
+<h2 id="s11">4. 对「中考提分」，必须讲的实话</h2>
+<p>公开的教研分析里，现代文阅读是失分重灾区，主因集中在三条：<strong>审题不严、概括抓不准、脱离语境只答表层含义</strong>。而中式评分是<strong>踩点给分</strong>——答案要点的数量由赋分决定。</p>
+<p>这意味着市面上「答题模板／术语套路」类产品的短期提分效果，<strong>确实会比我们强</strong>。这是一个必须承认的事实，不是竞品的营销话术。</p>
+<p>我们的取舍是：</p>
+<div class="tw"><table><thead><tr><th></th><th>模板类产品</th><th>本产品</th></tr></thead><tbody><tr><td>教什么</td><td>怎么摆答题的姿势</td><td>让姿势底下<strong>有东西可摆</strong></td></tr><tr><td>短期（1 学期）</td><td>提分快</td><td><strong>慢</strong></td></tr><tr><td>长期 / 新题型</td><td>模板失灵就归零（2026 多地中考已明确「传统模板失灵」）</td><td>迁移性更好</td></tr><tr><td>风险</td><td>题型一变就作废</td><td>家长在第一学期就可能失去耐心</td></tr></tbody></table></div>
+<p><strong>但两者有一个真实的交汇点</strong>：L3 强制的「观点＋文本证据」，和踩点给分要求的「扣住语境、找准角度」，底层是同一件事。这是可以向家长解释清楚的——<strong>我们不教他背角度，我们让他自己找得到角度。</strong></p>
+<p>诚实的对外表述仍然是 <code>05</code> 定的那句：<strong>「读得进去，说得出来，写得下来。」</strong> 不出现提分承诺。</p>
+<hr>
+<h2 id="s12">5. 要真的有效，按性价比排序的三处修改</h2>
+<h3 id="s13">修改 1｜把「写」从可跳过改成默认必做，但把门槛压到最低 ⭐ 最高优先级</h3>
+<ul><li>「跳过」按钮改成「<strong>只写一句</strong>」——保留退出通道，但退出的终点仍是一次输出。</li><li>默认档位从「中」降到「<strong>轻</strong>」（一句话批注，15 字）。<strong>门槛降下去，覆盖率提上来</strong>，比让 20% 的人写 150 字更有价值。</li><li>效应量最大的零件不能是选项。</li></ul>
+<h3 id="s14">修改 2｜把内容线从「文体覆盖」改成「主题簇」</h3>
+<ul><li>四周改成 <strong>3–4 个主题簇</strong>，每簇 3–4 篇连读，跨文体但共享知识（例：「人怎么记住一个人」——《阿长与〈山海经〉》切片 ＋ 一篇写人记事 ＋ 一篇关于记忆的说明文 ＋ 一组非连续性文本）。</li><li>每簇末尾显式回收：「这三篇里，你现在知道了哪三件以前不知道的事？」</li><li><strong>知识网比篇数重要。</strong> 文体覆盖靠题目保证，不靠选文顺序保证。</li></ul>
+<h3 id="s15">修改 3｜给 L3 真正的内容反馈</h3>
+<ul><li>现在的 L3 只判「有没有证据」，那是形式检查。</li><li>要提升理解力，必须反馈<strong>内容</strong>：这条证据支不支持你的观点、你漏掉了文中哪一处、别人从同一句里读出了什么不同。</li><li>这是整个产品里最贵的一环，<strong>也是 AI 唯一真正值得花钱的地方</strong>。把预算从「AI 帮你读懂」挪到「AI 读懂你写的」。</li></ul>
+<hr>
+<h2 id="s16">6. 三个月内怎么证伪它</h2>
+<p><code>05</code> 里的季度盲测只能回答「有没有进步」，回答不了「是不是我们造成的」。要回答后者，需要一个能杀死自己方案的设计：</p>
+<p><strong>随机对照，组间只差一个零件：</strong></p>
+<div class="tw"><table><thead><tr><th>组</th><th>做什么</th><th>目的</th></tr></thead><tbody><tr><td><strong>A 组</strong></td><td>完整五步（猜·读·问·辨·写）</td><td>完整产品</td></tr><tr><td><strong>B 组</strong></td><td>只有「猜·读」＋ L1 事实题，<strong>不写、不追问</strong></td><td>剥掉最强的两个零件</td></tr></tbody></table></div>
+<ul><li>三个月后，两组做同一套<strong>产品外文本</strong>的盲测。</li><li><strong>如果 A 不显著优于 B，说明我们的核心机制无效，产品要重做</strong>——不是调参数，是重做。</li><li>样本量：预期效应 d≈0.3、双侧 α=0.05、power=0.8 → <strong>每组约 175 人</strong>。首批用户量若达不到，就把预期效应设得更大（d=0.5 时每组约 64 人），但要在结论里如实标注检验力不足。</li></ul>
+<p><strong>B 组不是对照组，是诚实的成本。</strong> 三个月里 B 组拿到的是一个更弱的产品，这要在用户协议里说清楚，或用「延迟交付」设计（三个月后 B 组自动升级为完整版）。</p>
+<hr>
+<h2 id="s17">7. 回到那个问题</h2>
+<p><strong>有帮助吗？有。</strong></p>
+<ul><li>对 <strong>③ 习惯与意愿</strong>：帮助明确，这是产品设计最扎实的部分。</li><li>对 <strong>① 理解力</strong>：帮助真实存在，但<strong>只来自三个零件</strong>——写、追问、知识建构。而这三个零件在当前方案里分别是：<strong>被设成了可跳过、被做成了装饰、被做成了形式检查</strong>。</li><li>对 <strong>② 考试分数</strong>：短期弱于模板类产品，这是主动选择，必须提前告诉家长。</li></ul>
+<p><strong>所以更准确的回答是：这个方案的设计方向是对的，但它把最有效的部分放在了最轻的位置上。</strong> §5 的三处修改不是优化，是把效果从「理论上有」变成「实际发生」的前提。</p>
+<hr>
+<h2 id="s18">8. 资料来源</h2>
+<ul><li><a href="https://www.harvardeducationalreview.org/content/81/4/710" target="_blank" rel="noopener">Graham &amp; Hebert, <em>Writing to Read</em> meta 分析（写作回应文本 ES ≈ +0.40）</a></li><li><a href="https://www.centeroninstruction.org/files/7%20COI%20Synopsis%20Writing%20to%20Read.pdf" target="_blank" rel="noopener">Writing to Read 综述（Center on Instruction，含效应量说明）</a></li><li><a href="https://educationendowmentfoundation.org.uk/education-evidence/teaching-learning-toolkit/reading-comprehension-strategies" target="_blank" rel="noopener">EEF 教学工具箱：阅读理解策略（进度月数、证据强度、成本）</a></li><li><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.635289/full" target="_blank" rel="noopener">阅读策略与阅读理解关系的 meta 分析（Frontiers in Psychology, 2021）</a></li><li><a href="https://www.readingrockets.org/blogs/shanahan-on-literacy/how-much-comprehension-strategy-instruction" target="_blank" rel="noopener">Shanahan：需要多少阅读理解策略教学（剂量与边际效益）</a></li><li><a href="https://ila.onlinelibrary.wiley.com/doi/10.1002/rrq.338" target="_blank" rel="noopener">Cabell &amp; Hwang, <em>Building Content Knowledge to Boost Comprehension</em>（RRQ 2020）</a></li><li><a href="https://files.eric.ed.gov/fulltext/ED640520.pdf" target="_blank" rel="noopener">内容与读写整合教学的 meta 分析（Hwang, Cabell &amp; Joyner）</a></li><li><a href="https://www.edweek.org/teaching-learning/what-is-background-knowledge-and-how-does-it-fit-into-the-science-of-reading/2023/01" target="_blank" rel="noopener">背景知识在科学化阅读中的位置（Education Week）</a></li><li><a href="https://www.nichd.nih.gov/publications/pubs/nrp/findings" target="_blank" rel="noopener">美国国家阅读委员会报告：独立阅读的因果证据不足</a></li><li><a href="https://www.tandfonline.com/doi/abs/10.1080/10573569.2021.1944830" target="_blank" rel="noopener">独立默读效果的叙事性综述 2000–2020（理解力效应量近零）</a></li><li><a href="https://m.eol.cn/zhongkao/201611/t20161109_1466302.shtml" target="_blank" rel="noopener">中考现代文阅读失分原因与答题策略（教研分析）</a></li><li><a href="https://m.fx361.com/news/2017/0321/1225275.html" target="_blank" rel="noopener">初中语文阅读理解失分原因及解题技巧分析</a></li><li>2026 多地中考语文「传统模板失灵」见 <code>06</code> 来源</li></ul><div class="foot">读得深 · 中学生阅读产品项目资料 · 2026-09<br>内部工作稿，对外公开仅为便于评审；文中数字与结论多为待验证建议，非承诺<br>名著与古诗文为公有领域作品，原文取自维基文库；原创选文版权自持<br><a href="./">返回目录</a></div></div></body></html>

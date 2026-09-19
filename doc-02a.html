@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>定位总结：人群 · 价值观 · 满意度 · 读得深</title>
+<meta name="theme-color" content="#f9f9f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)">
+<style>
+:root{color-scheme:light dark;--plane:#f9f9f7;--surface:#fcfcfb;--surface-2:#f3f2ef;
+--ink:#0b0b0b;--ink-2:#52514e;--ink-muted:#898781;--grid:#e1e0d9;--axis:#c3c2b7;
+--border:rgba(11,11,11,.10);--accent:#2a78d6;--accent-soft:#86b6ef;--wash:#eaf2fd;--r:14px}
+@media (prefers-color-scheme:dark){:root{--plane:#0d0d0d;--surface:#1a1a19;--surface-2:#232321;
+--ink:#fff;--ink-2:#c3c2b7;--ink-muted:#898781;--grid:#2c2c2a;--axis:#383835;
+--border:rgba(255,255,255,.10);--accent:#3987e5;--accent-soft:#6da7ec;--wash:#141c26}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{background:var(--plane);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px 80px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.top{position:sticky;top:0;z-index:9;background:var(--plane);border-bottom:1px solid var(--border);padding:12px 18px;margin:0 -18px 0}
+.top .in{max-width:720px;margin:0 auto;display:flex;align-items:center;gap:12px;font-size:13.5px}
+.top b{font-weight:680;font-size:15px}
+.top .sp{flex:1}
+h1{font-size:30px;font-weight:700;letter-spacing:-.01em;line-height:1.3;margin:30px 0 12px}
+h2{font-size:21px;font-weight:660;margin:34px 0 10px;padding-top:6px;border-top:1px solid var(--grid)}
+h3{font-size:17px;font-weight:640;margin:24px 0 8px}
+h4{font-size:15px;font-weight:620;margin:18px 0 6px;color:var(--ink-2)}
+p{margin:0 0 14px;color:var(--ink-2)}
+strong{color:var(--ink);font-weight:620}
+hr{border:0;border-top:1px solid var(--grid);margin:26px 0}
+blockquote{margin:0 0 16px;padding:12px 16px;background:var(--surface);border-left:3px solid var(--accent-soft);border-radius:0 10px 10px 0;color:var(--ink-2);font-size:15px}
+blockquote strong{color:var(--ink)}
+ul,ol{margin:0 0 16px;padding-left:22px;color:var(--ink-2)}
+li{margin:0 0 6px}
+code{background:var(--surface-2);border-radius:5px;padding:1px 5px;font-size:13.5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+pre{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px;overflow-x:auto;margin:0 0 16px}
+pre code{background:none;padding:0;font-size:12.5px;line-height:1.7}
+.tw{overflow-x:auto;margin:0 0 18px;border:1px solid var(--border);border-radius:var(--r);background:var(--surface)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--grid);color:var(--ink-2);vertical-align:top}
+th{font-size:12px;color:var(--ink-muted);font-weight:560;white-space:nowrap;background:var(--surface-2)}
+tr:last-child td{border-bottom:0}
+td strong{color:var(--ink)}
+.toc{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 18px;margin:20px 0 28px}
+.toc b{font-size:12px;letter-spacing:.14em;color:var(--ink-muted);text-transform:uppercase;display:block;margin-bottom:8px}
+.toc a{display:block;font-size:14px;padding:3px 0;color:var(--ink-2)}
+.toc a:hover{color:var(--accent)}
+.notice{background:var(--wash);border-radius:10px;padding:11px 14px;font-size:13px;color:var(--ink-2);margin:18px 0}
+.foot{border-top:1px solid var(--grid);margin-top:40px;padding-top:20px;font-size:12.5px;color:var(--ink-muted);line-height:1.9}
+/* hub */
+.hero{padding:44px 0 6px}
+.hero .tag{display:inline-block;font-size:12.5px;color:var(--ink-muted);border:1px solid var(--border);border-radius:999px;padding:4px 12px;background:var(--surface)}
+.hero h1{font-size:38px;margin:16px 0 10px}
+.lead{font-size:17px;color:var(--ink-2);margin:0 0 6px}
+.cards{display:grid;gap:12px;margin:14px 0 8px}
+@media(min-width:560px){.cards.two{grid-template-columns:1fr 1fr}}
+.card{display:block;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px;color:inherit}
+.card:hover{border-color:var(--accent-soft);text-decoration:none}
+.card .k{font-size:11.5px;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:6px}
+.card b{display:block;font-size:16.5px;font-weight:640;margin-bottom:4px;color:var(--ink)}
+.card span{font-size:13.5px;color:var(--ink-muted);line-height:1.7}
+.doc{display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;color:inherit}
+.doc:hover{border-color:var(--accent-soft);text-decoration:none}
+.doc .n{flex:0 0 40px;height:40px;border-radius:10px;background:var(--wash);color:var(--accent);display:grid;place-items:center;font-weight:700;font-size:14px}
+.doc .t{flex:1;min-width:0}
+.doc .t b{display:block;font-size:15.5px;font-weight:620;color:var(--ink)}
+.doc .t span{font-size:13px;color:var(--ink-muted)}
+.sec-h{font-size:12px;letter-spacing:.14em;color:var(--ink-muted);text-transform:uppercase;margin:34px 0 10px}
+</style></head><body><div class="top"><div class="in"><a href="./">‹ 读得深 · 项目资料</a><span class="sp"></span><span style="color:var(--ink-muted)">02a</span></div></div><div class="wrap"><div class="notice">原始文件：<code>02-Achieve3000-定位总结-人群·价值观·满意度.md</code> · <a href="md/02-Achieve3000-定位总结-人群·价值观·满意度.md">下载 Markdown</a></div><div class="toc"><b>本篇目录</b><a href="#s2">0. 先给结论</a><a href="#s3">一、适用人群：付费方与使用方是分离的</a><a href="#s6">二、解决方案的底层价值观：五条信念</a><a href="#s12">三、用户满意度：四张成绩单</a><a href="#s18">四、满意度悖论：为什么这样的产品还能活得很好</a><a href="#s19">五、对我们做「中学生阅读产品」的三条决策含义</a><a href="#s23">六、一页纸定位对照表</a><a href="#s24">七、本篇新增资料来源</a></div><h1 id="s1">Achieve3000 定位总结：适用人群 → 底层价值观 → 用户满意度</h1>
+<blockquote>调研日期：2026-09-13 ｜ 承接 <code>01-竞品分析-Achieve3000.md</code>，换一条主线重新拆解<br>主线：<strong>一个产品的定位 = 为谁做（人群）× 信什么（价值观）× 兑现了多少（满意度）</strong>。三段扣不上，定位就是空话。</blockquote>
+<hr>
+<h2 id="s2">0. 先给结论</h2>
+<p><strong>Achieve3000 是一个「为学区的问责需求而生、由教师执行、由学生承受、与家长无关」的阅读训练系统。</strong></p>
+<p>它的底层价值观是：<em>阅读是一项可以被工程化管理的技能——只要把文本难度调到刚刚好，理解就会发生；只要理解可以被测量，增长就可以被证明。</em></p>
+<p>这套价值观让它在 B 端极其成功（7.01 亿美元被收购、50 州 49 国），也让它在真实使用端持续失分：<strong>在学校强制、老师布置、计入成绩的最强约束下，仍有 22% 的学生一篇都没做完，只有 8% 达到厂商推荐的年度剂量。</strong></p>
+<p>买它的人很满意，用它的人不满意。这不是执行问题，是定位的必然结果。</p>
+<hr>
+<h2 id="s3">一、适用人群：付费方与使用方是分离的</h2>
+<h3 id="s4">1.1 四层人群及其真实诉求</h3>
+<div class="tw"><table><thead><tr><th>层级</th><th>是谁</th><th>他真正要的</th><th>产品给了什么</th><th>匹配度</th></tr></thead><tbody><tr><td><strong>决策层（买单）</strong></td><td>学区课程主管、干预项目负责人、校长</td><td>州测成绩要交代；干预经费要循证依据；钱花在哪要说得清</td><td>ESSA &quot;Strong&quot; 评级 + 蓝思增长曲线 + 使用率报表</td><td>★★★★★</td></tr><tr><td><strong>执行层（部署）</strong></td><td>ELA 老师、科学/社会学科老师</td><td>一个班水平差 5–8 个年级，备不出 12 套材料；批改吃不消</td><td>一键分层 + 自动判分 + 现成讨论素材</td><td>★★★★☆</td></tr><tr><td><strong>使用层（承受）</strong></td><td>2–12 年级学生，尤其落后生与英语学习者</td><td>读得懂、有意思、别拖累成绩</td><td>难度刚好的文章 + 8 道选择题 + 每周两次</td><td>★★☆☆☆</td></tr><tr><td><strong>旁观层（无权）</strong></td><td>家长</td><td>知道孩子在干什么</td><td>一个只读进度页（Home/Parent Edition）</td><td>★☆☆☆☆</td></tr></tbody></table></div>
+<blockquote>一个说明问题的细节：2017 年的官方套餐里，$14,675 包含 <strong>250 个学生账号 + 250 个家长账号</strong>。家长账号是 1:1 白送的——<strong>送了也没人用</strong>。家长从来不在这个产品的目标函数里。</blockquote>
+<p><strong>中国是唯一的例外</strong>：家长同时扮演了决策层（掏钱）、执行层（盯着做）和旁观层（看数据）三个角色，唯独产品没有为这三个角色中的任何一个设计过。落差由此而来。</p>
+<h3 id="s5">1.2 学生侧的适配光谱</h3>
+<div class="tw"><table><thead><tr><th>最适合</th><th>勉强可用</th><th>明确不适合</th></tr></thead><tbody><tr><td>蓝思 400–1000L 的中低水平学生&lt;br&gt;英语学习者（EL/ELL）&lt;br&gt;需要外部结构才能开始的学生&lt;br&gt;非虚构阅读量为零的学生</td><td>中上水平学生（内容深度不足，且做得好会被&quot;惩罚&quot;以更长文本）</td><td>零基础/低幼启蒙&lt;br&gt;兴趣驱动、爱读小说的学生&lt;br&gt;需要整本书阅读、深度讨论的场景&lt;br&gt;需要写作精批的场景</td></tr></tbody></table></div>
+<hr>
+<h2 id="s6">二、解决方案的底层价值观：五条信念</h2>
+<p>这是整个产品所有取舍的源代码。它们大多没有被明说，但每一条都写在产品形态里。</p>
+<h3 id="s7">信念 1：「读不懂」是唯一的障碍，难度匹配是唯一的解药</h3>
+<blockquote>Lexile 决定论。整个产品建立在一个假设上：把文本调到学生刚好能读的位置，理解就会自然发生。</blockquote>
+<ul><li><strong>代价</strong>：动机、背景知识、兴趣、文本本身的吸引力，全部被降级为次要变量。产品不解决&quot;不想读&quot;，只解决&quot;读不动&quot;。</li><li>这也解释了为什么 12 个难度版本是它唯一真正的技术壁垒——它把全部赌注押在这一条上。</li></ul>
+<h3 id="s8">信念 2：公平 = 每个人都能参与同一场对话</h3>
+<blockquote>同一话题、同一堂课、同一次讨论，只是每人读自己那一版。</blockquote>
+<ul><li>这是它<strong>最值得尊敬</strong>的价值主张：读得慢的孩子不再被从课堂里剔出去单独补差，不再拿到一张&quot;简单版&quot;的羞辱标签。</li><li>这一条也是它能在美国公立体系拿到道德合法性的根本原因（equity / access 是学区采购的政治正确）。</li></ul>
+<h3 id="s9">信念 3：测不出来的增长不算增长</h3>
+<blockquote>蓝思值是唯一标尺；首答正确率是唯一信号。</blockquote>
+<ul><li>好处：简洁、抗作弊、易解释、可上报。</li><li>代价：所有无法折算成分数的收获（兴趣、审美、观点、表达欲）在系统里等于不存在，久而久之也在用户心里等于不存在。中国家长的&quot;蓝思焦虑&quot;就是这条信念的下游产物。</li></ul>
+<h3 id="s10">信念 4：规模化优先于个性化</h3>
+<blockquote>五步流程全球统一、不可跳过、不可自定义。</blockquote>
+<ul><li>这换来了可培训、可复制、可问责——一个新老师两天培训就能上手，一个学区能同时铺 250 所学校。</li><li>代价是体验千篇一律。学生投诉里最刺耳的一条是&quot;想跳过读前投票都不行&quot;。<strong>它给的是&quot;每个人的难度不同&quot;，不是&quot;每个人的体验不同&quot;。</strong></li></ul>
+<h3 id="s11">信念 5：学习动机由外部结构提供，而不是由产品产生</h3>
+<blockquote>老师布置 + 计入成绩 + 使用率报表 = 学生会打开它。</blockquote>
+<ul><li>这是最隐蔽也最致命的一条。产品从设计上就<strong>外包了动机问题</strong>：内容不必好看，流程不必有趣，因为有老师和分数在背后推。</li><li><strong>一旦剥离学校这层约束，产品就失去了动力来源。</strong> 中国家庭场景里孩子坚持不下来，不是孩子的问题，是产品从未内建过动机。</li></ul>
+<blockquote><strong>价值观一句话总结</strong>：它相信阅读是一件可以被工程化管理的事，而不是一件值得爱上的事。</blockquote>
+<hr>
+<h2 id="s12">三、用户满意度：四张成绩单</h2>
+<h3 id="s13">3.1 学区 / 管理者：<strong>高度满意</strong> ★★★★★</h3>
+<ul><li>拿到了要的东西：合规依据、可视化数据、对上可交代的增长曲线。</li><li>硬证据：McGraw Hill 于 2021-11-01 以 <strong>7.011 亿美元</strong>收购；2025–26 学年整体并入 McGraw Hill 平台继续运营；覆盖 50 州 49 国。</li><li><strong>续费权掌握在这一层手里，这就是它能活 25 年的原因。</strong></li></ul>
+<h3 id="s14">3.2 教师：<strong>有条件的满意</strong> ★★★☆☆</h3>
+<ul><li>满意点：分层备课的痛点是真解决了；数据看板对追踪学生成长确有帮助（G2 教师评价：<em>&quot;does a great job of determining a student&#x27;s Lexile level… great for tracking data and seeing growth&quot;</em>）。</li><li>不满点（来自 Walden 大学对高中教师的质性研究）：</li><li>网速与设备基础设施跟不上</li><li><strong>缺乏对&quot;该怎么用&quot;的明确预期规范</strong>——学区只下了&quot;所有核心学科老师每月用一次&quot;的硬指标</li><li>该研究同时指出：在这样的实施强度下，<strong>学生的读写达标率并没有统计意义上的改善</strong></li><li>教师侧最诚实的一句吐槽（G2）：<em>无法知道学生前几年是否读过同一篇文章，而且网上到处是学生贴出的答案。</em></li></ul>
+<h3 id="s15">3.3 学生：<strong>显著不满</strong> ★☆☆☆☆</h3>
+<ul><li>第三方评价站评分 <strong>1.8 星，86% 为一星</strong>，评论者绝大多数是学生本人。</li><li>集中在四点：</li><li>文章陈旧（大量 2004–2016 年旧闻，与&quot;时事阅读&quot;的定位自相矛盾）</li><li>题目重复无聊（&quot;Which event happened third?&quot; 反复出现）</li><li>被当作硬性作业计分——学生投稿称每月 4 篇没做好，&quot;70 分（及格）会掉到 63 分（不及格）&quot;</li><li><strong>读得越好，惩罚越重</strong>：正确率高就自动派更长更难的文章</li><li>最诚实的满意度指标不是评分，而是搜索行为：<strong>&quot;Achieve 3000 answer key&quot; 已经形成了一整个答案站生态。</strong> 学生用脚投票的方向是绕过它，不是用好它。</li></ul>
+<h3 id="s16">3.4 家长：<strong>美国近乎无感，中国高预期高落差</strong> ★★☆☆☆</h3>
+<ul><li>美国：账号白送也不用；产品对家长的承诺仅止于&quot;你能看到进度&quot;。</li><li>中国：渠道话术把预期拉到&quot;蓝思值涨 3.5 倍&quot;&quot;提高 MAP 成绩&quot;&quot;美国一半学生在用&quot;，而真实反馈是——首月 875L→1035L 的兴奋，随后兴趣崩塌、正确率从 88% 掉到 63%（最低 37%）。</li><li>渠道商自发补做<strong>中文周报</strong>（官方从未提供），恰恰证明了官方在家长侧留下的是一个真空。</li></ul>
+<h3 id="s17">3.5 一个盖过所有评分的数字：<strong>剂量真相</strong></h3>
+<p>WWC 复核的研究（涵盖 2013–14 与 2014–15 两个学年、14,493 名 2–3 年级学生）记录了在<strong>学校强制使用</strong>条件下的实际完成情况：</p>
+<div class="tw"><table><thead><tr><th>完成量</th><th>学生占比</th></tr></thead><tbody><tr><td>≥80 篇（厂商推荐的年度剂量）</td><td><strong>8%</strong></td></tr><tr><td>40–79 篇</td><td>21%</td></tr><tr><td>1–39 篇</td><td>50%</td></tr><tr><td><strong>0 篇（一篇都没做）</strong></td><td><strong>22%</strong></td></tr></tbody></table></div>
+<p><strong>结论不是&quot;用了没效果&quot;，而是&quot;绝大多数人根本没用起来&quot;。</strong></p>
+<p>厂商宣称的&quot;3.5 倍增长&quot;，描述的是最上面那 8–29% 的人群；ESSA 给出的整体效应量是 <strong>+0.29</strong>；WWC 给出的改善指数只有 <strong>+3 到 +6 个百分位</strong>，低年级阅读流畅度<strong>无可辨识效果</strong>。三个数字之间的落差，几乎全部由剂量差异填满。</p>
+<hr>
+<h2 id="s18">四、满意度悖论：为什么这样的产品还能活得很好</h2>
+<pre><code>买单的人（学区）  → 要的是「可证明」  → 拿到了  → 满意 → 续费
+使用的人（学生）  → 要的是「值得读」  → 没拿到  → 不满 → 但没有投票权</code></pre>
+<p><strong>只要付费方与使用方分离，使用方的不满就不会转化为商业惩罚。</strong> 这是所有 to B 教育产品的结构性庇护。</p>
+<p>而这恰恰是它在 to C 市场必然失灵的原因：<strong>当付费方和使用方合并进同一个家庭，产品就失去了掩护。</strong> 孩子不想读，家长立刻知道；数字不涨，家长立刻焦虑；三个月后不续费。中国家长的落差不是水土不服，是这套定位在没有学校做缓冲垫时的裸奔。</p>
+<hr>
+<h2 id="s19">五、对我们做「中学生阅读产品」的三条决策含义</h2>
+<h3 id="s20">1. 先想清楚：我们为谁的满意度负责</h3>
+<p>Achieve3000 只对一方（学区）负责，所以它能活。<strong>我们如果做家长付费 + 学生自用，就必须同时让两端满意——这是一道更难的题，但也是唯一可能的护城河。</strong> 不能一边抄它的 B 端产品形态，一边期待 C 端的留存。</p>
+<h3 id="s21">2. 价值观必须换掉一条半</h3>
+<div class="tw"><table><thead><tr><th>Achieve3000 的信念</th><th>我们该改成</th></tr></thead><tbody><tr><td>难度匹配 = 唯一解药</td><td>难度匹配是<strong>入场券</strong>，内容吸引力和输出成就感是<strong>留存的三支柱之一</strong></td></tr><tr><td>动机由外部结构（老师+分数）提供</td><td>动机必须<strong>内建在产品里</strong>：内容选题、连读机制、可选主题、社交与表达</td></tr><tr><td>测不出来的不算增长</td><td>保留可测量性，但<strong>给多维反馈</strong>（阅读量/主题广度/习惯稳定性/表达质量），弱化单一数值</td></tr><tr><td>公平 = 同一话题人人可参与</td><td>✅ <strong>这条照抄</strong>，它是分层阅读最有价值的部分</td></tr><tr><td>规模化优先于个性化</td><td>分层要机器做，<strong>体验要有选择权</strong>（可选主题、可跳步、可选输出形式）</td></tr></tbody></table></div>
+<h3 id="s22">3. 北极星指标应该是「完成率 / 续读率」，不是「能力值增长」</h3>
+<p>Achieve3000 用一整套评测体系证明了一件事：<strong>能力增长在真实世界里是被完成率卡死的（8% 达标率）。</strong> 一个 40% 的年度剂量达标率，价值远大于一条漂亮的蓝思曲线。先解决&quot;读下去&quot;，再谈&quot;读得好&quot;。</p>
+<hr>
+<h2 id="s23">六、一页纸定位对照表</h2>
+<div class="tw"><table><thead><tr><th>维度</th><th>Achieve3000</th><th>我们的差异点（建议）</th></tr></thead><tbody><tr><td>付费方</td><td>学区</td><td>家长</td></tr><tr><td>使用方</td><td>学生（被指派）</td><td>学生（需自愿）</td></tr><tr><td>核心承诺</td><td>可证明的成绩增长</td><td>读得下去 + 看得见成长</td></tr><tr><td>动机来源</td><td>老师布置 + 计分</td><td>内容 + 机制 + 表达</td></tr><tr><td>核心指标</td><td>蓝思值</td><td>完成率 / 续读率</td></tr><tr><td>内容</td><td>非虚构为主，更新滞后</td><td>时效性是生死线，虚构+非虚构混合</td></tr><tr><td>家长角色</td><td>旁观者（白送账号也不用）</td><td>第一用户，需独立设计视图</td></tr><tr><td>失败模式</td><td>学生绕过它找答案</td><td>需要设计成&quot;绕过它没有意义&quot;</td></tr></tbody></table></div>
+<hr>
+<h2 id="s24">七、本篇新增资料来源</h2>
+<ul><li><a href="https://files.eric.ed.gov/fulltext/ED581246.pdf" target="_blank" rel="noopener">WWC 干预报告：Achieve3000 Beginning Reading（含剂量数据与价格，PDF）</a></li><li><a href="https://ies.ed.gov/ncee/wwc/Intervention/1284" target="_blank" rel="noopener">WWC 干预页：Achieve3000</a></li><li><a href="https://scholarworks.waldenu.edu/cgi/viewcontent.cgi?article=17351&amp;context=dissertations" target="_blank" rel="noopener">Walden 大学博士论文：高中教师对 Achieve3000 的使用感知</a></li><li><a href="https://www.g2.com/products/achieve3000/reviews" target="_blank" rel="noopener">G2：Achieve3000 教师评价</a></li><li><a href="https://www.learninglist.com/post/new-review-mcgraw-hill-s-achieve3000-literacy" target="_blank" rel="noopener">Learning List：Achieve3000 Literacy 独立评测</a></li><li><a href="https://www.evidenceforessa.org/program/achieve3000-secondary/" target="_blank" rel="noopener">Evidence for ESSA：Achieve3000 Secondary</a></li><li><a href="https://investors.mheducation.com/news/news-details/2021/McGraw-Hill-Completes-Acquisition-of-EdTech-Pioneer-Achieve3000-11-01-2021/default.aspx" target="_blank" rel="noopener">McGraw Hill 完成收购公告（7.011 亿美元）</a></li><li>其余来源见 <code>01-竞品分析-Achieve3000.md</code> 第九节</li></ul><div class="foot">读得深 · 中学生阅读产品项目资料 · 2026-09<br>内部工作稿，对外公开仅为便于评审；文中数字与结论多为待验证建议，非承诺<br>名著与古诗文为公有领域作品，原文取自维基文库；原创选文版权自持<br><a href="./">返回目录</a></div></div></body></html>

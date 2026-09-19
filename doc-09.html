@@ -1,0 +1,173 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>阅读问题诊断与可训练提升方案 · 读得深</title>
+<meta name="theme-color" content="#f9f9f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)">
+<style>
+:root{color-scheme:light dark;--plane:#f9f9f7;--surface:#fcfcfb;--surface-2:#f3f2ef;
+--ink:#0b0b0b;--ink-2:#52514e;--ink-muted:#898781;--grid:#e1e0d9;--axis:#c3c2b7;
+--border:rgba(11,11,11,.10);--accent:#2a78d6;--accent-soft:#86b6ef;--wash:#eaf2fd;--r:14px}
+@media (prefers-color-scheme:dark){:root{--plane:#0d0d0d;--surface:#1a1a19;--surface-2:#232321;
+--ink:#fff;--ink-2:#c3c2b7;--ink-muted:#898781;--grid:#2c2c2a;--axis:#383835;
+--border:rgba(255,255,255,.10);--accent:#3987e5;--accent-soft:#6da7ec;--wash:#141c26}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{background:var(--plane);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px 80px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.top{position:sticky;top:0;z-index:9;background:var(--plane);border-bottom:1px solid var(--border);padding:12px 18px;margin:0 -18px 0}
+.top .in{max-width:720px;margin:0 auto;display:flex;align-items:center;gap:12px;font-size:13.5px}
+.top b{font-weight:680;font-size:15px}
+.top .sp{flex:1}
+h1{font-size:30px;font-weight:700;letter-spacing:-.01em;line-height:1.3;margin:30px 0 12px}
+h2{font-size:21px;font-weight:660;margin:34px 0 10px;padding-top:6px;border-top:1px solid var(--grid)}
+h3{font-size:17px;font-weight:640;margin:24px 0 8px}
+h4{font-size:15px;font-weight:620;margin:18px 0 6px;color:var(--ink-2)}
+p{margin:0 0 14px;color:var(--ink-2)}
+strong{color:var(--ink);font-weight:620}
+hr{border:0;border-top:1px solid var(--grid);margin:26px 0}
+blockquote{margin:0 0 16px;padding:12px 16px;background:var(--surface);border-left:3px solid var(--accent-soft);border-radius:0 10px 10px 0;color:var(--ink-2);font-size:15px}
+blockquote strong{color:var(--ink)}
+ul,ol{margin:0 0 16px;padding-left:22px;color:var(--ink-2)}
+li{margin:0 0 6px}
+code{background:var(--surface-2);border-radius:5px;padding:1px 5px;font-size:13.5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+pre{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px;overflow-x:auto;margin:0 0 16px}
+pre code{background:none;padding:0;font-size:12.5px;line-height:1.7}
+.tw{overflow-x:auto;margin:0 0 18px;border:1px solid var(--border);border-radius:var(--r);background:var(--surface)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--grid);color:var(--ink-2);vertical-align:top}
+th{font-size:12px;color:var(--ink-muted);font-weight:560;white-space:nowrap;background:var(--surface-2)}
+tr:last-child td{border-bottom:0}
+td strong{color:var(--ink)}
+.toc{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 18px;margin:20px 0 28px}
+.toc b{font-size:12px;letter-spacing:.14em;color:var(--ink-muted);text-transform:uppercase;display:block;margin-bottom:8px}
+.toc a{display:block;font-size:14px;padding:3px 0;color:var(--ink-2)}
+.toc a:hover{color:var(--accent)}
+.notice{background:var(--wash);border-radius:10px;padding:11px 14px;font-size:13px;color:var(--ink-2);margin:18px 0}
+.foot{border-top:1px solid var(--grid);margin-top:40px;padding-top:20px;font-size:12.5px;color:var(--ink-muted);line-height:1.9}
+/* hub */
+.hero{padding:44px 0 6px}
+.hero .tag{display:inline-block;font-size:12.5px;color:var(--ink-muted);border:1px solid var(--border);border-radius:999px;padding:4px 12px;background:var(--surface)}
+.hero h1{font-size:38px;margin:16px 0 10px}
+.lead{font-size:17px;color:var(--ink-2);margin:0 0 6px}
+.cards{display:grid;gap:12px;margin:14px 0 8px}
+@media(min-width:560px){.cards.two{grid-template-columns:1fr 1fr}}
+.card{display:block;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px;color:inherit}
+.card:hover{border-color:var(--accent-soft);text-decoration:none}
+.card .k{font-size:11.5px;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:6px}
+.card b{display:block;font-size:16.5px;font-weight:640;margin-bottom:4px;color:var(--ink)}
+.card span{font-size:13.5px;color:var(--ink-muted);line-height:1.7}
+.doc{display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;color:inherit}
+.doc:hover{border-color:var(--accent-soft);text-decoration:none}
+.doc .n{flex:0 0 40px;height:40px;border-radius:10px;background:var(--wash);color:var(--accent);display:grid;place-items:center;font-weight:700;font-size:14px}
+.doc .t{flex:1;min-width:0}
+.doc .t b{display:block;font-size:15.5px;font-weight:620;color:var(--ink)}
+.doc .t span{font-size:13px;color:var(--ink-muted)}
+.sec-h{font-size:12px;letter-spacing:.14em;color:var(--ink-muted);text-transform:uppercase;margin:34px 0 10px}
+</style></head><body><div class="top"><div class="in"><a href="./">‹ 读得深 · 项目资料</a><span class="sp"></span><span style="color:var(--ink-muted)">09</span></div></div><div class="wrap"><div class="notice">原始文件：<code>09-阅读问题诊断与可训练提升方案.md</code> · <a href="md/09-阅读问题诊断与可训练提升方案.md">下载 Markdown</a></div><div class="toc"><b>本篇目录</b><a href="#s3">0. 结论</a><a href="#s5">1. 把「阅读不好」拆成三道闸门</a><a href="#s6">2. 症状 → 病因对照表（诊断主表）</a><a href="#s7">3. 分诊怎么做：三个便宜的分离器</a><a href="#s14">4. 按证据排序的干预清单</a><a href="#s17">5. 17 个微技能：可训练 = 可判定</a><a href="#s22">6. 12 周疗程</a><a href="#s25">7. 落到产品：要改什么，成本多少</a><a href="#s26">8. 家长侧怎么讲（不越线）</a><a href="#s27">9. 指标与证伪</a><a href="#s30">10. 四个风险</a><a href="#s31">11. 与已有文档的关系</a><a href="#s32">12. 资料来源</a></div><h1 id="s1">初中生阅读问题诊断与可训练提升方案</h1>
+<h3 id="s2">—— 三道闸门：先定位，再施治</h3>
+<blockquote>日期：2026-09-19 ｜ 需求：「初中生在阅读应试和能力的问题诊断及最优解法，形成可训练提升的方案」<br>本篇是 <code>05</code>/<code>06</code>/<code>08</code> 的<strong>上游</strong>：那三篇回答「做什么内容」，本篇回答「这个孩子卡在哪、该给他哪一味药、练到什么程度算好了」。<br>本篇对 <code>07</code> 做一处补充修正（见 §3.5）。信息分三档标注：<strong>【研究】</strong>实证研究与效应量 ／ <strong>【考情】</strong>考试与教研事实 ／ <strong>【判断】</strong>我们的推断。</blockquote>
+<hr>
+<h2 id="s3">0. 结论</h2>
+<ol><li><strong>失分点不是病因。</strong> 教研口径里的「审题不严、概括不准、脱离语境」是<strong>症状</strong>。同一个症状背后至少四种不同病因，用同一套答题模板去治，只有其中一种能治好——剩下三种孩子练得越多越确信「我学过了」，而分数不动。</li><li><strong>不存在单一最优解法，最优解是「最优匹配」。</strong> 证据最强的干预之一（推断教学），对弱读者的字面理解效应量 <strong>d=0.97</strong>，对强读者只有 <strong>d=0.06</strong>【研究】。同一味药，差 15 倍。所以方案的核心动作不是挑练习，是<strong>分诊</strong>。</li><li><strong>「可训练」等于「可判定」。</strong> 一项能力如果说不出「做到什么算过关」，它就不可训练，只能被消费。本篇把三道闸门拆成 <strong>17 个带过关标准的微技能</strong>，配 <strong>6 种学生画像的处方表</strong>和 <strong>12 周疗程</strong>。</li></ol>
+<blockquote><strong>如果只能做三件事：</strong><br><strong>① 每篇必有一次最低门槛输出（一句话）；② 结构切块 → 一句话概括；③ 审题拆解 ＋ 分值换要点数。</strong><br>前两件修能力，第三件修应试。三件都能在 15 分钟单元里完成，也都有明确的过关判定。其余全部可以后排。</blockquote>
+<hr>
+<h1 id="s4">第一部分：诊断</h1>
+<h2 id="s5">1. 把「阅读不好」拆成三道闸门</h2>
+<p>分数是一条<strong>串联电路</strong>：三道闸门任意一道堵住，卷面表现都是低分，而且<strong>低分的样子长得几乎一样</strong>。这是为什么绝大多数补课无效——它默认所有孩子堵在同一道闸。</p>
+<pre><code>文字 ──[闸门 I 输入]──&gt; 意思 ──[闸门 P 加工]──&gt; 整体理解 ──[闸门 O 输出]──&gt; 分数
+       字词·流畅·配速        推断·结构·知识·监控        审题·定位·要点·配速</code></pre>
+<div class="tw"><table><thead><tr><th></th><th>闸门</th><th>管什么</th><th>堵住时的卷面症状</th><th>市面训练覆盖度</th></tr></thead><tbody><tr><td><strong>I</strong></td><td><strong>输入闸</strong></td><td>认字、词义、默读速度</td><td>读到一半就慌、做不完、越到后面越差</td><td>几乎为零（默认初中生已过关）</td></tr><tr><td><strong>P</strong></td><td><strong>加工闸</strong></td><td>推断、结构、背景知识、理解监控</td><td>细节题对、主旨题错；答非所问；自认为读懂了</td><td>少，且多被讲成「阅读技巧」口诀</td></tr><tr><td><strong>O</strong></td><td><strong>输出闸</strong></td><td>审题、定位、要点化、配速</td><td>想得到写不出、答案全是原文、只写一点</td><td><strong>≈90% 的市场都在这里</strong></td></tr></tbody></table></div>
+<p><strong>【判断】市场的训练供给和孩子的真实病因分布是错位的。</strong> 输出闸的训练之所以流行，是因为它最容易标准化、见效最快、最好讲给家长听。但它只对「已经读懂了、卡在表述」的那部分孩子有效——这部分孩子是少数，且是原本就不弱的那批。</p>
+<hr>
+<h2 id="s6">2. 症状 → 病因对照表（诊断主表）</h2>
+<p>左列是老师和家长能直接观察到的，右列是真正要治的。<strong>一个症状对多个病因，这正是不能凭症状施治的原因。</strong></p>
+<div class="tw"><table><thead><tr><th>观察到的症状</th><th>可能病因（按常见度）</th><th>区分办法</th></tr></thead><tbody><tr><td><strong>卷子做不完 / 最后一道大题空着</strong></td><td>① 默读速度低于 500 字/分【考情：课标第四学段明确要求】② 反复回读（监控过度）③ 不会取舍，每题都想写满</td><td>双跑法（§3.2）：不限时重做能提分 → 是速度/配速问题</td></tr><tr><td><strong>概括题总抓不准</strong></td><td>① 不会切结构，把全文当一团 ② 分不清主次事件 ③ 读懂了但压缩不了 ④ 根本没读懂</td><td>口头复述（§3.3）：能口头说清 → 输出闸问题；说不清 → 加工闸问题</td></tr><tr><td><strong>答案照抄原文</strong></td><td>① 不知道要转化 ② 不会转化（缺概括词） ③ 怕扣分的保守策略</td><td>追问「这句话在回答题干的哪个词」，答不上 → 审题缺失；答得上 → 表述缺失</td></tr><tr><td><strong>只答一点，分值 4 分只写 1 句</strong></td><td>① 不知道分值对应要点数【考情：踩点给分】② 只找到一处证据</td><td>提示「这题 4 分，至少两点」后能否补出——能补 → 规则缺失（好治）；补不出 → 定位/推断缺失</td></tr><tr><td><strong>赏析题写「生动形象」凑字</strong></td><td>① 手法术语与文本脱节 ② 没有可说的内容</td><td>去掉术语要求，只问「这句话让你看见了什么」——说得出 → 术语问题；说不出 → 理解问题</td></tr><tr><td><strong>人物题答不到动机</strong></td><td>① 心理推断缺失（最常见）② 文本证据定位不准</td><td>问「从哪句看出来的」</td></tr><tr><td><strong>说明文/非连续性文本失分高于记叙文</strong></td><td>① 信号词不敏感 ② 图文互证没练过 ③ 背景知识空白</td><td>换同主题记叙文对照，若差距消失 → 文体结构问题</td></tr><tr><td><strong>自我感觉良好，一对答案全错</strong></td><td><strong>理解监控失灵</strong>【研究：元认知监控对理解成绩有稳定预测力】</td><td>逐题自信度自评 vs 实际得分的<strong>校准度</strong></td></tr><tr><td><strong>课内考得还行，课外一塌糊涂</strong></td><td>① 靠记忆与讲义，不靠读 ② 背景知识依赖</td><td>用完全陌生文本盲测</td></tr></tbody></table></div>
+<p><strong>【考情】</strong> 公开教研分析把中考现代文的主要失误归为四条：<strong>审题不周答非所问、不会细读定位、不追根溯源只会照搬、表述不规范脱离原文</strong>。这四条全部落在输出闸和加工闸的交界处——它们是真实的，但它们是<strong>终端表现</strong>，不是起点。</p>
+<hr>
+<h2 id="s7">3. 分诊怎么做：三个便宜的分离器</h2>
+<p>诊断的难点不是「测不出水平」，而是<strong>测不出卡点</strong>。一张卷子只给一个总分，总分把三道闸门的信息全部抹平了。</p>
+<p>需要的是<strong>分离器</strong>——能把混在一起的两种可能拆开的测法。下面三个的共同优点是：<strong>便宜、快、不需要人工批改就能出结论。</strong></p>
+<h3 id="s8">3.1 三个分离器</h3>
+<div class="tw"><table><thead><tr><th>分离器</th><th>怎么做</th><th>分开了什么</th><th>成本</th></tr></thead><tbody><tr><td><strong>双跑法</strong> ⭐</td><td>同一篇文章、同一套题，<strong>先限时做一遍（A 卷），再不限时、允许回看重做一遍（B 卷）</strong></td><td><strong>B−A 的差值</strong> 分开「不会」与「来不及/不细看」。差值大＝输入闸或配速问题；差值≈0＝真不会，加工闸问题</td><td>一次重做，约 6 分钟</td></tr><tr><td><strong>口头复述</strong> ⭐</td><td>读完后 <strong>60 秒语音</strong>：「这篇讲了什么，按顺序说」</td><td>分开「没读懂」与「读懂了写不出」。口头清晰但书面零散＝纯输出闸</td><td>60 秒录音，转文字后自动判</td></tr><tr><td><strong>自信度自评</strong></td><td>每题作答后点一下「有把握 / 不确定」</td><td>算<strong>校准度</strong>。「有把握且答错」的比例＝监控失灵程度</td><td>一次点击，零额外时间</td></tr></tbody></table></div>
+<blockquote><strong>为什么是这三个：</strong> 它们各自只增加不到 1 分钟，却把最容易混淆的三组病因劈开了。三个都不做，就只能拿总分猜；三个都做，画像基本成形。</blockquote>
+<h3 id="s9">3.2 首测规格（必须短）</h3>
+<p><strong>【判断】C 端产品做 45–60 分钟的入学测，等于在转化漏斗最窄处放一道墙。</strong> 首测必须压到 20 分钟以内，剩下的维度靠前两周的常规使用被动采集。</p>
+<div class="tw"><table><thead><tr><th>环节</th><th>内容</th><th>时长</th><th>采集</th></tr></thead><tbody><tr><td>1</td><td>800 字写人记事文（限时 6 分钟，到点自动交，未读完记录读到哪）</td><td>6′</td><td><strong>默读速度</strong>、是否读完</td></tr><tr><td>2</td><td>8 题：L1×3（事实）＋L2×3（推断/结构）＋L3×2（证据表达），每题带自信度自评</td><td>7′</td><td>三闸门粗分、<strong>校准度</strong></td></tr><tr><td>3</td><td>60 秒口头复述</td><td>1′</td><td><strong>主旨 / 结构是否成形</strong></td></tr><tr><td>4</td><td>同题 B 卷重做（可回看全文，不限时，实际约 5 分钟）</td><td>5′</td><td><strong>B−A 差值</strong></td></tr><tr><td>5</td><td>20 题书面语·文言实词词义速判（每题 3 秒）</td><td>1′</td><td><strong>词汇底座</strong></td></tr><tr><td></td><td><strong>合计</strong></td><td><strong>≈20 分钟</strong></td><td></td></tr></tbody></table></div>
+<p><strong>滚动补全</strong>：背景知识、说明文/非连续性文本表现、写作输出意愿，不在首测测，放在第 1–2 周的常规篇目里用带标签的题目采集。<strong>一个画像允许两周后才稳定</strong>，但第 1 天必须给出一条能用的初步处方。</p>
+<h3 id="s10">3.3 六种学生画像与处方</h3>
+<p>分诊输出的不是分数，是<strong>画像 + 本月主攻方向</strong>。</p>
+<div class="tw"><table><thead><tr><th>#</th><th>画像</th><th>判定条件（首测）</th><th>主病因</th><th>本月处方配比</th></tr></thead><tbody><tr><td>1</td><td><strong>慢读型</strong></td><td>6 分钟未读完 ／ B−A ≥ 25%</td><td>输入闸：默读速度、回读过多</td><td>配速与流畅 40%、结构切块 30%、输出 30%</td></tr><tr><td>2</td><td><strong>跳读型</strong></td><td>读完很快但 L2 推断题错半数以上；B−A ≈ 0</td><td>加工闸：推断缺失，靠猜</td><td><strong>推断 50%</strong>、理解监控 20%、输出 30%</td></tr><tr><td>3</td><td><strong>散点型</strong></td><td>L1 高、L2 结构/主旨题低；口头复述说不出顺序</td><td>加工闸：结构意识缺失</td><td><strong>结构切块＋概括 50%</strong>、推断 20%、输出 30%</td></tr><tr><td>4</td><td><strong>搬运型</strong></td><td>口头复述清楚，但书面答案 ≥60% 是原文照抄</td><td>输出闸：不会转化、不会挂证据</td><td><strong>要点化＋证据句 50%</strong>、审题 30%、推断 20%</td></tr><tr><td>5</td><td><strong>失校准型</strong></td><td>「有把握且答错」占比 ≥40%</td><td>加工闸：理解监控失灵</td><td><strong>监控训练 40%</strong>、推断 30%、输出 30%</td></tr><tr><td>6</td><td><strong>基础薄弱型</strong></td><td>词义速判 &lt;12/20 且 L1 事实题即失分</td><td>输入闸：词汇底座不足</td><td><strong>词汇/语素 40%</strong>、短文流畅 30%、最低门槛输出 30%</td></tr></tbody></table></div>
+<blockquote><strong>红线：画像名不对孩子显示，也不进家长周报的标题位。</strong> <code>01</code> 里 Achieve3000 的中国家长落差证明了单点标签的破坏力——诊断结论只以「本月主攻：把一篇文章切成三块」这种<strong>动作语言</strong>呈现（见 §8）。</blockquote>
+<h3 id="s11">3.4 分型施治的证据基础</h3>
+<p><strong>【研究】</strong> 这不是产品话术。Elleman（2017，25 项 K–12 研究）的推断教学元分析：总体 d=0.58、推断性理解 d=0.68、字面理解 d=0.28；而分组看，<strong>弱读者在字面理解上的效应量 d=0.97，强读者只有 d=0.06</strong>。2024 年一份更大的元分析（56 项研究、N=5088）给出 g=0.495，方向一致。</p>
+<p><strong>同一项干预，在不同孩子身上的效应量相差一个数量级。</strong> 这是「先分诊、后施治」最硬的一条论据，也意味着：<strong>统一课表的产品，其平均效应量天然被稀释。</strong></p>
+<h3 id="s12">3.5 对 <code>07</code> 的一处补充修正：不该把「应试」整个让出去</h3>
+<p><code>07</code> §4 的处理是：承认模板类产品短期提分更快，我们主动选择慢路径。<strong>这个判断的方向对，但让出的范围过大了。</strong></p>
+<p>「答题模板」其实是两样混在一起的东西：</p>
+<div class="tw"><table><thead><tr><th></th><th>内容</th><th>是否该收回</th></tr></thead><tbody><tr><td><strong>万能句式</strong></td><td>「运用了××手法，生动形象地写出了××，表达了作者××之情」——不读文本也能填</td><td>❌ 不做。题型一变即归零，且掩盖理解缺失</td></tr><tr><td><strong>输出闸技能</strong></td><td>审题拆解、分值→要点数、定位区间、每点挂证据句</td><td>✅ <strong>必须收回</strong>。这是可训练、可判定、有迁移的真能力</td></tr></tbody></table></div>
+<p><strong>【考情】</strong> 2025 年多地中考命题明确走「反刷题、去模式化、情境化」，传统套路失灵——<strong>失灵的是万能句式，不是「按分值给足要点、每点挂原文证据」这条规则。</strong> 后者恰恰是踩点给分机制下永远有效的对接口，而且它与 <code>05</code> 第 3 步 L3 要求的「观点＋文本证据」底层是同一件事。</p>
+<blockquote><strong>修正结论：</strong> <code>07</code> 说「我们短期提分弱于模板产品，这是取舍」——应改为：<strong>「万能句式我们不做，输出闸的四个技能我们做，而且要做得比模板产品更硬，因为我们要求每一点都挂得住原文。」</strong> 这不增加内容成本（是题壳规则，不是新选文），却显著改善家长在第一学期的耐心问题——<code>07</code> §4 自己点名的那个最大商业风险。</blockquote>
+<hr>
+<h1 id="s13">第二部分：最优解法</h1>
+<h2 id="s14">4. 按证据排序的干预清单</h2>
+<p>三列打分：<strong>效应量证据强度 × 中考迁移度 × C 端可实施性</strong>。C 端无老师、无课堂、单次 15 分钟，很多课堂里有效的干预在这里落不了地——这一列会否掉一些「学术上很好」的选项。</p>
+<div class="tw"><table><thead><tr><th>#</th><th>干预</th><th>证据【研究】</th><th>中考迁移</th><th>C 端可实施</th><th>综合</th></tr></thead><tbody><tr><td>1</td><td><strong>写作回应文本</strong>（读完就写，哪怕一句）</td><td>Graham &amp; Hebert：<strong>ES ≈ +0.40</strong></td><td>高（直接练表述）</td><td>高（一句话即可）</td><td>🟢 <strong>首选</strong></td></tr><tr><td>2</td><td><strong>推断教学</strong>（指代、因果、心理动机）</td><td>Elleman 2017 <strong>d=0.58</strong>；2024 meta <strong>g=0.495</strong>；弱读者字面理解 <strong>d=0.97</strong></td><td>高（L2 类题主力）</td><td>高（题壳即可承载）</td><td>🟢 <strong>首选</strong></td></tr><tr><td>3</td><td><strong>文本结构教学</strong>（切块、信号词、图示）</td><td>Hebert 2016（45 项研究，2–12 年级）<strong>g=0.56</strong>，学困生 0.96</td><td><strong>极高</strong>（概括题的直接前置）</td><td>高</td><td>🟢 <strong>首选</strong></td></tr><tr><td>4</td><td><strong>高阶提问 / 理解策略</strong></td><td>EEF 工具箱：约 <strong>+6–7 个月</strong>进度，证据充分</td><td>高</td><td>中（依赖反馈质量）</td><td>🟢 强</td></tr><tr><td>5</td><td><strong>知识建构（主题簇连读）</strong></td><td>Hwang/Cabell/Joyner 2022：词汇 ES 0.55，标准化阅读测验更优</td><td>中（间接但长效）</td><td>中（靠选文编排，<code>08</code> 已改）</td><td>🟡 中强</td></tr><tr><td>6</td><td><strong>理解监控 / 自我校准</strong></td><td>监控能力对理解有稳定预测力；青少年干预整体 <strong>g=0.63</strong>（Sohn 2023，6–12 年级）</td><td>中</td><td><strong>高（一次点击）</strong></td><td>🟢 <strong>性价比最高</strong></td></tr><tr><td>7</td><td><strong>概括与复述训练</strong></td><td>属策略教学范畴，效应稳定</td><td><strong>极高</strong></td><td>高（60 秒语音）</td><td>🟢 强</td></tr><tr><td>8</td><td><strong>配速与流畅</strong></td><td>对慢读者有效；对已流畅者无增益</td><td>高（做不完直接丢分）</td><td>高（计时即可）</td><td>🟡 <strong>仅对画像 1/6</strong></td></tr><tr><td>9</td><td><strong>词汇 / 语素（文言实词、书面语词）</strong></td><td>词汇教学在自编测验上效应明显，在标准化测验上小</td><td>中高（文言迁移题）</td><td>高</td><td>🟡 仅对画像 6</td></tr><tr><td>10</td><td><strong>有结构的同伴讨论</strong></td><td>课堂条件下中等效应</td><td>低</td><td><strong>低</strong>（线上异步无引导 ≠ 有结构讨论，<code>07</code> 已判）</td><td>⚪ 动机价值为主</td></tr><tr><td>11</td><td><strong>单纯增加阅读量</strong></td><td>独立阅读对理解力效应 <strong>≈0</strong>（<code>07</code> 已核）</td><td>低</td><td>高</td><td>🔴 <strong>不作为效果机制</strong></td></tr><tr><td>12</td><td><strong>万能句式背诵</strong></td><td>无迁移证据；反套路命题下贬值</td><td>短期高、长期归零</td><td>高</td><td>🔴 <strong>明确不做</strong></td></tr></tbody></table></div>
+<h3 id="s15">4.1 三条从表里读出来的结论</h3>
+<ol><li><strong>前三名（写、推断、结构）加起来能覆盖大多数病因，且都能塞进 15 分钟。</strong> 这就是 §0 里「只做三件事」的来源。</li><li><strong>第 6 项（理解监控）是被严重低估的一项</strong>：它几乎零成本（一次点击 + 一句「你哪里没懂」），却直击最隐蔽也最难自我纠正的病因（失校准型），并且顺带产出诊断数据。<strong>应该默认全员开启，而不是当成某一型的处方。</strong></li><li><strong>第 8、9 项必须按画像给，不能全员给。</strong> 给已经流畅的孩子做限时速读，不仅无增益，还会推高焦虑、压低完成率——而完成率是北极星（<code>05</code> §7）。<strong>对画像给药，不对人群给药。</strong></li></ol>
+<hr>
+<h1 id="s16">第三部分：可训练的方案</h1>
+<h2 id="s17">5. 17 个微技能：可训练 = 可判定</h2>
+<p><strong>规则：写不出过关标准的，不写进课表。</strong> 每个微技能都必须能被一次 15 分钟的单元练到，并被自动或半自动判定。</p>
+<h3 id="s18">闸门 I｜输入（3 项）</h3>
+<div class="tw"><table><thead><tr><th>编号</th><th>微技能</th><th>训练动作</th><th><strong>过关标准</strong></th><th>常见错法</th></tr></thead><tbody><tr><td><strong>I1</strong></td><td>默读配速</td><td>800 字文章限时默读，到点交</td><td>2 分钟内读完，且 3 道事实题对 2【课标：每分钟不少于 500 字】</td><td>边读边回看，读完仍答错</td></tr><tr><td><strong>I2</strong></td><td>难词绕行</td><td>遇生词不停，用上下文给一个可替换的词</td><td>5 处生词中 3 处给出语义相近替换</td><td>停下来查字典、卡住不走</td></tr><tr><td><strong>I3</strong></td><td>实词迁移</td><td>课内文言/书面语词放进新语境判词义</td><td>连续两次 ≥80%</td><td>只记课内那一句的译文</td></tr></tbody></table></div>
+<h3 id="s19">闸门 P｜加工（8 项）</h3>
+<div class="tw"><table><thead><tr><th>编号</th><th>微技能</th><th>训练动作</th><th><strong>过关标准</strong></th><th>常见错法</th></tr></thead><tbody><tr><td><strong>P1</strong></td><td>指代还原</td><td>把「这、其、那件事」还原成具体对象</td><td>3 处还原全对</td><td>指向最近的名词而非真正对象</td></tr><tr><td><strong>P2</strong></td><td>关系推断</td><td>说出相邻两句的关系（因果/转折/递进）并指出信号词</td><td>3 组对 2，且能指出信号词</td><td>只复述句意，说不出关系</td></tr><tr><td><strong>P3</strong></td><td>动机推断 ⭐</td><td>「他为什么这么做」＋「从哪句看出来」</td><td>给出动机且挂得住一句原文</td><td>用常识代替文本（「因为妈妈都爱孩子」）</td></tr><tr><td><strong>P4</strong></td><td>结构切块 ⭐</td><td>把文章划成 3–5 块，每块起一个 ≤6 字小标题</td><td>块数与标准切分差 ≤1 块，且标题含动作</td><td>按自然段切，不按意义切</td></tr><tr><td><strong>P5</strong></td><td>主旨压缩 ⭐</td><td>一句话说清「谁 + 怎么样 + 结果/情感」，≤30 字</td><td>覆盖主体与主事件，不含评价套话</td><td>写成「表达了作者的思想感情」</td></tr><tr><td><strong>P6</strong></td><td>信号词扫描</td><td>说明/议论文中圈出「首先、然而、总之、因此」并说明各领起什么</td><td>圈全 ≥80%，且说得出作用</td><td>圈了不用</td></tr><tr><td><strong>P7</strong></td><td>理解监控 ⭐</td><td><strong>每篇必须标出一处「我没懂」</strong>，并归类：词不懂 / 关系不懂 / 背景不懂</td><td>标出且归类正确（由后续追问校验）</td><td>全篇标「都懂」——这本身是失校准信号</td></tr><tr><td><strong>P8</strong></td><td>图文互证</td><td>指出图表与正文相互印证或冲突之处</td><td>找出 1 处对应关系</td><td>只读文字，跳过图表</td></tr></tbody></table></div>
+<h3 id="s20">闸门 O｜输出（6 项）</h3>
+<div class="tw"><table><thead><tr><th>编号</th><th>微技能</th><th>训练动作</th><th><strong>过关标准</strong></th><th>常见错法</th></tr></thead><tbody><tr><td><strong>O1</strong></td><td>题干拆解 ⭐</td><td>圈出三样：<strong>指令动词</strong>（概括/分析/赏析/结合）、<strong>范围限定</strong>（第③段/全文）、<strong>数量限定</strong>（两点/两处）</td><td>三样圈全，连续 3 次</td><td>只看见「分析」，看不见「结合全文」</td></tr><tr><td><strong>O2</strong></td><td>分值→要点数 ⭐</td><td>作答前先写「本题 X 分 → 写 N 点」</td><td>要点数与分值匹配率 ≥80%【考情：踩点给分】</td><td>4 分题只写一点</td></tr><tr><td><strong>O3</strong></td><td>定位区间</td><td>作答前先标「答案在第几段」</td><td>定位命中率 ≥70%</td><td>全文通找，或凭印象</td></tr><tr><td><strong>O4</strong></td><td>证据句挂钩 ⭐</td><td>每个要点后附一句原文</td><td>每点都挂得住，不得空挂</td><td>挂了一句与观点无关的原文</td></tr><tr><td><strong>O5</strong></td><td>要点表述</td><td>用「主体 + 动作 + 结果/情感」压缩成句</td><td>不照抄、不超 25 字、要素齐</td><td>整段照搬原文</td></tr><tr><td><strong>O6</strong></td><td>单篇配速</td><td>一篇现代文 ≤12 分钟做完，开放题不空</td><td>连续 3 次达标且正确率不掉</td><td>为赶时间放弃最后一题</td></tr></tbody></table></div>
+<blockquote><strong>⭐ 七个星标是主干。</strong> 其余 10 项按画像启用。全员必练的只有：<strong>P4 结构切块、P5 主旨压缩、P7 理解监控、O1 题干拆解、O2 分值要点数、O4 证据句挂钩</strong> ——六项，正好对应 §0 的三件事。</blockquote>
+<h3 id="s21">5.1 过关、复现与回捞</h3>
+<div class="tw"><table><thead><tr><th>规则</th><th>内容</th></tr></thead><tbody><tr><td><strong>判定过关</strong></td><td>同一微技能在<strong>三篇不同文本</strong>上连续达标 → 判过关（单篇达标不算，防止文本效应）</td></tr><tr><td><strong>间隔复现</strong></td><td>过关后第 <strong>2 周</strong>、第 <strong>6 周</strong>各安排一次回测（不告知）</td></tr><tr><td><strong>回捞</strong></td><td>回测失败 → 该技能降级回训练池，但<strong>不清零进度</strong>（<code>05</code> §5 的「断了能接上」同一原则）</td></tr><tr><td><strong>每月上限</strong></td><td>同时在训的微技能 <strong>≤3 个</strong>。超过 3 个，单元时长必然突破 15 分钟，完成率先崩</td></tr></tbody></table></div>
+<hr>
+<h2 id="s22">6. 12 周疗程</h2>
+<p>每天 15 分钟、每周 5 天 ＋ 1 次周测，嵌进 <code>06</code>/<code>08</code> 已定的内容节奏（每月 12 篇精读 ＋ 晨读微篇），<strong>不新增时长，只改靶点</strong>。</p>
+<div class="tw"><table><thead><tr><th>阶段</th><th>周次</th><th>目标</th><th>靶点</th><th>验收</th></tr></thead><tbody><tr><td><strong>定位期</strong></td><td>1–2</td><td>画像成形、建立输出习惯</td><td>全员：P7 监控 ＋ O1 题干拆解 ＋ <strong>每篇一句话输出</strong></td><td>画像稳定；输出率 ≥70%</td></tr><tr><td><strong>主攻期</strong></td><td>3–8</td><td>攻画像主病因</td><td>按 §3.3 处方，同时在训 ≤3 项</td><td>每 4 周至少 <strong>2 个微技能过关</strong></td></tr><tr><td><strong>合拢期</strong></td><td>9–11</td><td>三闸门串起来</td><td>完整流程跑单篇：审题→定位→切块→要点→证据</td><td>周测中 O2/O4 达标率 ≥80%</td></tr><tr><td><strong>回测期</strong></td><td>12</td><td>迁移验证</td><td><strong>产品外陌生文本盲测</strong> ＋ 前期过关技能回测</td><td>盲测对比第 1 周同难度基线</td></tr></tbody></table></div>
+<h3 id="s23">6.1 一个 15 分钟训练块长什么样</h3>
+<p>承 <code>05</code> 的五步（猜·读·问·辨·写），<strong>不改五步，只在每步挂靶点</strong>：</p>
+<div class="tw"><table><thead><tr><th>步</th><th>时长</th><th>常规动作</th><th><strong>挂上的靶点（按画像变）</strong></th></tr></thead><tbody><tr><td>猜</td><td>1′</td><td>代入式预判</td><td>—</td></tr><tr><td>读</td><td>5–6′</td><td>同文本 + 三档支架</td><td>画像 1/6：<strong>计时读</strong>（I1）｜全员：<strong>标一处没懂</strong>（P7）</td></tr><tr><td>问</td><td>4′</td><td>三层追问 L1/L2/L3</td><td>先做 <strong>O1 题干拆解</strong>；L2 挂 P2/P3；L3 强制 <strong>O4 证据句</strong></td></tr><tr><td>辨</td><td>2′</td><td>回看 + 同龄人观点</td><td><strong>P4 切块</strong>（拖 3 条分隔线）或 <strong>P5 一句话主旨</strong></td></tr><tr><td>写</td><td>2′</td><td>阶梯输出</td><td><strong>默认「只写一句」</strong>（承 <code>07</code> 修改 1），画像 4 加 <strong>O5 压缩句式</strong></td></tr></tbody></table></div>
+<blockquote><strong>每块只主攻 1 个靶点，其余是常规。</strong> 靶点轮换由系统排，孩子看到的只是「今天这篇，试着把它切成三块」。</blockquote>
+<h3 id="s24">6.2 周测与月测</h3>
+<div class="tw"><table><thead><tr><th></th><th>频率</th><th>内容</th><th>用途</th></tr></thead><tbody><tr><td><strong>周测</strong></td><td>每周 1 次</td><td>按本地卷型复刻的缩小版（承 <code>06</code> §5）</td><td>应试对接；采集 O2/O4/O6 达标率</td></tr><tr><td><strong>月度回测</strong></td><td>每 4 周</td><td>陌生文本 + 双跑法 + 60 秒复述</td><td>更新画像；判定微技能过关是否保持</td></tr><tr><td><strong>季度盲测</strong></td><td>第 12 周</td><td>完全产品外文本，与第 1 周同难度基线对比</td><td>唯一可用于效果结论的数据</td></tr></tbody></table></div>
+<hr>
+<h2 id="s25">7. 落到产品：要改什么，成本多少</h2>
+<p><strong>【判断】这套方案不需要重做内容，只需要给已有内容加标签。</strong> <code>08</code> 的 32 篇首月内容库结构不变。</p>
+<div class="tw"><table><thead><tr><th>改动</th><th>具体做什么</th><th>工作量</th></tr></thead><tbody><tr><td><strong>1. 首测模块</strong></td><td>20 分钟分诊流程（含双跑、60 秒复述、词义速判）</td><td>1 篇选文 + 8 题 + 20 词速判 ≈ <strong>3 人日</strong></td></tr><tr><td><strong>2. 靶点标注</strong></td><td>给 32 篇每篇标 2–3 个可挂靶点，并补写对应靶点题</td><td>≈80 条靶点题 × 15 分钟 ≈ <strong>20 人时</strong></td></tr><tr><td><strong>3. 题壳升级</strong></td><td><code>06</code> 的「四套题壳（按地区）」升级为 <strong>「地区 × 靶点」两维</strong></td><td>规则改动，<strong>不新增选文</strong></td></tr><tr><td><strong>4. 判定引擎</strong></td><td>17 个过关标准里，13 个可自动判（选择、圈选、计时、字数、是否挂证据），4 个需 AI 判（P5 主旨、O5 表述、P3 动机、P4 切块）</td><td>AI 预算集中于此，承 <code>07</code> 修改 3</td></tr><tr><td><strong>5. 复杂度上限</strong></td><td><strong>全站同一周最多 4 种靶点组合</strong>，否则内容运营会爆炸</td><td>硬性约束写进内容规范</td></tr></tbody></table></div>
+<blockquote><strong>AI 的钱只花在一个地方：读懂孩子写的那 4 类开放输出。</strong> 这与 <code>07</code> 修改 3 的结论一致——不做「AI 帮你读懂文章」，只做「AI 读懂你写的东西」。</blockquote>
+<hr>
+<h2 id="s26">8. 家长侧怎么讲（不越线）</h2>
+<p>家长要的是「有没有用」的证据，而诊断结论恰恰是这个品类<strong>唯一能正当交付的确定性</strong>——它讲的是<strong>过程</strong>，不是分数承诺。</p>
+<p><strong>周报三件套（承 <code>05</code> §6）里增加一行「本月主攻」，写法固定为动作语言：</strong></p>
+<div class="tw"><table><thead><tr><th>❌ 不能这么写</th><th>✅ 应该这么写</th></tr></thead><tbody><tr><td>「孩子属于跳读型，推断能力弱」</td><td>「本月主攻：读人物时，多问一句『他为什么这么做』——这周他有 4 次答出了动机并找到了原文依据。」</td></tr><tr><td>「阅读能力值 68 → 74」</td><td>「『把文章切成三块』这项，他在三篇不同文章上都做到了，已过关；下月进入『一句话说清主旨』。」</td></tr><tr><td>「预计可提升 X 分」</td><td>「这三项（按分值给足要点、每点挂原文、题干圈限定词）是中考主观题的评分对接点，我们按周给达标率。」</td></tr></tbody></table></div>
+<p><strong>红线不变（<code>05</code>/<code>07</code> 已定）：不出现提分承诺、不给单一能力总分、不做排名。</strong> 新增一条：<strong>不向孩子展示画像标签。</strong></p>
+<hr>
+<h2 id="s27">9. 指标与证伪</h2>
+<h3 id="s28">9.1 四层指标</h3>
+<div class="tw"><table><thead><tr><th>层</th><th>指标</th><th>目标</th><th>用途</th></tr></thead><tbody><tr><td>诊断</td><td>两周内画像稳定率</td><td>≥80%</td><td>分诊是否可用</td></tr><tr><td>过程</td><td><strong>带证据的输出率</strong>（承 <code>07</code> 的指标修正）</td><td>≥70%</td><td>效果对赌</td></tr><tr><td>训练</td><td><strong>月度微技能过关数</strong></td><td>≥2 个/月</td><td>「可训练」是否兑现</td></tr><tr><td>迁移</td><td>12 周产品外盲测 vs 第 1 周基线</td><td>显著优于基线</td><td>唯一可对外说效果的数据</td></tr></tbody></table></div>
+<blockquote>北极星仍是完成率（它决定商业存活）；效果指标是输出率与过关数。<strong>两套指标不能混用</strong>——这是 <code>07</code> 已经立过的规矩。</blockquote>
+<h3 id="s29">9.2 怎么杀死这个方案</h3>
+<p><code>07</code> 设计的 A/B（完整五步 vs 剥掉写与追问）验证的是<strong>机制</strong>。本篇需要验证的是<strong>分诊本身值不值得做</strong>：</p>
+<div class="tw"><table><thead><tr><th>组</th><th>做什么</th></tr></thead><tbody><tr><td><strong>A 组</strong></td><td>分诊 → 按画像处方 → 靶点轮换</td></tr><tr><td><strong>B 组</strong></td><td>不分诊 → 统一课表（六项全员必练技能，顺序固定）</td></tr></tbody></table></div>
+<ul><li>12 周后比 <strong>微技能过关数</strong> 与 <strong>盲测迁移分</strong>。</li><li><strong>判负条件：A 组不显著优于 B 组 → 砍掉分诊，保留统一课表。</strong> 分诊是纯成本（首测流失、标注人力、判定引擎），不产生内容价值，不划算就必须砍。</li><li>样本量：预期 d≈0.3、双侧 α=0.05、power=0.8 → 每组约 175 人；若用户量不足，按 d=0.5 估算每组约 64 人，并在结论中如实标注检验力不足（同 <code>07</code> §6 口径）。</li></ul>
+<hr>
+<h2 id="s30">10. 四个风险</h2>
+<div class="tw"><table><thead><tr><th>#</th><th>风险</th><th>为什么真实</th><th>对策</th></tr></thead><tbody><tr><td>1</td><td><strong>标签伤害</strong></td><td>初中生对「我是差的那一类」极敏感，标签会自我实现</td><td>画像仅内部使用；对孩子只呈现动作；对家长只呈现主攻方向</td></tr><tr><td>2</td><td><strong>单次诊断信度低</strong></td><td>一篇文章的表现受题材、当天状态影响极大</td><td>三篇不同文本连续达标才判过关；画像允许两周才稳定，且每 4 周重判</td></tr><tr><td>3</td><td><strong>首测杀转化</strong></td><td>20 分钟仍然是一道墙</td><td>首测包装成「第一篇正式阅读」，不叫「测评」；未完成也给出初步处方</td></tr><tr><td>4</td><td><strong>输出闸训练滑向模板</strong></td><td>一旦讲「几分写几点」，很容易退化成套话</td><td>硬红线：<strong>任何要点必须挂原文证据句（O4），空挂不计达标</strong>。万能句式在判定引擎里直接判不达标</td></tr></tbody></table></div>
+<hr>
+<h2 id="s31">11. 与已有文档的关系</h2>
+<div class="tw"><table><thead><tr><th>文档</th><th>关系</th></tr></thead><tbody><tr><td><code>05</code> 中文五步法</td><td><strong>不改五步流程</strong>。五维雷达保留为家长展示层，三闸门作为内部诊断层，两者不冲突（雷达讲结果，闸门讲卡点）</td></tr><tr><td><code>06</code> 首月训练量与地区规格</td><td><strong>题壳规则从「地区四套」扩展为「地区 × 靶点」</strong>；篇幅、题量、周排布全部沿用</td></tr><tr><td><code>07</code> 有效性审查</td><td>全面采纳其三处修改；<strong>§3.5 对其「应试整体让出」做了收窄修正</strong>——万能句式不做，输出闸技能收回</td></tr><tr><td><code>08</code> 首月内容库</td><td>内容不动，新增靶点标注与分诊首测篇目</td></tr><tr><td><code>01</code>–<code>04</code></td><td>沿用其结论（不做单一数值、不做排行榜、内容自采编）</td></tr></tbody></table></div>
+<hr>
+<h2 id="s32">12. 资料来源</h2>
+<p><strong>【研究】</strong></p>
+<ul><li><a href="https://eric.ed.gov/?id=EJ1149970" target="_blank" rel="noopener">Elleman (2017)：推断教学元分析，25 项 K–12 研究，d=0.58 / 弱读者字面理解 d=0.97</a></li><li><a href="https://eric.ed.gov/?q=5+AND+inference&amp;ff1=dtySince_2021&amp;id=EJ1423349" target="_blank" rel="noopener">Inference Skills for Reading: A Meta-Analysis of Instructional Practices (2024)，56 项研究 N=5088，g=0.495</a></li><li><a href="https://eric.ed.gov/?id=EJ1105625" target="_blank" rel="noopener">Hebert et al. (2016)：文本结构教学元分析，45 项研究 2–12 年级，g=0.56</a></li><li><a href="https://ila.onlinelibrary.wiley.com/doi/full/10.1002/rrq.311" target="_blank" rel="noopener">Bogaerds-Hazenberg et al. (2021, RRQ)：结构教学元分析的谨慎结论（对照组更强时效应缩水）</a></li><li><a href="https://journals.sagepub.com/doi/10.1111/ldrp.12307" target="_blank" rel="noopener">Sohn et al. (2023)：6–12 年级阅读困难学生干预元分析，37 项研究 g=0.63</a></li><li><a href="https://www.harvardeducationalreview.org/content/81/4/710" target="_blank" rel="noopener">Graham &amp; Hebert, <em>Writing to Read</em>（写作回应文本 ES ≈ +0.40）</a></li><li><a href="https://educationendowmentfoundation.org.uk/education-evidence/teaching-learning-toolkit/reading-comprehension-strategies" target="_blank" rel="noopener">EEF 教学工具箱：阅读理解策略（约 +6–7 个月进度）</a></li></ul>
+<p><strong>【考情】</strong></p>
+<ul><li><a href="https://www.pep.com.cn/ebook/2022yjkcbz/yw/mobile/index.html" target="_blank" rel="noopener">《义务教育语文课程标准（2022年版）》（人教社电子版）</a> — 第四学段「阅读一般的现代文每分钟不少于 500 字」</li><li><a href="http://www.moe.gov.cn/srcsite/A26/s8001/202204/t20220420_619921.html" target="_blank" rel="noopener">教育部：义务教育课程方案和课程标准（2022年版）印发通知</a></li><li><a href="http://www.yongkao.com/zhongkao/yuwen/yuedu/53005.html" target="_blank" rel="noopener">中考现代文阅读答题主要失误、命题趋势及复习设想（四类失误）</a></li><li><a href="https://m.sohu.com/a/870173615_121956424/" target="_blank" rel="noopener">2025 中考命题新突破：反刷题、情境化、跨学科</a></li><li><a href="https://news.qq.com/rain/a/20250421A05WVC00" target="_blank" rel="noopener">中考语文：阅读量逐渐加大，对阅读速度与分析能力提出更高要求（2025-04）</a></li><li><a href="https://www.sohu.com/a/892778201_121956425" target="_blank" rel="noopener">2025 中考语文阅读理解攻略：3 大模型 + 5 类题型（教辅口径样本，用于对照「万能句式」形态）</a></li><li><a href="http://jsfzzx.ts.gov.cn/art/2025/6/15/art_1340713_58925209.html" target="_blank" rel="noopener">泰顺县九年级学科素养检测质量分析会（区域教研实感）</a></li></ul><div class="foot">读得深 · 中学生阅读产品项目资料 · 2026-09<br>内部工作稿，对外公开仅为便于评审；文中数字与结论多为待验证建议，非承诺<br>名著与古诗文为公有领域作品，原文取自维基文库；原创选文版权自持<br><a href="./">返回目录</a></div></div></body></html>

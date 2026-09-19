@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>初中语文阅读产品方案：中文五步法 · 读得深</title>
+<meta name="theme-color" content="#f9f9f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)">
+<style>
+:root{color-scheme:light dark;--plane:#f9f9f7;--surface:#fcfcfb;--surface-2:#f3f2ef;
+--ink:#0b0b0b;--ink-2:#52514e;--ink-muted:#898781;--grid:#e1e0d9;--axis:#c3c2b7;
+--border:rgba(11,11,11,.10);--accent:#2a78d6;--accent-soft:#86b6ef;--wash:#eaf2fd;--r:14px}
+@media (prefers-color-scheme:dark){:root{--plane:#0d0d0d;--surface:#1a1a19;--surface-2:#232321;
+--ink:#fff;--ink-2:#c3c2b7;--ink-muted:#898781;--grid:#2c2c2a;--axis:#383835;
+--border:rgba(255,255,255,.10);--accent:#3987e5;--accent-soft:#6da7ec;--wash:#141c26}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{background:var(--plane);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px 80px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.top{position:sticky;top:0;z-index:9;background:var(--plane);border-bottom:1px solid var(--border);padding:12px 18px;margin:0 -18px 0}
+.top .in{max-width:720px;margin:0 auto;display:flex;align-items:center;gap:12px;font-size:13.5px}
+.top b{font-weight:680;font-size:15px}
+.top .sp{flex:1}
+h1{font-size:30px;font-weight:700;letter-spacing:-.01em;line-height:1.3;margin:30px 0 12px}
+h2{font-size:21px;font-weight:660;margin:34px 0 10px;padding-top:6px;border-top:1px solid var(--grid)}
+h3{font-size:17px;font-weight:640;margin:24px 0 8px}
+h4{font-size:15px;font-weight:620;margin:18px 0 6px;color:var(--ink-2)}
+p{margin:0 0 14px;color:var(--ink-2)}
+strong{color:var(--ink);font-weight:620}
+hr{border:0;border-top:1px solid var(--grid);margin:26px 0}
+blockquote{margin:0 0 16px;padding:12px 16px;background:var(--surface);border-left:3px solid var(--accent-soft);border-radius:0 10px 10px 0;color:var(--ink-2);font-size:15px}
+blockquote strong{color:var(--ink)}
+ul,ol{margin:0 0 16px;padding-left:22px;color:var(--ink-2)}
+li{margin:0 0 6px}
+code{background:var(--surface-2);border-radius:5px;padding:1px 5px;font-size:13.5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+pre{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px;overflow-x:auto;margin:0 0 16px}
+pre code{background:none;padding:0;font-size:12.5px;line-height:1.7}
+.tw{overflow-x:auto;margin:0 0 18px;border:1px solid var(--border);border-radius:var(--r);background:var(--surface)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--grid);color:var(--ink-2);vertical-align:top}
+th{font-size:12px;color:var(--ink-muted);font-weight:560;white-space:nowrap;background:var(--surface-2)}
+tr:last-child td{border-bottom:0}
+td strong{color:var(--ink)}
+.toc{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 18px;margin:20px 0 28px}
+.toc b{font-size:12px;letter-spacing:.14em;color:var(--ink-muted);text-transform:uppercase;display:block;margin-bottom:8px}
+.toc a{display:block;font-size:14px;padding:3px 0;color:var(--ink-2)}
+.toc a:hover{color:var(--accent)}
+.notice{background:var(--wash);border-radius:10px;padding:11px 14px;font-size:13px;color:var(--ink-2);margin:18px 0}
+.foot{border-top:1px solid var(--grid);margin-top:40px;padding-top:20px;font-size:12.5px;color:var(--ink-muted);line-height:1.9}
+/* hub */
+.hero{padding:44px 0 6px}
+.hero .tag{display:inline-block;font-size:12.5px;color:var(--ink-muted);border:1px solid var(--border);border-radius:999px;padding:4px 12px;background:var(--surface)}
+.hero h1{font-size:38px;margin:16px 0 10px}
+.lead{font-size:17px;color:var(--ink-2);margin:0 0 6px}
+.cards{display:grid;gap:12px;margin:14px 0 8px}
+@media(min-width:560px){.cards.two{grid-template-columns:1fr 1fr}}
+.card{display:block;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px;color:inherit}
+.card:hover{border-color:var(--accent-soft);text-decoration:none}
+.card .k{font-size:11.5px;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:6px}
+.card b{display:block;font-size:16.5px;font-weight:640;margin-bottom:4px;color:var(--ink)}
+.card span{font-size:13.5px;color:var(--ink-muted);line-height:1.7}
+.doc{display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;color:inherit}
+.doc:hover{border-color:var(--accent-soft);text-decoration:none}
+.doc .n{flex:0 0 40px;height:40px;border-radius:10px;background:var(--wash);color:var(--accent);display:grid;place-items:center;font-weight:700;font-size:14px}
+.doc .t{flex:1;min-width:0}
+.doc .t b{display:block;font-size:15.5px;font-weight:620;color:var(--ink)}
+.doc .t span{font-size:13px;color:var(--ink-muted)}
+.sec-h{font-size:12px;letter-spacing:.14em;color:var(--ink-muted);text-transform:uppercase;margin:34px 0 10px}
+</style></head><body><div class="top"><div class="in"><a href="./">‹ 读得深 · 项目资料</a><span class="sp"></span><span style="color:var(--ink-muted)">05</span></div></div><div class="wrap"><div class="notice">原始文件：<code>05-初中语文阅读产品方案-中文五步法.md</code> · <a href="md/05-初中语文阅读产品方案-中文五步法.md">下载 Markdown</a></div><div class="toc"><b>本篇目录</b><a href="#s3">0. 一句话方案</a><a href="#s4">1. 三个不可动摇的设计前提</a><a href="#s8">2. 五步法的中文改造：猜 · 读 · 问 · 辨 · 写</a><a href="#s17">3. 内容体系：三条线，三年 360 篇</a><a href="#s21">4. 能力模型：用五维雷达替代蓝思值</a><a href="#s22">5. 让孩子爱用：六个机制</a><a href="#s23">6. 让家长续费：周报三件套 + 一条红线</a><a href="#s24">7. 「持续用就有提升」这句话，怎么兑现、怎么被证伪</a><a href="#s27">8. 定价、冷启动与 12 个月路线</a><a href="#s30">9. 六个高风险点与对策</a><a href="#s31">10. 这个方案与 Achieve3000 的差异，一页看完</a><a href="#s32">11. 与已有文档的关系</a><a href="#s33">12. 资料来源</a></div><h1 id="s1">「读得深」：面向 C 端的初中语文阅读能力产品方案</h1>
+<h3 id="s2">—— 对标 Achieve3000 五步法的中文改造版</h3>
+<blockquote>日期：2026-09-13 ｜ 承接 <code>01</code>–<code>04</code> 四份文档<br>本篇是<strong>产品方案</strong>，不是调研。凡涉及数字（定价、内容量、指标）均为待验证建议；凡涉及事实（政策、考纲、调查数据）均附来源。</blockquote>
+<hr>
+<h2 id="s3">0. 一句话方案</h2>
+<p><strong>每天 15 分钟，一篇好文本，五步走完。一年 120 篇，孩子有话可说，家长看得见证据。</strong></p>
+<p>产品名暂定「<strong>读得深</strong>」——直接对应它与 Achieve3000 的根本差异：<strong>A3K 解决&quot;读不懂&quot;，初中语文要解决&quot;读不深&quot;。</strong></p>
+<hr>
+<h2 id="s4">1. 三个不可动摇的设计前提</h2>
+<p>在画任何一个界面之前，先钉死三件事。它们不是限制，是这个产品所有创新的来源。</p>
+<h3 id="s5">前提 1｜语文不能分级，所以「难度不变，支架变」</h3>
+<p>英文有 Lexile，中文没有公认标尺；更关键的是，初中语文的难度不在字词，在思想深度与文化背景（详见 <code>04</code>）。把《背影》改写成 12 个难度版本是荒谬的。</p>
+<p><strong>→ 全案最核心的技术决策：原文一字不改，变的是&quot;脚手架密度&quot;。</strong></p>
+<div class="tw"><table><thead><tr><th></th><th>Achieve3000</th><th>读得深</th></tr></thead><tbody><tr><td>分层对象</td><td>文本本身（12 个改写版本）</td><td><strong>读者获得的支持</strong>（3 档支架密度）</td></tr><tr><td>弱读者拿到</td><td>一篇被简化的文章</td><td><strong>同一篇原文</strong> + 更多注释/背景/朗读/段落导航</td></tr><tr><td>强读者拿到</td><td>一篇更长更难的文章</td><td><strong>同一篇原文</strong> + 更少支架 + 更深的追问</td></tr><tr><td>隐含信号</td><td>&quot;你只配读简单的&quot;</td><td>&quot;我们读的是同一篇，你需要的帮助不同&quot;</td></tr></tbody></table></div>
+<p>这一条同时解决了三个问题：<strong>中文无法量化分级</strong>、<strong>改写侵犯原作</strong>、<strong>分层带来的羞辱感</strong>（A3K 学生投诉里最刺耳的一条就是&quot;读得好反而被派更难更长的文章&quot;）。</p>
+<h3 id="s6">前提 2｜动机不能外包，因为没有老师也没有分数</h3>
+<p>A3K 的动力来自&quot;老师布置 + 计入成绩&quot;。即便如此，它的年度剂量达标率也只有 <strong>8%</strong>，22% 的学生一篇未读（<code>02</code> 第 3.5 节）。<strong>纯 C 端连这层约束都没有。</strong></p>
+<p><strong>→ 产品必须自己产生动机。本方案把它拆成三个来源：内容的可说性、同龄人的存在、作品的累积。</strong></p>
+<h3 id="s7">前提 3｜合规形态锁死为「工具 / 内容 / 测评」</h3>
+<p>语文是学科类；学科培训类教育 App 的提供者必须是持证非营利法人（详见 <code>04</code>）。因此：</p>
+<ul><li>❌ 不做真人授课、录播课、班期、课时包、报名退费</li><li>✅ 只做文本、追问、自动判分、AI 反馈、按年订阅</li><li>✅ 单次 <strong>12–15 分钟</strong>、每日一篇——恰好落在《移动互联网未成年人模式建设指南》给 16 岁以下的每日 1 小时之内，且远低于它</li></ul>
+<hr>
+<h2 id="s8">2. 五步法的中文改造：<strong>猜 · 读 · 问 · 辨 · 写</strong></h2>
+<h3 id="s9">2.1 对照表</h3>
+<div class="tw"><table><thead><tr><th></th><th>Achieve3000</th><th>读得深</th><th>改造理由</th></tr></thead><tbody><tr><td>1</td><td><strong>Ready</strong> 读前投票</td><td><strong>猜</strong>：代入式预判</td><td>从&quot;你同意吗&quot;改成&quot;换你会怎么做&quot;，把孩子放进文本的处境</td></tr><tr><td>2</td><td><strong>Read</strong> 分层文章</td><td><strong>读</strong>：同文本 + 三档支架</td><td>中文不能改写分级（前提 1）</td></tr><tr><td>3</td><td><strong>Respond</strong> 8 题选择</td><td><strong>问</strong>：三层追问</td><td>对齐中考主观题化，选择题测不出&quot;读得深&quot;</td></tr><tr><td>4</td><td><strong>Reflect</strong> 读后投票</td><td><strong>辨</strong>：回看 + 同龄人碰撞</td><td>A3K 最聪明也最被浪费的设计，把它社交化</td></tr><tr><td>5</td><td><strong>Write</strong> 思辨写作</td><td><strong>写</strong>：阶梯输出</td><td>每次都写作文＝必然流失，改成一句/三句/一段三档</td></tr></tbody></table></div>
+<p><strong>总时长 12–15 分钟。五步必须能一口气走完，否则第二天不会有人回来。</strong></p>
+<h3 id="s10">2.2 逐步设计（以八年级上册《背影》为例，公版无版权风险）</h3>
+<h4 id="s11">第 1 步｜猜（60 秒）</h4>
+<blockquote><strong>父亲说什么也要自己爬过月台去买那几个橘子。你觉得他真正想让儿子看到的是什么？</strong><br>A. 我还有力气照顾你　B. 我心里过意不去　C. 我不知道该说什么　D. 其他（写一句）</blockquote>
+<ul><li><strong>规则</strong>：不判对错，只记录。这是全流程唯一一个&quot;无论怎么答都对&quot;的环节。</li><li><strong>为什么</strong>：A3K 的读前投票是为了激活背景知识；中文版更进一步——<strong>制造一个属于自己的预判，好让第 4 步有东西可回看</strong>。没有这一步，第 4 步就是空的。</li><li><strong>反例</strong>：不要问&quot;你读过《背影》吗&quot;&quot;朱自清是哪个朝代的人&quot;。前者无意义，后者是知识题不是代入题。</li></ul>
+<h4 id="s12">第 2 步｜读（6–8 分钟）</h4>
+<p>同一段原文，三档支架：</p>
+<div class="tw"><table><thead><tr><th>支架档</th><th>给什么</th><th>给谁</th></tr></thead><tbody><tr><td><strong>扶</strong></td><td>逐段旁注、生词卡、背景卡（1917 年家道中落、祖母去世）、全文朗读、段落导航</td><td>读不进去、注意力易断的孩子</td></tr><tr><td><strong>半扶</strong></td><td>关键处旁注 + 背景卡，朗读可选</td><td>大多数人</td></tr><tr><td><strong>放</strong></td><td>纯原文，注释需主动点开</td><td>已有阅读习惯的孩子</td></tr></tbody></table></div>
+<ul><li><strong>档位由系统建议、孩子可自选、家长看不到档位</strong>。这一点是刻意的：档位一旦对家长可见，就会变成新的比较焦虑。</li><li>支架的降级要慢：连续三篇在&quot;扶&quot;档且 L1 层全对，才提示&quot;要不要少点提示试试&quot;。<strong>降支架是邀请，不是惩罚。</strong></li></ul>
+<h4 id="s13">第 3 步｜问（3–4 分钟）—— 全案的能力核心</h4>
+<p>三层递进，共 5–6 题，<strong>替代 A3K 的 8 道同质选择题</strong>：</p>
+<div class="tw"><table><thead><tr><th>层</th><th>问什么</th><th>题型</th><th>判分</th><th>对应能力</th></tr></thead><tbody><tr><td><strong>L1 读到了什么</strong></td><td>父亲翻越月台的动作依次是？</td><td>客观题</td><td>自动</td><td>信息提取（PISA：访问与检索）</td></tr><tr><td><strong>L2 作者怎么写的</strong></td><td>全文写父亲，为什么只写背影、几乎不写正脸？</td><td>选择 + 一句理由</td><td>自动 + AI</td><td>手法鉴赏（中考现代文赏析题）</td></tr><tr><td><strong>L3 你怎么看</strong></td><td>文中&quot;我&quot;哭了四次，你觉得哪一次最不一样？为什么？</td><td>开放</td><td>AI + 同伴</td><td>反思评价（PISA 短板项、中考开放探究题）</td></tr></tbody></table></div>
+<ul><li><strong>L3 必须给&quot;文本证据&quot;字段</strong>：孩子写观点时，要求从原文里划出一句支撑。这直接对应中考开放探究题&quot;观点明确 + 文本支撑 + 联系实际&quot;的评分要求，也是防 AI 代写最有效的一招（下文第 9 节）。</li><li><strong>判分口径</strong>：L1 记正误；L2 记&quot;是否说到点上&quot;；<strong>L3 永远不判对错，只判&quot;有没有证据、有没有自己的话&quot;</strong>。</li></ul>
+<h4 id="s14">第 4 步｜辨（2 分钟）—— A3K 浪费掉的那座金矿</h4>
+<ol><li><strong>回看</strong>：把第 1 步自己的预判原样端出来，问一句：&quot;现在还这么想吗？&quot;</li><li><strong>碰撞</strong>：展示同龄人的选项分布 + <strong>三条与你不同的观点</strong>（人工/算法精选，非最热）。</li><li><strong>可回应</strong>：能给别人的观点点&quot;这条说服我了&quot;，也能追一句。</li></ol>
+<ul><li><strong>只有完成第 3 步才解锁</strong>——防剧透，也是最自然的完成激励。</li><li><strong>展示&quot;最不同的&quot;而不是&quot;最热门的&quot;</strong>：热门会导致趋同和表演，不同才产生思考。</li><li>A3K 有读前读后双投票，却只让学生自己看见。<strong>一个 14 岁的孩子会为了&quot;我的看法被人看见&quot;而读完一篇文章——这个动力比任何分数都强，而且是学校产品做不到的。</strong></li></ul>
+<h4 id="s15">第 5 步｜写（2–3 分钟，可跳过）</h4>
+<p>三档输出，<strong>孩子自选</strong>：</p>
+<div class="tw"><table><thead><tr><th>档</th><th>形式</th><th>门槛</th></tr></thead><tbody><tr><td>轻</td><td>一句话批注（贴在原文某处）</td><td>15 字</td></tr><tr><td>中</td><td>三句评论（观点 + 证据 + 联想）</td><td>60 字</td></tr><tr><td>重</td><td>一段短评</td><td>150 字，每周至多引导一次</td></tr></tbody></table></div>
+<ul><li><strong>&quot;重&quot;档一周最多出现一次</strong>，其余时候默认&quot;轻/中&quot;。<strong>每次都要求写作文，是这类产品最典型的死法。</strong></li><li>写完立刻进两个地方：<strong>观点广场</strong>（可选公开）和<strong>我的文库</strong>（永久私有）。</li></ul>
+<h3 id="s16">2.3 五步之外：作品沉淀层</h3>
+<p>A3K 没有的东西。<strong>孩子写过的每一句都留下来</strong>，按名著/主题自动归档，形成&quot;我的文库&quot;。</p>
+<ul><li>期末可导出成一本 PDF《我读过的 40 篇和我说过的话》。</li><li><strong>这是三个东西的合体</strong>：孩子的成就感载体、家长的验收物、续费的理由。</li></ul>
+<hr>
+<h2 id="s17">3. 内容体系：三条线，三年 360 篇</h2>
+<h3 id="s18">3.1 三条内容线</h3>
+<div class="tw"><table><thead><tr><th>线</th><th>占比</th><th>内容</th><th>解决什么</th><th>版权</th></tr></thead><tbody><tr><td><strong>名著线</strong></td><td>40%</td><td>统编教材 12 部必读名著的<strong>高光切片</strong>（《朝花夕拾》《西游记》《骆驼祥子》《海底两万里》《红星照耀中国》《昆虫记》《傅雷家书》《钢铁是怎样炼成的》《艾青诗选》《水浒传》《儒林外史》《简·爱》）</td><td>初中生第一痛点：名著读不下去；中考名著题约 20 分（媒体口径）</td><td>多为公版，个别需授权译本</td></tr><tr><td><strong>时文线</strong></td><td>45%</td><td>原创/授权的当代散文、说明文、议论文、<strong>非连续性文本</strong>（图表+文字混排）</td><td>中考现代文三文体；非连续性文本占比正在上升</td><td><strong>自采编原创，版权自持</strong></td></tr><tr><td><strong>古诗文线</strong></td><td>15%</td><td>每周 2 篇短篇，配情境与今译</td><td>高频微量，不做系统串讲（那会变成培训）</td><td>公版</td></tr></tbody></table></div>
+<h3 id="s19">3.2 名著切片：这条线是差异化的关键</h3>
+<p><strong>不要求读全本，也不做速读速成。</strong> 每部名著拆成 8–10 个&quot;高光切片&quot;，每片一次 15 分钟，一个月读完一部的骨架。</p>
+<ul><li>每片是一个<strong>完整的戏剧性时刻</strong>（祥子第一次买车、第一次丢车……），不是章节摘要。</li><li>片与片之间用一段 100 字的&quot;这中间发生了什么&quot;过桥。</li><li><strong>目标不是替代读原著，是让孩子产生&quot;我想把这本读完&quot;的冲动。</strong> 切片末尾永远有一句：&quot;接下来他会……？&quot;</li></ul>
+<blockquote>这条线的商业价值：它是家长<strong>唯一不需要被说服</strong>的东西。中考要考，孩子读不下去，这是一个已经存在于每个初中家庭里的、被明确表述过的痛点。</blockquote>
+<h3 id="s20">3.3 内容量与生产</h3>
+<div class="tw"><table><thead><tr><th>阶段</th><th>内容量</th><th>说明</th></tr></thead><tbody><tr><td>MVP（首发）</td><td><strong>50 篇</strong> = 3 部名著切片（30 篇）+ 20 篇时文</td><td>够一个孩子读 4 个月</td></tr><tr><td>首年</td><td><strong>120 篇</strong>（每周 3 篇 × 40 周）</td><td>覆盖一学年</td></tr><tr><td>三年满配</td><td><strong>360 篇</strong></td><td>初一到初三完整路径</td></tr></tbody></table></div>
+<ul><li>生产方式：<strong>编辑选文定题 → AI 生成支架初稿与三层追问初稿 → 教研终审</strong>。</li><li><strong>人工终审不可省</strong>。事实错误和价值观偏差在这个品类里是一票否决项，A3K 的差评里&quot;题目有事实性错误&quot;就是前车之鉴。</li><li>单篇成本控制目标：<strong>≤300 元</strong>（含选文、三档支架、三层追问、审核）。120 篇首年内容成本约 3.6 万元——这是这个方案最反直觉的地方：<strong>大模型把内容生产成本压到了 2001 年 A3K 的千分之一，这是今天做这件事唯一比它强的结构性优势。</strong></li></ul>
+<hr>
+<h2 id="s21">4. 能力模型：用五维雷达替代蓝思值</h2>
+<p>家长需要一个验收物，但<strong>绝不能是单一数值</strong>——A3K 的中国家长案例已经证明，单点数值会先制造兴奋、再制造焦虑、最后杀死兴趣（<code>01</code> 第 6.3 节：某孩子首月 875L→1035L，随后正确率从 88% 跌到 37%）。</p>
+<div class="tw"><table><thead><tr><th>维度</th><th>怎么测</th><th>对齐</th></tr></thead><tbody><tr><td><strong>信息提取</strong></td><td>L1 层正确率</td><td>PISA 访问与检索</td></tr><tr><td><strong>推断解释</strong></td><td>L2 层&quot;说到点上&quot;比例</td><td>PISA 整合与解释 · 新课标&quot;思维能力&quot;</td></tr><tr><td><strong>手法鉴赏</strong></td><td>L2 层赏析类题表现</td><td>中考现代文赏析题 · 新课标&quot;审美创造&quot;</td></tr><tr><td><strong>观点表达</strong></td><td>L3 层文本证据使用率、被同伴认可数</td><td>PISA 反思与评价（中国学生公认短板）· 中考开放探究题</td></tr><tr><td><strong>阅读习惯</strong></td><td>周完成篇数、连续周数、单篇专注时长</td><td><strong>C 端独有，也是真正决定效果的一维</strong></td></tr></tbody></table></div>
+<ul><li><strong>前四维给雷达图，不给总分。</strong> 不排名、不与他人比，只与自己三个月前比。</li><li><strong>第五维放在最显眼处</strong>。因为这一维才是家长真正能干预的，也是产品真正能保证的。</li></ul>
+<hr>
+<h2 id="s22">5. 让孩子爱用：六个机制</h2>
+<div class="tw"><table><thead><tr><th>#</th><th>机制</th><th>具体做法</th><th>反面（明确不做）</th></tr></thead><tbody><tr><td>1</td><td><strong>选题标准只有一条</strong></td><td><em>读完之后，他有没有话想说？</em></td><td>不做&quot;知识点科普&quot;式选题</td></tr><tr><td>2</td><td><strong>同龄人可见</strong></td><td>观点广场展示&quot;最不同的三条&quot;，可回应、可被引用</td><td>不做排行榜、不做互相打分</td></tr><tr><td>3</td><td><strong>断了能接上</strong></td><td>漏读不清零、不补罚、从当前内容继续</td><td>不做连续打卡奖励（断一次就永久流失）</td></tr><tr><td>4</td><td><strong>作品会累积</strong></td><td>我的文库，可导出 PDF</td><td>不做积分商城、不做抽奖</td></tr><tr><td>5</td><td><strong>选择权</strong></td><td>每次给 2–3 篇可选；支架档位自选；第 5 步可跳过</td><td>不做强制路径</td></tr><tr><td>6</td><td><strong>准时结束</strong></td><td>走完五步就明确收尾：&quot;今天读完了&quot;</td><td>不做无限下拉、不做&quot;再读一篇解锁&quot;</td></tr></tbody></table></div>
+<blockquote>3、4、6 三条都是在主动放弃常见的增长手段。理由是：<strong>这个产品的续费由家长决定，而家长最反感的就是&quot;像游戏一样上瘾的学习 App&quot;；同时抽奖式设计与教育 App 的监管导向相悖</strong>（教育 App 不得植入商业广告和游戏）。</blockquote>
+<hr>
+<h2 id="s23">6. 让家长续费：周报三件套 + 一条红线</h2>
+<p><strong>每周一封周报，只有三件事：</strong></p>
+<ol><li><strong>孩子的原话</strong>（最重要，放最上面）——本周他写的 1–2 条最好的批注/短评，原文照登。</li></ol>
+<p>&gt; <em>这是家长第一次&quot;听见&quot;孩子对一篇文章的想法。它比任何数据都有说服力。</em></p>
+<ol><li><strong>一张雷达图 + 一句人话</strong>——&quot;这个月他在&#x27;找证据&#x27;上明显稳了，&#x27;手法鉴赏&#x27;还偏弱。&quot;</li><li><strong>下周会读什么</strong>——预告，制造期待，也让家长有话跟孩子聊。</li></ol>
+<p><strong>红线：家长端只做&quot;看得见&quot;，不做&quot;管得着&quot;。</strong></p>
+<ul><li>❌ 不提供：催办按钮、实时进度推送、&quot;孩子今天没读&quot;提醒、学习时长监控</li><li>✅ 只提供：周报、成长档案、可导出的作品集</li></ul>
+<p>理由：一旦家长端具备管控能力，孩子会立刻把产品识别为家长的延伸，然后放弃它——这正是 A3K 在美国被学生当作&quot;学校的工具&quot;而集体抵制的同一机制（<code>02</code> 第 3.3 节）。<strong>家长端的产品目标不是&quot;让家长管孩子&quot;，是&quot;让家长放心不管&quot;。</strong></p>
+<hr>
+<h2 id="s24">7. 「持续用就有提升」这句话，怎么兑现、怎么被证伪</h2>
+<p>这是本方案唯一需要严格约束表述的地方。</p>
+<h3 id="s25">7.1 传导链条与承诺边界</h3>
+<pre><code>持续使用 ──①──&gt; 阅读量与专注时长上升 ──②──&gt; 阅读能力提升 ──③──&gt; 语文成绩提升
+  我们能保证         我们能证明              我们能验证但需时间     不承诺</code></pre>
+<ul><li><strong>①②我们负责，③不承诺。</strong> A3K 的教训摆在那里：厂商宣称 3.5 倍增长，第三方 ESSA 给出的效应量是 +0.29，WWC 的改善指数只有 +3 到 +6 个百分位（<code>01</code> 第七节）。<strong>过度承诺换来的是家长的落差和差评。</strong></li><li>对外表述统一为：<strong>&quot;读得进去，说得出来，写得下来。&quot;</strong> 不出现任何提分承诺。</li></ul>
+<h3 id="s26">7.2 怎么自证（也怎么允许自己被证伪）</h3>
+<p><strong>用产品外的题验证产品内的效果。</strong></p>
+<ul><li>每季度一次<strong>盲测</strong>：给孩子一篇从未在产品内出现过的文本，做一套标准三层题。</li><li>对比的是<strong>同一个孩子三个月前的表现</strong>，不是别人的孩子。</li><li><strong>如果盲测不涨，就是产品无效，不能用系统内等级上涨来搪塞。</strong> 这一条要写进内部指标，也要敢于写进家长周报。</li></ul>
+<hr>
+<h2 id="s27">8. 定价、冷启动与 12 个月路线</h2>
+<h3 id="s28">8.1 定价</h3>
+<p><strong>499 元/年</strong>（月付 59 元，先给 14 天完整试用）。</p>
+<p>参照系（详见 <code>04</code>）：AI 学习机均价 3164 元、学而思伴读书房约 1600 元/期、豆神语文本 4999 元、A3K 中国团购 468 元/年。<strong>500 元是家长&quot;不用跟配偶商量就能决定&quot;的心理区间。</strong></p>
+<ul><li>不做课时包、不做班期、不做退费制（这些是学科培训的形式特征，合规上的自杀动作）。</li><li>硬件先不做。学习机赛道已被作业帮/学而思/讯飞占去 55%+ 份额，是渠道与供应链的战争。<strong>软件先证明留存，硬件是放大器不是获客手段。</strong></li></ul>
+<h3 id="s29">8.2 12 个月路线与验收标准</h3>
+<div class="tw"><table><thead><tr><th>阶段</th><th>做什么</th><th>只看这个指标</th></tr></thead><tbody><tr><td>M1–M3</td><td>五步闭环 + 50 篇内容（3 部名著 + 20 时文），单档支架</td><td><strong>次月留存 ≥35%</strong>，单次时长 12–15 分钟</td></tr><tr><td>M4–M6</td><td>三档支架 + 观点广场 + 家长周报</td><td><strong>付费转化 ≥5%</strong>，周报打开率 ≥50%</td></tr><tr><td>M7–M9</td><td>五维雷达 + 我的文库 + 首次季度盲测</td><td><strong>盲测三个月环比有进步的孩子 ≥50%</strong></td></tr><tr><td>M10–M12</td><td>内容补到 120 篇，年卡续费验证</td><td><strong>年度剂量达标率 ≥40%</strong>（对照 A3K 强制条件下的 8%）、<strong>续费率 ≥40%</strong></td></tr></tbody></table></div>
+<p><strong>任何一个阶段的验收标准都不是&quot;能力值增长&quot;。</strong> 先解决&quot;读下去&quot;，再谈&quot;读得好&quot;。</p>
+<hr>
+<h2 id="s30">9. 六个高风险点与对策</h2>
+<div class="tw"><table><thead><tr><th>#</th><th>风险</th><th>对策</th></tr></thead><tbody><tr><td>1</td><td><strong>AI 代写 L3</strong></td><td>强制&quot;文本证据&quot;字段（要从原文划线）；检测粘贴与秒答；L3 不计分只计&quot;有没有自己的话&quot;——<strong>没有分数就没有代写动机，这才是根治</strong></td></tr><tr><td>2</td><td><strong>名著切片被当成&quot;速成攻略&quot;</strong></td><td>切片不给情节梗概式总结，永远停在悬念处；周报明确写&quot;这是引子不是替代&quot;</td></tr><tr><td>3</td><td><strong>家长要分数</strong></td><td>首页永远先放&quot;孩子的原话&quot;再放数据；季度盲测报告作为唯一效果凭证；营销口径统一不提分</td></tr><tr><td>4</td><td><strong>观点广场出现不良内容</strong></td><td>先审后发 + 关键词拦截 + 举报；初期只放&quot;三条精选&quot;不做全量流；实名与未成年人保护合规成本必须预留</td></tr><tr><td>5</td><td><strong>内容生产跟不上</strong></td><td>单篇成本≤300 元、编辑+AI+终审流水线；名著线可预制（公版、不依赖时效），时文线保持每周更新</td></tr><tr><td>6</td><td><strong>免费 AI 冲击</strong></td><td>豆包爱学、夸克等已在开学季发放学生免费会员。<strong>付费理由不能是&quot;AI 帮你读懂&quot;，只能是：持续更新的原创内容 + 被设计出来的习惯 + 同龄人的存在。</strong> 这三样大模型给不了</td></tr></tbody></table></div>
+<hr>
+<h2 id="s31">10. 这个方案与 Achieve3000 的差异，一页看完</h2>
+<div class="tw"><table><thead><tr><th>维度</th><th>Achieve3000</th><th>读得深</th></tr></thead><tbody><tr><td>学科</td><td>英文非虚构</td><td>初中语文</td></tr><tr><td>核心问题</td><td>读不懂</td><td><strong>读不深</strong></td></tr><tr><td>分层对象</td><td>文本（12 版改写）</td><td><strong>支架（3 档密度），原文不动</strong></td></tr><tr><td>测什么</td><td>8 题选择，首答正确率</td><td><strong>三层追问，L3 不判对错</strong></td></tr><tr><td>读后</td><td>私下投票</td><td><strong>同龄人观点碰撞</strong></td></tr><tr><td>输出</td><td>每次一道思辨写作</td><td><strong>一句/三句/一段三档，可跳过</strong></td></tr><tr><td>沉淀</td><td>无</td><td><strong>我的文库，可导出作品集</strong></td></tr><tr><td>家长</td><td>白送账号也不用</td><td><strong>周报第一位放孩子原话，只看不管</strong></td></tr><tr><td>指标</td><td>蓝思值</td><td><strong>完成率 + 五维雷达，不给总分</strong></td></tr><tr><td>动机</td><td>老师布置 + 计入成绩</td><td><strong>内容可说性 + 同龄人 + 作品累积</strong></td></tr><tr><td>达标率</td><td>8%（强制条件下）</td><td>目标 40%（自愿条件下）</td></tr></tbody></table></div>
+<hr>
+<h2 id="s32">11. 与已有文档的关系</h2>
+<ul><li><code>01</code>/<code>02</code>：Achieve3000 的机制拆解与满意度真相，本方案的所有&quot;反面教材&quot;出自这里。</li><li><code>03</code>：并行会话产出的纯 C 端方案，在<strong>用户分层、主题系列化、每周节奏</strong>上更细，本方案在<strong>语文学科内核（支架分层、三层追问、名著切片）</strong>上更具体。<strong>两者不冲突，建议合读：<code>03</code> 是运营与用户侧，本篇是学科与内容侧。</strong></li><li><code>04</code>：合规红线与&quot;语文不能分级&quot;的论证，是本方案前提 1 和前提 3 的依据。</li></ul>
+<hr>
+<h2 id="s33">12. 资料来源</h2>
+<ul><li><a href="https://m.thepaper.cn/baijiahao_18036640" target="_blank" rel="noopener">义务教育语文课程标准（2022 年版）核心素养解读：文化自信 / 语言运用 / 思维能力 / 审美创造</a></li><li><a href="https://zhuanlan.zhihu.com/p/163642057" target="_blank" rel="noopener">统编版初中语文必读名著书目（12 部）</a></li><li><a href="https://www.sohu.com/a/892778201_121956425" target="_blank" rel="noopener">2025 中考语文阅读理解题型与能力要求（媒体分析，含非连续性文本占比上升）</a></li><li><a href="https://www.sina.cn/news/detail/5311873635587003.html" target="_blank" rel="noopener">多地 2026 中考语文题型变化：难度提升、立意灵活、传统模板失灵</a></li><li><a href="https://news.qq.com/rain/a/20260421A04BHN00" target="_blank" rel="noopener">第二十三次全国国民阅读调查：0–17 岁人均阅读 11.72 本、每天读纸书 36.82 分钟、数字化阅读接触率 75.9%</a></li><li><a href="https://www.nationalreading.gov.cn/wzzt/2025qmyddh/cgfb/202504/t20250424_892768.html" target="_blank" rel="noopener">第二十二次全国国民阅读调查成果发布（14–17 岁阅读量 13.73 本，各年龄段最高）</a></li><li><a href="https://xbjk.ecnu.edu.cn/CN/10.16382/j.cnki.1000-5560.2020.05.002" target="_blank" rel="noopener">PISA 阅读素养三个认知维度与中国学生表现（反思与评价为短板）</a></li><li><a href="http://www.moe.gov.cn/jyb_xwfb/moe_2082/zl_2019n/2019_zl94/201912/t20191204_410709.html" target="_blank" rel="noopener">教育部：PISA 经验——国际视野与本土探索</a></li><li><a href="https://www.cac.gov.cn/2024-11/15/c_1733364304749288.htm" target="_blank" rel="noopener">国家网信办：移动互联网未成年人模式建设指南（16 岁以下每日 1 小时）</a></li><li><a href="http://www.moe.gov.cn/srcsite/A16/moe_784/201908/t20190829_396505.html" target="_blank" rel="noopener">教育部等八部门：关于引导规范教育移动互联网应用有序健康发展的意见</a></li><li>其余 Achieve3000 与市场数据来源见 <code>01</code>、<code>02</code>、<code>04</code> 三篇文档</li></ul><div class="foot">读得深 · 中学生阅读产品项目资料 · 2026-09<br>内部工作稿，对外公开仅为便于评审；文中数字与结论多为待验证建议，非承诺<br>名著与古诗文为公有领域作品，原文取自维基文库；原创选文版权自持<br><a href="./">返回目录</a></div></div></body></html>
