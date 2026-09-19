@@ -21,7 +21,7 @@ DOCS=[
  ("06-初一首月阅读训练量与分地区内容规格.md","06","初一首月训练量与分地区内容规格","首月 12＋4＋16 的量与排布；分地区部分首版不实施，见 10"),
  ("07-有效性审查-按机制逐件审.md","07","有效性审查：按机制逐件审","七个零件逐件对证据；一处对 05 的自我纠正"),
  ("08-首月内容库-选文与练习.md","08","首月内容库：选文与练习","16 篇选文全文 ＋ 120 道练习，可直接投产"),
- ("09-阅读问题诊断与可训练提升方案.md","09","阅读问题诊断与可训练提升方案","并行会话产出：三道闸门、17 个微技能、6 种画像处方"),
+ ("09-阅读问题诊断与可训练提升方案.md","09","阅读问题诊断与可训练提升方案","三道闸门、17 个微技能、6 种画像处方；配可试玩 Demo"),
  ("10-去掉地区分版本-首版收敛决定.md","10","去掉地区分版本：首版收敛决定","决策记录：去掉了什么、为什么、代价、什么条件下加回来"),
 ]
 
@@ -125,13 +125,14 @@ hub = f"""<div class="hero">
 <span class="tag">项目资料 · 2026-09</span>
 <h1>读得深</h1>
 <p class="lead">面向 C 端的初中语文阅读能力产品 —— 从 Achieve3000 竞品拆解，到可投产的首月内容库。</p>
-<p style="font-size:13.5px;color:var(--ink-muted)">11 份文档 · 2 个可交互 Demo · 16 篇选文 · 120 道练习</p>
+<p style="font-size:13.5px;color:var(--ink-muted)">11 份文档 · 3 个可交互 Demo · 16 篇选文 · 120 道练习</p>
 </div>
 
 <div class="notice">这是一组<strong>内部工作稿</strong>，公开仅为便于评审。文中的定价、内容量、各项指标均为<strong>待验证建议，不是承诺</strong>；效果数据凡来自厂商宣称的均已标注。</div>
 
 <div class="sec-h">可交互 Demo</div>
 <div class="cards two">
+  <a class="card" href="https://pumo0926-cpu.github.io/dudeshen-diagnose-demo/"><div class="k">分诊 · 新</div><b>三道闸门：初一分诊与训练</b><span>走一遍 20 分钟分诊，判出六种画像之一，再领一份 15 分钟训练块（对应文档 09）</span></a>
   <a class="card" href="https://pumo0926-cpu.github.io/dudeshen-reading-h5/"><div class="k">产品方案</div><b>五步法方案 H5</b><span>猜·读·问·辨·写的完整设计，含 Achieve3000 对照与承诺边界</span></a>
   <a class="card" href="https://pumo0926-cpu.github.io/dudeshen-month-demo/"><div class="k">月度 Demo</div><b>初一首月训练</b><span>16 篇选文全部可读，可走完整五步；首版不分地区</span></a>
 </div>

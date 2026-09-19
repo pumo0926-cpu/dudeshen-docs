@@ -3,10 +3,11 @@
 **在线阅读：** https://pumo0926-cpu.github.io/dudeshen-docs/
 
 面向 C 端的初中语文阅读能力产品 —— 从 Achieve3000 竞品拆解，到可投产的首月内容库。
-10 份文档 · 2 个可交互 Demo · 16 篇选文 · 168 道练习。
+10 份文档 · 3 个可交互 Demo · 16 篇选文 · 168 道练习。
 
 ## 可交互 Demo
 
+- **三道闸门：初一分诊与训练**（对应文档 09）— https://pumo0926-cpu.github.io/dudeshen-diagnose-demo/
 - **五步法方案 H5** — https://pumo0926-cpu.github.io/dudeshen-reading-h5/
 - **初一首月训练 Demo** — https://pumo0926-cpu.github.io/dudeshen-month-demo/
 
