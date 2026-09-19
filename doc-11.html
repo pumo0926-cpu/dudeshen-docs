@@ -1,0 +1,130 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>初中生体验的最大流失风险 · 读得深</title>
+<meta name="theme-color" content="#f9f9f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)">
+<style>
+:root{color-scheme:light dark;--plane:#f9f9f7;--surface:#fcfcfb;--surface-2:#f3f2ef;
+--ink:#0b0b0b;--ink-2:#52514e;--ink-muted:#898781;--grid:#e1e0d9;--axis:#c3c2b7;
+--border:rgba(11,11,11,.10);--accent:#2a78d6;--accent-soft:#86b6ef;--wash:#eaf2fd;--r:14px}
+@media (prefers-color-scheme:dark){:root{--plane:#0d0d0d;--surface:#1a1a19;--surface-2:#232321;
+--ink:#fff;--ink-2:#c3c2b7;--ink-muted:#898781;--grid:#2c2c2a;--axis:#383835;
+--border:rgba(255,255,255,.10);--accent:#3987e5;--accent-soft:#6da7ec;--wash:#141c26}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{background:var(--plane);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px 80px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.top{position:sticky;top:0;z-index:9;background:var(--plane);border-bottom:1px solid var(--border);padding:12px 18px;margin:0 -18px 0}
+.top .in{max-width:720px;margin:0 auto;display:flex;align-items:center;gap:12px;font-size:13.5px}
+.top b{font-weight:680;font-size:15px}
+.top .sp{flex:1}
+h1{font-size:30px;font-weight:700;letter-spacing:-.01em;line-height:1.3;margin:30px 0 12px}
+h2{font-size:21px;font-weight:660;margin:34px 0 10px;padding-top:6px;border-top:1px solid var(--grid)}
+h3{font-size:17px;font-weight:640;margin:24px 0 8px}
+h4{font-size:15px;font-weight:620;margin:18px 0 6px;color:var(--ink-2)}
+p{margin:0 0 14px;color:var(--ink-2)}
+strong{color:var(--ink);font-weight:620}
+hr{border:0;border-top:1px solid var(--grid);margin:26px 0}
+blockquote{margin:0 0 16px;padding:12px 16px;background:var(--surface);border-left:3px solid var(--accent-soft);border-radius:0 10px 10px 0;color:var(--ink-2);font-size:15px}
+blockquote strong{color:var(--ink)}
+ul,ol{margin:0 0 16px;padding-left:22px;color:var(--ink-2)}
+li{margin:0 0 6px}
+code{background:var(--surface-2);border-radius:5px;padding:1px 5px;font-size:13.5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+pre{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px;overflow-x:auto;margin:0 0 16px}
+pre code{background:none;padding:0;font-size:12.5px;line-height:1.7}
+.tw{overflow-x:auto;margin:0 0 18px;border:1px solid var(--border);border-radius:var(--r);background:var(--surface)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--grid);color:var(--ink-2);vertical-align:top}
+th{font-size:12px;color:var(--ink-muted);font-weight:560;white-space:nowrap;background:var(--surface-2)}
+tr:last-child td{border-bottom:0}
+td strong{color:var(--ink)}
+.toc{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 18px;margin:20px 0 28px}
+.toc b{font-size:12px;letter-spacing:.14em;color:var(--ink-muted);text-transform:uppercase;display:block;margin-bottom:8px}
+.toc a{display:block;font-size:14px;padding:3px 0;color:var(--ink-2)}
+.toc a:hover{color:var(--accent)}
+.notice{background:var(--wash);border-radius:10px;padding:11px 14px;font-size:13px;color:var(--ink-2);margin:18px 0}
+.foot{border-top:1px solid var(--grid);margin-top:40px;padding-top:20px;font-size:12.5px;color:var(--ink-muted);line-height:1.9}
+/* hub */
+.hero{padding:44px 0 6px}
+.hero .tag{display:inline-block;font-size:12.5px;color:var(--ink-muted);border:1px solid var(--border);border-radius:999px;padding:4px 12px;background:var(--surface)}
+.hero h1{font-size:38px;margin:16px 0 10px}
+.lead{font-size:17px;color:var(--ink-2);margin:0 0 6px}
+.cards{display:grid;gap:12px;margin:14px 0 8px}
+@media(min-width:560px){.cards.two{grid-template-columns:1fr 1fr}}
+.card{display:block;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px;color:inherit}
+.card:hover{border-color:var(--accent-soft);text-decoration:none}
+.card .k{font-size:11.5px;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:6px}
+.card b{display:block;font-size:16.5px;font-weight:640;margin-bottom:4px;color:var(--ink)}
+.card span{font-size:13.5px;color:var(--ink-muted);line-height:1.7}
+.doc{display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;color:inherit}
+.doc:hover{border-color:var(--accent-soft);text-decoration:none}
+.doc .n{flex:0 0 40px;height:40px;border-radius:10px;background:var(--wash);color:var(--accent);display:grid;place-items:center;font-weight:700;font-size:14px}
+.doc .t{flex:1;min-width:0}
+.doc .t b{display:block;font-size:15.5px;font-weight:620;color:var(--ink)}
+.doc .t span{font-size:13px;color:var(--ink-muted)}
+.sec-h{font-size:12px;letter-spacing:.14em;color:var(--ink-muted);text-transform:uppercase;margin:34px 0 10px}
+</style></head><body><div class="top"><div class="in"><a href="./">‹ 读得深 · 项目资料</a><span class="sp"></span><span style="color:var(--ink-muted)">11</span></div></div><div class="wrap"><div class="notice">原始文件：<code>11-初中生体验的最大流失风险.md</code> · <a href="md/11-初中生体验的最大流失风险.md">下载 Markdown</a></div><div class="toc"><b>本篇目录</b><a href="#s2">0. 结论</a><a href="#s3">1. 先把真实负担量出来</a><a href="#s7">2. 风险点排序</a><a href="#s8">3. 为什么第 3 步最致命：三件事叠在同一屏</a><a href="#s12">4. 最小改动方案：把输入框从 6 个降到 1 个</a><a href="#s13">5. 怎么验证这个判断，而不是相信它</a><a href="#s14">6. 不建议做的三件事</a><a href="#s15">7. 一句话</a></div><h1 id="s1">初中生走完这套体验，最容易在哪一步走不下去</h1>
+<blockquote>日期：2026-09-19 ｜ 审查对象：已发布的初一首月 Demo（<code>h5-month-demo</code>）与内容库 <code>content/month01.json</code><br>本篇的数字全部从<strong>已交付的产物</strong>里量出来，不是估的。凡估算均标注【估】。</blockquote>
+<hr>
+<h2 id="s2">0. 结论</h2>
+<p><strong>最大的风险点是第 3 步「问」。</strong></p>
+<p>不是内容不好，不是时长太长，是<strong>这一步把「读完了」的成就感，直接换成了六个空白输入框和两个灰掉的按钮，中间没有任何一次「我做对了」。</strong></p>
+<p>一篇精读里：</p>
+<div class="tw"><table><thead><tr><th></th><th>数量</th></tr></thead><tbody><tr><td>需要手打的输入框</td><td><strong>6 个</strong>（L1×3 ＋ L2×2 ＋ L3×1）</td></tr><tr><td>系统给出的即时对错反馈</td><td><strong>0 次</strong></td></tr><tr><td>会变灰、挡住去路的按钮</td><td><strong>2 个</strong>（L3 未满 30 字或未挂证据；写作未满 15 字）</td></tr></tbody></table></div>
+<p><strong>反馈密度为零，而摩擦密度是每篇 6 次输入、2 道硬门槛。</strong> 这是一个 12 岁孩子在自愿状态下最典型的退出位置。</p>
+<hr>
+<h2 id="s3">1. 先把真实负担量出来</h2>
+<h3 id="s4">1.1 全月</h3>
+<div class="tw"><table><thead><tr><th>项</th><th>实测</th></tr></thead><tbody><tr><td>阅读总量</td><td><strong>16,689 字</strong>（精读与切片 14,870 ＋ 周测新文本 1,819）</td></tr><tr><td>需要手打的输入框</td><td><strong>156 个</strong>（精读 104 ＋ 周测 52）</td></tr><tr><td>最低必打字数（仅算硬门槛）</td><td><strong>720 字</strong>（16 篇 ×（L3 30 字 ＋ 写作 15 字））</td></tr><tr><td>硬门槛次数</td><td><strong>32 次</strong></td></tr></tbody></table></div>
+<blockquote>720 字只是<strong>下限</strong>——那是每篇只写「刚好 30 字 ＋ 刚好 15 字」、其余四个框全部留空的极端走法。按每个框平均 20 字估，实际打字量在 <strong>3,000 字上下</strong>【估】。</blockquote>
+<h3 id="s5">1.2 单篇（以 2-1《外婆的樟木箱》为例，1018 字）</h3>
+<p>从 Demo 里实测的页面高度（390px 宽视口）：</p>
+<div class="tw"><table><thead><tr><th>步骤</th><th>页面高度</th><th>相当于</th><th>学生要做什么</th></tr></thead><tbody><tr><td>读</td><td><strong>2,463 px</strong></td><td>约 3 屏</td><td>滑动阅读</td></tr><tr><td>问</td><td><strong>1,636 px</strong></td><td>约 2.5 屏</td><td><strong>6 个空框，逐个手打</strong></td></tr><tr><td>辨</td><td>约 1 屏</td><td></td><td>看</td></tr><tr><td>写</td><td>约 1 屏</td><td></td><td>再打一次</td></tr></tbody></table></div>
+<p><strong>读完之后要翻 2.5 屏的空白输入框。</strong> 这一屏一屏往下滑、每一格都要自己填的观感，是整个流程里体验落差最大的地方。</p>
+<h3 id="s6">1.3 时间【估】</h3>
+<p>按新课标第四学段「默读一般现代文每分钟不少于 500 字」作下限，精读带注释按 300 字/分：</p>
+<div class="tw"><table><thead><tr><th>步骤</th><th>估时</th></tr></thead><tbody><tr><td>读 1,000 字</td><td>3 分钟</td></tr><tr><td>L1 ×3（回翻找信息＋打字）</td><td>3.5 分钟</td></tr><tr><td>L2 ×2（分析＋打字）</td><td>4 分钟</td></tr><tr><td>L3（形成观点＋30 字＋选证据）</td><td>3.5 分钟</td></tr><tr><td>辨 ＋ 写</td><td>2.5 分钟</td></tr><tr><td><strong>合计</strong></td><td><strong>约 16.5 分钟</strong></td></tr></tbody></table></div>
+<p>对照宣称的 12–15 分钟，<strong>在一切顺利、每题只写二十来字、一次不卡壳的前提下</strong>，已经顶到上沿。任何一次卡壳都会溢出。</p>
+<hr>
+<h2 id="s7">2. 风险点排序</h2>
+<div class="tw"><table><thead><tr><th>#</th><th>风险</th><th>性质</th><th>严重度</th></tr></thead><tbody><tr><td><strong>1</strong></td><td><strong>第 3 步 6 个输入框 ＋ 0 反馈</strong></td><td>体验断崖</td><td>🔴 <strong>最高</strong></td></tr><tr><td>2</td><td>L3 的硬门槛（30 字＋必挂证据）卡住就过不去</td><td>硬阻断</td><td>🔴 高</td></tr><tr><td>3</td><td>全程没有一次「我做对了」的确认</td><td>动机缺失</td><td>🟠 高</td></tr><tr><td>4</td><td>名著切片 1,200–1,300 字，且是民国白话</td><td>阅读门槛</td><td>🟡 中</td></tr><tr><td>5</td><td>单次实际 16.5 分钟，比宣称多 10–35%</td><td>预期偏差</td><td>🟡 中</td></tr></tbody></table></div>
+<hr>
+<h2 id="s8">3. 为什么第 3 步最致命：三件事叠在同一屏</h2>
+<h3 id="s9">3.1 设计说的是客观题，交付的是简答题</h3>
+<p><code>05</code> 和 <code>08</code> 里写得很清楚：</p>
+<blockquote><strong>L1 读到了什么</strong> ｜ 题型：<strong>客观题</strong> ｜ 判分：<strong>自动</strong></blockquote>
+<p>但 Demo 里 L1 渲染成了<strong>简答 ＋「对照判分口径」自评</strong>。页面上还诚实地标了一句「本 demo 中以简答形式呈现；正式产品里 L1 为可自动判分的客观题」。</p>
+<p><strong>问题是：现在孩子体验到的就是简答版，而且它比设计版难得多。</strong> 原本最容易给正反馈、最容易秒过的一步，成了打字最多的一步。</p>
+<h3 id="s10">3.2 把唯一能产生「我做对了」的地方删掉了</h3>
+<p>L1 是全流程里唯一有标准答案的环节。它一旦变成简答自评，整篇就<strong>一次确定的正反馈都不存在</strong>：</p>
+<ul><li>L1／L2：自己点「对照要点」，自己判断自己对不对</li><li>L3：设计上就<strong>不判对错</strong>（这是对的，不能改）</li><li>写：只数字数</li></ul>
+<p>一个 12 岁的孩子，读了 1,000 字、打了六次字，系统从头到尾没有对他说过一次「对」。</p>
+<p><strong>这正是 Achieve3000 唯一做对的那件事</strong>——它的 8 道选择题虽然被学生骂无聊，但每道题都立刻告诉你对错。而它在<strong>学校强制、计入成绩</strong>的条件下，年度剂量达标率仍只有 8%（<code>02</code> §3.5）。</p>
+<blockquote><strong>我们的摩擦比它高，约束比它弱。拿 8% 当参照，自愿状态下的完成率只会更低。</strong></blockquote>
+<h3 id="s11">3.3 两道灰按钮，位置都在最难的地方</h3>
+<ul><li><strong>L3</strong>：<code>≥30 字</code> <strong>且</strong> <code>已选证据</code>，两个条件都满足按钮才亮。而 L3 是开放题，卡住时连「照着要点抄」都不行——要点是判分口径，不是答案。</li><li><strong>写</strong>：轻档 <code>≥15 字</code>，按钮显示「还差 N 字」。</li></ul>
+<p>这两道门是 <code>07</code> 的结论要求的（效应量最大的零件不能做成选项），<strong>方向没错，但现在它们是流程里仅有的两个反馈信号，而且都是负向的</strong>：不是「你做到了」，是「你还差」。</p>
+<hr>
+<h2 id="s12">4. 最小改动方案：把输入框从 6 个降到 1 个</h2>
+<p>不动内容、不动五步结构、不动 L3 的门槛（那是效应量最大的一环）。只改题型形态：</p>
+<div class="tw"><table><thead><tr><th>层</th><th>现在</th><th>改成</th><th>效果</th></tr></thead><tbody><tr><td><strong>L1 ×3</strong></td><td>简答 ＋ 自评</td><td><strong>客观题</strong>（选择／排序／判断），点选即判对错</td><td>打字 3→0，反馈 0→3</td></tr><tr><td><strong>L2 ×2</strong></td><td>简答 ＋ 自评</td><td><strong>选择 ＋ 选填一句理由</strong>（理由不卡门槛）</td><td>打字 2→0（可选）</td></tr><tr><td><strong>L3 ×1</strong></td><td>简答 ＋ 30 字 ＋ 证据</td><td><strong>不变</strong></td><td>唯一的开放框</td></tr><tr><td><strong>写</strong></td><td>15 字</td><td><strong>不变</strong></td><td></td></tr></tbody></table></div>
+<p>改完之后：</p>
+<div class="tw"><table><thead><tr><th></th><th>现在</th><th>改后</th></tr></thead><tbody><tr><td>必须手打的框</td><td>6</td><td><strong>1</strong></td></tr><tr><td>即时对错反馈</td><td>0 次</td><td><strong>5 次</strong></td></tr><tr><td>第一次正反馈出现在</td><td>从来没有</td><td><strong>读完后约 30 秒</strong></td></tr></tbody></table></div>
+<p><strong>再加一个出口</strong>：L3 卡住超过 60 秒，允许先看一条同龄人观点作为脚手架（现在是提交后才解锁）。这不会削弱「必须自己写」——看完仍要自己写 30 字并挂证据，但把「一个字都憋不出来」变成「有个起点」。</p>
+<p><strong>改造成本</strong>：给 L1／L2 补选项，共 <strong>72 题</strong>（12 篇 ×5 ＋ 4 切片 ×3）。判分要点已经写好了，选项是从要点反向出的，<strong>不需要重写内容</strong>。按现有单题成本口径【估】约 40 元/题，合计 <strong>≈ 2,900 元</strong>。</p>
+<blockquote>这和 <code>07</code> 不冲突。<code>07</code> 说不能砍的是<strong>「写」和 L3</strong>；L1／L2 改客观题恰恰是<strong>回到 <code>05</code> 的原始设计</strong>，不是让步。</blockquote>
+<hr>
+<h2 id="s13">5. 怎么验证这个判断，而不是相信它</h2>
+<p>上面全是机制推理，<strong>没有一个真实用户数据</strong>。要确认第 3 步是不是真的最大流失点，只需要一件事：</p>
+<p><strong>分步埋点，看漏斗。</strong></p>
+<div class="tw"><table><thead><tr><th>埋点</th><th>事件</th></tr></thead><tbody><tr><td><code>step_enter</code></td><td>进入第 N 步</td></tr><tr><td><code>step_exit</code></td><td>离开第 N 步（完成 / 退出）</td></tr><tr><td><code>l3_stuck</code></td><td>L3 聚焦后 60 秒内字数 &lt; 10</td></tr><tr><td><code>gate_block</code></td><td>主按钮为灰态时被点击（学生尝试过但过不去）</td></tr></tbody></table></div>
+<p><strong><code>gate_block</code> 是最有价值的一个</strong>——它直接数出「想走走不了」的次数。</p>
+<p><strong>判定标准</strong>：首批 30 个孩子跑完两周，如果第 3 步的 <code>step_exit(退出)</code> 占比不是最高，本篇的结论就是错的，按数据改。</p>
+<hr>
+<h2 id="s14">6. 不建议做的三件事</h2>
+<ol><li><strong>不要降低 L3 的 30 字门槛。</strong> 这是全流程唯一有实证支撑的动作（写作回应文本 ＋0.40 SD，<code>07</code> §2）。要降的是<strong>周围的摩擦</strong>，不是它本身。</li><li><strong>不要加打卡、连续天数、积分。</strong> <code>05</code> §5 已论证：断一次就永久流失，且与教育类应用的监管导向相悖。</li><li><strong>不要靠「家长监督」补完成率。</strong> <code>05</code> §6 的红线——家长端一旦能管控，孩子会把产品识别成家长的延伸然后放弃它。</li></ol>
+<hr>
+<h2 id="s15">7. 一句话</h2>
+<p><strong>内容已经能跑完了，卡住的是形式。</strong> 六个空白输入框和零次「对」，是这套体验里最可能让一个初中生停在第一周的地方——而修它不需要动内容，只需要把三道事实题改回可以点选的样子。</p><div class="foot">读得深 · 中学生阅读产品项目资料 · 2026-09<br>内部工作稿，对外公开仅为便于评审；文中数字与结论多为待验证建议，非承诺<br>名著与古诗文为公有领域作品，原文取自维基文库；原创选文版权自持<br><a href="./">返回目录</a></div></div></body></html>
