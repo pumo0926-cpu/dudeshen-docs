@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>去掉地区分版本：首版收敛决定 · 读得深</title>
+<title>地区差异与首版收敛决定 · 读得深</title>
 <meta name="theme-color" content="#f9f9f7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)">
 <style>
@@ -65,42 +65,60 @@ td strong{color:var(--ink)}
 .doc .t b{display:block;font-size:15.5px;font-weight:620;color:var(--ink)}
 .doc .t span{font-size:13px;color:var(--ink-muted)}
 .sec-h{font-size:12px;letter-spacing:.14em;color:var(--ink-muted);text-transform:uppercase;margin:34px 0 10px}
-</style></head><body><div class="top"><div class="in"><a href="./">‹ 读得深 · 项目资料</a><span class="sp"></span><span style="color:var(--ink-muted)">10</span></div></div><div class="wrap"><div class="notice">原始文件：<code>10-去掉地区分版本-首版收敛决定.md</code> · <a href="md/10-去掉地区分版本-首版收敛决定.md">下载 Markdown</a></div><div class="toc"><b>本篇目录</b><a href="#s2">0. 一句话</a><a href="#s3">1. 去掉了什么</a><a href="#s4">2. 为什么现在去掉</a><a href="#s9">3. 代价：老实说三条</a><a href="#s10">4. 什么条件下加回来</a><a href="#s11">5. 已落地清单</a></div><h1 id="s1">去掉地区分版本：首版收敛决定</h1>
-<blockquote>日期：2026-09-19 ｜ 决定：<strong>首版不做按地区分版本</strong><br>影响文档：<code>06</code>（分析保留、首版不实施）、<code>08</code>（已改）、<code>content/month01.json</code>（已改）、初一首月 Demo（已改）<br>本篇是<strong>决策记录</strong>，不是新分析。记清楚：去掉了什么、为什么、代价是什么、什么条件下再加回来。</blockquote>
+</style></head><body><div class="top"><div class="in"><a href="./">‹ 读得深 · 项目资料</a><span class="sp"></span><span style="color:var(--ink-muted)">10</span></div></div><div class="wrap"><div class="notice">原始文件：<code>10-地区差异与首版收敛决定.md</code> · <a href="md/10-地区差异与首版收敛决定.md">下载 Markdown</a></div><div class="toc"><b>本篇目录</b><a href="#s2">0. 先更正一个说法：不存在「版本」问题</a><a href="#s3">0.1 一句话结论</a><a href="#s4">1. 去掉了什么</a><a href="#s5">2. 为什么现在不做</a><a href="#s10">3. 代价：老实说三条</a><a href="#s11">4. 什么条件下加回来</a><a href="#s12">5. 已落地清单</a><a href="#s13">6. 同日的第二处更正：课内篇目要放原文</a><a href="#s14">7. 已落地清单（含同日第二次修订）</a></div><h1 id="s1">地区差异与首版收敛决定</h1>
+<blockquote>日期：2026-09-19（当日修订）｜ 决定：<strong>首版不按地区出分支</strong><br>影响文档：<code>06</code>（分析保留、首版不实施）、<code>08</code>（已改）、<code>content/month01.json</code>（已改）、初一首月 Demo（已改）<br>本篇是<strong>决策记录</strong>，不是新分析。记清楚：去掉了什么、为什么、代价是什么、什么条件下再加回来。</blockquote>
 <hr>
-<h2 id="s2">0. 一句话</h2>
-<p><strong>地区差异是真的，但在初一这个阶段，它值不回四倍的题目量和四套周测。</strong></p>
+<h2 id="s2">0. 先更正一个说法：不存在「版本」问题</h2>
+<p>本篇初稿（以及 <code>06</code>）反复用「地区分版本／本地化版本」这个词，<strong>用错了</strong>。</p>
+<ul><li><strong>初中语文教材全国统一</strong>：统编版（教育部统一组织编写、人民教育出版社出版）自 <strong>2017 年秋季学期</strong>起在小学一年级和初中一年级统一使用，<strong>2019 年实现各年级全覆盖</strong>。不存在「地区用不同教材版本」这回事。</li><li><strong>真正有差异的是出题风格</strong>，而且发生在<strong>各地的月考、期中、期末</strong>这一层：同样的考点，北京的卷子和成都的卷子长得不一样——题型顺序、配分比例、情境包装不同。</li><li>换句话说：<strong>考点是同一套，差的是卷子的口味。</strong></li></ul>
+<p>这个更正<strong>让原结论更站得住</strong>，而不是推翻它：既然考点全国统一，那么首版按地区分四套题壳，买到的只是「卷子口味像不像」，而不是「练的内容对不对」。</p>
+<hr>
+<h2 id="s3">0.1 一句话结论</h2>
+<p><strong>出题风格的地区差异是真的，但在初一这个阶段，它值不回四倍的题目量和四套周测。</strong></p>
 <p>保留判断（<code>06</code> 的分析一个字没删），只是首版不实施。</p>
 <hr>
-<h2 id="s3">1. 去掉了什么</h2>
-<div class="tw"><table><thead><tr><th></th><th>原设计</th><th>首版</th></tr></thead><tbody><tr><td>卷型集群</td><td>京津冀 / 沪 / 苏浙粤 / 川渝鄂，<strong>4 套</strong></td><td><strong>无</strong></td></tr><tr><td>每篇第 7 题</td><td>4 道（每集群 1 道）</td><td><strong>1 道</strong></td></tr><tr><td>周测</td><td>4 套地区卷型 × 4 周 = <strong>16 套</strong></td><td><strong>1 套通用卷型 × 4 周 = 4 套</strong></td></tr><tr><td>首月练习总量</td><td><strong>168 题</strong></td><td><strong>120 题</strong>（三层追问 88 ＋ 第 7 题 16 ＋ 晨读 16）</td></tr><tr><td>产品前端</td><td>顶部地区切换器</td><td><strong>无切换器</strong></td></tr></tbody></table></div>
+<h2 id="s4">1. 去掉了什么</h2>
+<div class="tw"><table><thead><tr><th></th><th>原设计</th><th>首版</th></tr></thead><tbody><tr><td>出题风格集群</td><td>京津冀 / 沪 / 苏浙粤 / 川渝鄂，<strong>4 套题壳</strong></td><td><strong>无</strong></td></tr><tr><td>每篇第 7 题</td><td>4 道（每集群 1 道）</td><td><strong>1 道</strong></td></tr><tr><td>周测</td><td>4 套地区卷型 × 4 周 = <strong>16 套</strong></td><td><strong>1 套通用卷型 × 4 周 = 4 套</strong></td></tr><tr><td>首月练习总量</td><td><strong>168 题</strong></td><td><strong>120 题</strong>（三层追问 88 ＋ 第 7 题 16 ＋ 晨读 16）</td></tr><tr><td>产品前端</td><td>顶部地区切换器</td><td><strong>无切换器</strong></td></tr></tbody></table></div>
 <p><strong>第 7 题怎么定的</strong>：统一取原 A 版——它在 16 篇里有 14 篇本来就是<strong>跨篇／跨材料的关联题</strong>，正好是 <code>07</code> 要求强化的知识线。唯一例外是 4-2《秋天的叶子为什么会变色》，改取原 D 版（与本周晨读《行军九日思长安故园》对读，比较科学解释与诗歌表达），比原 A 版的流程图更有价值。</p>
 <hr>
-<h2 id="s4">2. 为什么现在去掉</h2>
-<h3 id="s5">2.1 这层差异在初一本来就最薄</h3>
+<h2 id="s5">2. 为什么现在不做</h2>
+<h3 id="s6">2.1 这层差异在初一本来就最薄（而且只是风格差异）</h3>
 <p><code>06</code> §2 自己写过一句限定，现在它变成了主要理由：</p>
 <blockquote>上表的结构特征来自各地<strong>中考</strong>。初一的月考/期中由本校或区教研组命题，是中考卷型的「降维版」——议论文一般不考，文言只考课内。<strong>所以初一阶段的地区差异主要体现在题型外壳与配分，而不是考点范围。</strong></blockquote>
+<p>再叠上「教材全国统一」这个事实，结论只会更硬：<strong>考点同一套，教材同一本，差的只有卷子的排法。</strong></p>
 <p><strong>能力层面四个集群练的是同一批东西。</strong> 差的只是卷子长什么样——而首版要验证的是「孩子读不读得下去」，不是「卷子像不像」。</p>
-<h3 id="s6">2.2 成本不在选文，在题目和周测</h3>
+<h3 id="s7">2.2 成本不在选文，在题目和周测</h3>
 <p><code>06</code> 的三层拆法（选文共用／题组分区／卷型分区）确实把内容成本从 4 倍压回了 1 倍。但压不掉的部分仍然摆在那里：</p>
 <div class="tw"><table><thead><tr><th>项目</th><th>分地区</th><th>不分地区</th><th>差额</th></tr></thead><tbody><tr><td>地区加练题</td><td>48 道 × 40 元 = 1,920</td><td>16 道 × 40 元 = 640</td><td>−1,280</td></tr><tr><td>周测卷</td><td>16 套 × 300 元 = 4,800</td><td>4 套 × 300 元 = 1,200</td><td>−3,600</td></tr><tr><td><strong>首月内容成本</strong></td><td><strong>≈ 13,200 元</strong></td><td><strong>≈ 8,300 元</strong></td><td><strong>−37%</strong></td></tr></tbody></table></div>
 <p>更贵的是<strong>每学期都要重做一次</strong>：<code>06</code> §6.3 的《题型配方表》是四份，每学期各更新一次，采集量 4 × 20 套卷。</p>
-<h3 id="s7">2.3 首版用户密度撑不起四个集群</h3>
+<h3 id="s8">2.3 首版用户密度撑不起四个集群</h3>
 <p>四个集群意味着任何一个地区的用户都只拿到全部内容的一部分体验，而我们<strong>在每个集群里的样本都会小到看不出问题</strong>。<code>07</code> §6 设计的 A/B 对照实验要求每组约 175 人；如果再按地区切四份，首版根本跑不出可信结论。</p>
 <p><strong>先把一套内容跑到有统计意义，再谈分版本。</strong></p>
-<h3 id="s8">2.4 它不在最有效的三个零件里</h3>
+<h3 id="s9">2.4 它不在最有效的三个零件里</h3>
 <p><code>07</code> 逐件审过七个零件，地区题壳<strong>一件都不沾</strong>：</p>
 <ul><li>最强的三件是「写」「三层追问」「知识建构」</li><li>地区加练题属于题型外壳，对理解力本身没有证据支撑</li><li>而把它去掉，反而让第 7 题统一成了<strong>关联题</strong>——直接加强了排第四的「知识建构」</li></ul>
 <p><strong>去掉一个没有证据的零件，顺手加强了一个有证据的零件。</strong></p>
 <hr>
-<h2 id="s9">3. 代价：老实说三条</h2>
+<h2 id="s10">3. 代价：老实说三条</h2>
 <ol><li><strong>家长的「像不像我们这儿的卷子」这个卖点没有了。</strong> <code>06</code> 里写过，周测是家长唯一会逐项核对的东西。去掉之后，这条说服路径关闭，首版只能靠内容本身和孩子的输出说话。</li><li><strong>对初三、对临考家庭吸引力下降。</strong> 越接近中考，卷型一致性越值钱。首版因此更适合初一、初二上。</li><li><strong>重新加回来有沉没成本。</strong> 若 v2 恢复，已产出的 120 题要重新配 4 套题壳，且《题型配方表》的采集要从头做。<strong>但这部分成本本来就无法提前省下</strong>——提前做反而是提前浪费。</li></ol>
 <hr>
-<h2 id="s10">4. 什么条件下加回来</h2>
+<h2 id="s11">4. 什么条件下加回来</h2>
 <p>三个条件<strong>同时</strong>满足再开 v2：</p>
 <ol><li><strong>首版留存与完成率跑通</strong>：次月留存 ≥35%、年度剂量达标率 ≥40%（<code>05</code> §8 的既定门槛）。</li><li><strong>单一地区用户密度够</strong>：任一集群内付费用户 ≥500，能支撑该集群独立看数据。</li><li><strong>家长侧出现真实拉力</strong>：来自本地家长的「卷型不一样」反馈成为退订／不续费的前三位原因。</li></ol>
-<p>在此之前，<code>06</code> 里那套分析原样躺着，不删不改——<strong>它是一份已经做好的 v2 设计，不是废稿。</strong></p>
+<p>在此之前，<code>06</code> 里那套分析原样躺着，不删不改——<strong>它是一份已经做好的 v2 设计，不是废稿。</strong> 只需记住：它要解决的是<strong>出题风格</strong>，不是教材版本。</p>
 <hr>
-<h2 id="s11">5. 已落地清单</h2>
+<h2 id="s12">5. 已落地清单</h2>
 <div class="tw"><table><thead><tr><th>#</th><th>项</th><th>状态</th></tr></thead><tbody><tr><td>1</td><td><code>content/month01.json</code>：<code>regional</code> 四选一 → <code>extra</code> 单题；删 <code>regions</code>；补 <code>regions_removed</code> 决策留痕</td><td>✅</td></tr><tr><td>2</td><td><code>08</code> 内容库：16 处「地区加练」四行表 → 单题；交付清单与质检清单同步</td><td>✅</td></tr><tr><td>3</td><td><code>06</code>：顶部加状态横幅，分地区部分标为 v2 备选设计</td><td>✅</td></tr><tr><td>4</td><td>初一首月 Demo：去掉地区切换器、地区周测、完成页地区标签</td><td>✅</td></tr><tr><td>5</td><td>资料站与 README：题量 168 → 120</td><td>✅</td></tr></tbody></table></div>
-<p><strong>未改动</strong>：<code>05</code> 五步法、<code>07</code> 有效性审查、16 篇选文正文与 88 道三层追问、16 则晨读——去地区化不触碰内容本体。</p><div class="foot">读得深 · 中学生阅读产品项目资料 · 2026-09<br>内部工作稿，对外公开仅为便于评审；文中数字与结论多为待验证建议，非承诺<br>名著与古诗文为公有领域作品，原文取自维基文库；原创选文版权自持<br><a href="./">返回目录</a></div></div></body></html>
+<p><strong>未改动</strong>：<code>05</code> 五步法、<code>07</code> 有效性审查、16 篇选文正文与 88 道三层追问、16 则晨读——去地区化不触碰内容本体。</p>
+<hr>
+<h2 id="s13">6. 同日的第二处更正：课内篇目要放原文</h2>
+<p>原设计是「课内锚定篇不提供原文，让孩子对着课本读」，理由是绕开教材版权、把产品和课本绑在一起。<strong>这条废止</strong>——预习和复习时翻书是真实摩擦，原文该放上。</p>
+<p>但<strong>不能一刀切</strong>，课内篇目的版权状态差别很大：</p>
+<div class="tw"><table><thead><tr><th>篇目</th><th>作者</th><th>卒年</th><th>保护期</th><th>处理</th></tr></thead><tbody><tr><td>《春》</td><td>朱自清</td><td>1948</td><td>1998 年底届满</td><td>✅ <strong>已收全文 746 字</strong>（维基文库，逐字未改）</td></tr><tr><td>《秋天的怀念》</td><td>史铁生</td><td>2010</td><td><strong>至 2060 年底</strong></td><td>⚠️ 待授权，暂不收正文</td></tr></tbody></table></div>
+<p><strong>关键法律点</strong>：《著作权法》给教科书的法定许可，只适用于<strong>教科书的编写出版</strong>，不适用于第三方商业产品。「课本里有」不构成我们可以复制的理由。</p>
+<p><strong>落地方式</strong>：每个课内篇目加 <code>rights</code> 字段（<code>public_domain</code> / <code>license_required</code>）与 <code>text</code> 字段。拿到授权后把正文填进 <code>text</code>，前端一行不用改。</p>
+<p><strong>这件事排进生产清单</strong>：</p>
+<ol><li>逐篇核定卒年 → 定能不能放全文（七上第 1–2 单元里，《济南的冬天》《世说新语》二则、《古代诗歌四首》可直接收；《散步》《荷叶·母亲》等当代作品仍在保护期）。</li><li>对在保护期的篇目，走授权：联系著作权继承人或代理机构（多数经人民教育出版社或作家所属出版社）。</li><li>授权未到位之前，产品内的这些篇目<strong>明确显示「正文待授权」</strong>，不用含糊话术搪塞。</li></ol>
+<hr>
+<h2 id="s14">7. 已落地清单（含同日第二次修订）</h2>
+<div class="tw"><table><thead><tr><th>#</th><th>项</th><th>状态</th></tr></thead><tbody><tr><td>6</td><td><code>content/month01.json</code>：新增 <code>rights_policy</code>；<code>3-1</code>《春》收全文 746 字并标 <code>public_domain</code>；<code>1-1</code>《秋天的怀念》标 <code>license_required</code> 并预留 <code>text</code></td><td>✅</td></tr><tr><td>7</td><td><code>08</code>：新增「调整四」；两篇课内锚定的说明改写；生产规则加第 4 条</td><td>✅</td></tr><tr><td>8</td><td><code>06</code>：顶部横幅改为两处更正；§6.2「不提供原文」一段标注废止并改写</td><td>✅</td></tr><tr><td>9</td><td>Demo：课内篇目有正文则直接展示（《春》），无正文则显示「正文待授权」＋背景卡＋题组</td><td>✅</td></tr><tr><td>10</td><td>本篇改名 <code>10-地区差异与首版收敛决定.md</code>，措辞由「版本」改为「出题风格」</td><td>✅</td></tr></tbody></table></div><div class="foot">读得深 · 中学生阅读产品项目资料 · 2026-09<br>内部工作稿，对外公开仅为便于评审；文中数字与结论多为待验证建议，非承诺<br>名著与古诗文为公有领域作品，原文取自维基文库；原创选文版权自持<br><a href="./">返回目录</a></div></div></body></html>
