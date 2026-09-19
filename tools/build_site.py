@@ -132,7 +132,7 @@ hub = f"""<div class="hero">
 
 <div class="sec-h">可交互 Demo</div>
 <div class="cards two">
-  <a class="card" href="https://pumo0926-cpu.github.io/dudeshen-diagnose-demo/"><div class="k">分诊 · 新</div><b>三道闸门：初一分诊与训练</b><span>走一遍 20 分钟分诊，判出六种画像之一，再领一份 15 分钟训练块（对应文档 09）</span></a>
+  <a class="card" href="https://pumo0926-cpu.github.io/dudeshen-diagnose-demo/"><div class="k">分诊 · 新</div><b>三道闸门：初一分诊与训练</b><span>默认是孩子视角：读一篇、说一遍，再领今天该练的一件事；右上角「给大人看」才展开画像、判定规则与处方（对应文档 09）</span></a>
   <a class="card" href="https://pumo0926-cpu.github.io/dudeshen-reading-h5/"><div class="k">产品方案</div><b>五步法方案 H5</b><span>猜·读·问·辨·写的完整设计，含 Achieve3000 对照与承诺边界</span></a>
   <a class="card" href="https://pumo0926-cpu.github.io/dudeshen-month-demo/"><div class="k">月度 Demo</div><b>初一首月训练</b><span>16 篇选文全部可读，可走完整五步；首版不分地区</span></a>
 </div>

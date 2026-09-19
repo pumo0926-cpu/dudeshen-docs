@@ -7,7 +7,7 @@
 
 ## 可交互 Demo
 
-- **三道闸门：初一分诊与训练**（对应文档 09）— https://pumo0926-cpu.github.io/dudeshen-diagnose-demo/
+- **三道闸门：初一分诊与训练**（对应文档 09，默认孩子视角，可切「给大人看」）— https://pumo0926-cpu.github.io/dudeshen-diagnose-demo/
 - **五步法方案 H5** — https://pumo0926-cpu.github.io/dudeshen-reading-h5/
 - **初一首月训练 Demo** — https://pumo0926-cpu.github.io/dudeshen-month-demo/
 
