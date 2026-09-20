@@ -65,7 +65,7 @@ td strong{color:var(--ink)}
 .doc .t b{display:block;font-size:15.5px;font-weight:620;color:var(--ink)}
 .doc .t span{font-size:13px;color:var(--ink-muted)}
 .sec-h{font-size:12px;letter-spacing:.14em;color:var(--ink-muted);text-transform:uppercase;margin:34px 0 10px}
-</style></head><body><div class="top"><div class="in"><a href="./">‹ 读得深 · 项目资料</a><span class="sp"></span><span style="color:var(--ink-muted)">12</span></div></div><div class="wrap"><div class="notice">原始文件：<code>12-答题动线审计-阻碍点与体验损耗.md</code> · <a href="md/12-答题动线审计-阻碍点与体验损耗.md">下载 Markdown</a></div><div class="toc"><b>本篇目录</b><a href="#s2">0. 结论</a><a href="#s3">1. 怎么查的</a><a href="#s4">2. 九个点</a><a href="#s5">3. 三条值得单独说的</a><a href="#s9">4. 从九条里抽出来的三条通用规则</a><a href="#s10">5. 和 11 撞上了同一个结论，这件事本身是信号</a><a href="#s11">6. 明确不改的三件</a><a href="#s12">7. 怎么保证不再退回去</a><a href="#s13">8. 与已有文档的关系</a></div><h1 id="s1">一个初一学生走完这套 Demo，会在哪些地方卡住、在哪些地方被消耗</h1>
+</style></head><body><div class="top"><div class="in"><a href="./">‹ 读得深 · 项目资料</a><span class="sp"></span><span style="color:var(--ink-muted)">12</span></div></div><div class="wrap"><div class="notice">原始文件：<code>12-答题动线审计-阻碍点与体验损耗.md</code> · <a href="md/12-答题动线审计-阻碍点与体验损耗.md">下载 Markdown</a></div><div class="toc"><b>本篇目录</b><a href="#s2">0. 结论</a><a href="#s3">1. 怎么查的</a><a href="#s4">2. 九个点</a><a href="#s5">3. 三条值得单独说的</a><a href="#s9">4. 从九条里抽出来的四条通用规则</a><a href="#s11">5. 和 11 撞上了同一个结论，这件事本身是信号</a><a href="#s12">6. 明确不改的三件</a><a href="#s13">7. 怎么保证不再退回去</a><a href="#s14">8. 与已有文档的关系</a></div><h1 id="s1">一个初一学生走完这套 Demo，会在哪些地方卡住、在哪些地方被消耗</h1>
 <blockquote>日期：2026-09-19 ｜ 审查对象：已发布的<strong>分诊与训练 Demo</strong>（<code>h5-diagnose-demo</code> → https://pumo0926-cpu.github.io/dudeshen-diagnose-demo/ ）<br>触发：用户实测反馈「<strong>完成后，没有反馈直接结束</strong>」。本篇从这一条倒查整条答题动线。<br>与 <code>11</code> 的关系：<code>11</code> 审的是<strong>首月训练 Demo</strong>（<code>h5-month-demo</code>），结论是「反馈密度为零、摩擦密度很高」。本篇审的是另一个产物，<strong>得到的是同一类结论</strong>——见 §5。</blockquote>
 <hr>
 <h2 id="s2">0. 结论</h2>
@@ -103,24 +103,30 @@ td strong{color:var(--ink)}
 <p>60 秒复述到点直接跳转、3 秒速判一进页面就开始跑——这两处的共同错误是：<strong>计时器的作用被当成了「催促」，而不是「界定」。</strong></p>
 <p>对成年评审，计时是个参数；对孩子，计时到点抢走输入 = 惩罚。改完之后计时仍然照常记录（配速数据没有损失），只是不再打断人。</p>
 <hr>
-<h2 id="s9">4. 从九条里抽出来的三条通用规则</h2>
+<h2 id="s9">4. 从九条里抽出来的四条通用规则</h2>
 <p>写进内容与交互规范，后续每一屏都按这个自检：</p>
-<ol><li><strong>凡是要求输出的地方，必须有「被看见」的回应。</strong> 哪怕只是按字面算的三句话，也好过一页无声的清单。</li><li><strong>凡是有门槛的地方，必须说清「还差什么」。</strong> 不满足条件时不许只是没有按钮——要写明「还差：还有 1 块没起名字」。</li><li><strong>凡是限时的地方，不许抢走正在进行的输入。</strong> 到点提醒，不到点不催，计时照记。</li></ol>
-<blockquote>这三条各对应一类故障：<strong>沉默</strong>、<strong>暗门</strong>、<strong>打断</strong>。本轮 9 个问题里，6 个属于第 1、2 类。</blockquote>
+<ol><li><strong>凡是要求输出的地方，必须有「被看见」的回应。</strong> 哪怕只是按字面算的三句话，也好过一页无声的清单。</li><li><strong>凡是有门槛的地方，必须说清「还差什么」。</strong> 不满足条件时不许只是没有按钮——要写明「还差：还有 1 块没起名字」。</li><li><strong>凡是限时的地方，不许抢走正在进行的输入。</strong> 到点提醒，不到点不催，计时照记。</li><li><strong>凡是判过对错的地方，必须给正解，并给一次当场订正的机会。</strong>（第二轮补充，见 §4.1）</li></ol>
+<blockquote>前三条各对应一类故障：<strong>沉默</strong>、<strong>暗门</strong>、<strong>打断</strong>；第四条对应的是<strong>赖账</strong>——答应了要讲，最后没讲。</blockquote>
+<h3 id="s10">4.1 第四条是怎么补上的</h3>
+<p>第一轮改完后，用户指出：结算页列的是「今天做到的几件事」，<strong>缺的是对答题结果的反馈和钉正</strong>。</p>
+<p>回查发现一处更硬的问题：分诊答题时页面上明写着「<strong>先不说对错，最后一起讲</strong>」——这个承诺<strong>从来没有兑现</strong>。孩子做完八道题，直接看到一张画像报告，没有任何一道题被讲过。</p>
+<p>这是比「没反馈」更严重的一类：<strong>产品自己许的诺，自己没做到。</strong></p>
+<div class="tw"><table><thead><tr><th>补上的</th><th>内容</th></tr></thead><tbody><tr><td><strong>逐题讲评</strong>（新屏）</td><td>八道题逐题给：你选的／正解／为什么（每题一段解析）／原文在第几段（可展开）；「说过有底却答错」的题单独打标——那几道最值得看</td></tr><tr><td><strong>错题订正</strong>（新屏）</td><td>讲完之后只做错题，<strong>这一次当场给对错与解析</strong>；结尾统计「N 道这次做对了」，并说明「错过一次又自己改对的题，比一开始就做对的记得牢」</td></tr><tr><td><strong>训练块的钉正区</strong></td><td>收尾页不再只打一个「–」：每件没做到的事都给出正解或范例（如主旨句给一句 23 字的范写），并配「现在回去改一下 ›」直接跳回那一步</td></tr></tbody></table></div>
+<p><strong>为什么订正必须在讲评之后、而不是替代 B 卷</strong>：B 卷（双跑法）测的是「给时间、允许翻书，他能不能&lt;b&gt;自己&lt;/b&gt;改对」，那是诊断数据，所以必须不给对错；订正是讲完之后的学习动作，所以必须给对错。两者顺序不能换。</p>
 <hr>
-<h2 id="s10">5. 和 <code>11</code> 撞上了同一个结论，这件事本身是信号</h2>
+<h2 id="s11">5. 和 <code>11</code> 撞上了同一个结论，这件事本身是信号</h2>
 <div class="tw"><table><thead><tr><th></th><th><code>11</code>（首月训练 Demo）</th><th>本篇（分诊与训练 Demo）</th></tr></thead><tbody><tr><td>审查对象</td><td><code>h5-month-demo</code></td><td><code>h5-diagnose-demo</code></td></tr><tr><td>主结论</td><td>第 3 步「6 个输入框 ＋ 0 次即时反馈」是最可能的退出位置</td><td>第 5 步「写完一句话 ＋ 0 回应」是最贵的一次损耗</td></tr><tr><td>共同点</td><td><strong>要求输出的密度很高，回应输出的密度接近零</strong></td><td>同左</td></tr></tbody></table></div>
 <p>两个产物由不同会话、在不同时间、按同一套方案（<code>05</code>/<code>09</code>）分别实现，<strong>却独立地长出了同一个缺陷</strong>。这说明问题不在实现，在方案本身：<code>05</code> 与 <code>09</code> 把「输出」写成了硬要求，却从没规定「系统必须怎么回应输出」。</p>
 <p><strong>建议回写 <code>05</code>/<code>09</code> 一条设计红线：</strong></p>
 <blockquote>每一次要求孩子产出内容（L3 观点、证据句、主旨句、写作句），都必须配一条<strong>当场可给的回应</strong>；回应可以弱、可以是按字面算的，但不许没有。AI 预算优先保这一环（<code>07</code> 修改 3 已指出同一件事，本篇给出了它在交互层的具体形态）。</blockquote>
 <hr>
-<h2 id="s11">6. 明确不改的三件</h2>
+<h2 id="s12">6. 明确不改的三件</h2>
 <div class="tw"><table><thead><tr><th>不改</th><th>为什么</th></tr></thead><tbody><tr><td>分诊八题仍然看不到原文</td><td>A 卷测的是「读完留下什么」。给了原文，B 卷的「双跑法」差值就失去意义——那是整套分诊里最便宜也最关键的分离器（<code>09</code> §3.1）</td></tr><tr><td>复述的四个关键词仍然实时提示</td><td>实时变绿确实会抬高这一项的得分（孩子会去凑词），但它同时在教「复述该说清哪四样」。<strong>教学价值大于测量纯度</strong>；代价是大人层需要标注这一项偏高</td></tr><tr><td>训练第 2 步仍然要求标一处没懂</td><td>这是 <code>09</code> 里效应量确凿的理解监控训练。本轮只加了「真的都懂」的出路，没有取消要求</td></tr></tbody></table></div>
 <hr>
-<h2 id="s12">7. 怎么保证不再退回去</h2>
+<h2 id="s13">7. 怎么保证不再退回去</h2>
 <p>三个脚本都在 <code>h5-diagnose-demo/tools/</code>，本地与线上都能跑：</p>
-<div class="tw"><table><thead><tr><th>脚本</th><th>查什么</th><th>现状</th></tr></thead><tbody><tr><td><code>e2e.js</code></td><td>两种视角的完整动线，含返回、关卡、门槛的正反例</td><td><strong>108 项全过</strong></td></tr><tr><td><code>audit.js</code></td><td>孩子视角 11 屏不许出现内部术语</td><td>全清</td></tr><tr><td><code>friction.js</code></td><td>本篇这 9 个阻碍点／损耗点</td><td>全清</td></tr></tbody></table></div>
+<div class="tw"><table><thead><tr><th>脚本</th><th>查什么</th><th>现状</th></tr></thead><tbody><tr><td><code>e2e.js</code></td><td>两种视角的完整动线，含返回、关卡、门槛、讲评与订正的正反例</td><td><strong>129 项全过</strong></td></tr><tr><td><code>audit.js</code></td><td>孩子视角 11 屏不许出现内部术语</td><td>全清</td></tr><tr><td><code>friction.js</code></td><td>本篇这 9 个阻碍点／损耗点</td><td>全清</td></tr></tbody></table></div>
 <p><strong>任何一条回退，脚本立刻报出来。</strong></p>
 <hr>
-<h2 id="s13">8. 与已有文档的关系</h2>
+<h2 id="s14">8. 与已有文档的关系</h2>
 <div class="tw"><table><thead><tr><th>文档</th><th>关系</th></tr></thead><tbody><tr><td><code>11</code> 初中生体验的最大流失风险</td><td>同一类结论的另一个样本；本篇 §5 把两者合并成一条对 <code>05</code>/<code>09</code> 的回写建议</td></tr><tr><td><code>09</code> 阅读问题诊断与可训练提升方案</td><td>本篇是它的交互落地审计；§4 的三条规则建议写进其 §7「落到产品」</td></tr><tr><td><code>07</code> 有效性审查</td><td>其「修改 3：给 L3 真正的内容反馈」在本篇里得到了具体的交互形态与最低可行版本</td></tr><tr><td><code>05</code> 中文五步法</td><td>第 5 步「写」的门槛与回报不对等，是本篇的起点</td></tr></tbody></table></div><div class="foot">读得深 · 中学生阅读产品项目资料 · 2026-09<br>内部工作稿，对外公开仅为便于评审；文中数字与结论多为待验证建议，非承诺<br>名著与古诗文为公有领域作品，原文取自维基文库；原创选文版权自持<br><a href="./">返回目录</a></div></div></body></html>
